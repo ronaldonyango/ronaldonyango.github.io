@@ -1,2 +1,0 @@
-# ronaldonyango.github.io
-Portfolio
