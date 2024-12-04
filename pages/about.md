@@ -13,6 +13,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="row">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
+{% include about/skills.html title="Category_Name Skills" source=site.data.category_name-skills %}
 </div>
 
 <div class="row">
