@@ -56,7 +56,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .nav-links a {
@@ -65,6 +65,7 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            font-size: 0.9rem;
         }
 
         .nav-links a:hover {
@@ -88,7 +89,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 120px 0 80px;
+            padding: 120px 0 60px;
             text-align: center;
             color: white;
             position: relative;
@@ -116,12 +117,43 @@
             z-index: 2;
         }
 
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            animation: slideInDown 1s ease-out;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInDown 1s ease-out;
+            animation: slideInDown 1s ease-out 0.2s both;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            animation: slideInUp 1s ease-out 0.4s both;
         }
 
         @keyframes slideInDown {
@@ -136,13 +168,13 @@
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
-            max-width: 800px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-            animation: slideInUp 1s ease-out 0.3s both;
+            animation: slideInUp 1s ease-out 0.6s both;
         }
 
         @keyframes slideInUp {
@@ -161,7 +193,7 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeIn 1s ease-out 0.6s both;
+            animation: fadeIn 1s ease-out 0.8s both;
         }
 
         @keyframes fadeIn {
@@ -170,7 +202,7 @@
         }
 
         .btn {
-            padding: 12px 30px;
+            padding: 10px 25px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
@@ -180,6 +212,7 @@
             gap: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
         .btn-primary {
@@ -210,7 +243,7 @@
 
         /* Section Styles */
         .section {
-            padding: 80px 0;
+            padding: 60px 0;
             background: white;
             position: relative;
         }
@@ -221,13 +254,13 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #333;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             position: relative;
         }
 
@@ -243,66 +276,71 @@
             border-radius: 2px;
         }
 
+        .section-title p {
+            color: #666;
+            font-size: 1rem;
+        }
+
         /* Stats */
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
 
         .stat-card {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(102, 126, 234, 0.1);
         }
 
         .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.12);
         }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: bold;
             background: linear-gradient(45deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: block;
+            margin-bottom: 0.3rem;
         }
 
         .stat-label {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             color: #666;
-            margin-top: 0.5rem;
         }
 
-        /* Experience */
-        .experience-grid {
+        /* Experience & Projects Grid */
+        .content-grid {
             display: grid;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
-        .job-card {
+        .card {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-left: 5px solid #667eea;
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #667eea;
             transition: all 0.3s ease;
         }
 
-        .job-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
+        .card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.12);
         }
 
-        .job-header {
+        .card-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -311,14 +349,15 @@
             gap: 1rem;
         }
 
-        .job-title {
-            font-size: 1.3rem;
+        .card-title {
+            font-size: 1.2rem;
             font-weight: bold;
             color: #333;
+            margin-bottom: 0.3rem;
         }
 
-        .company {
-            font-size: 1.1rem;
+        .card-subtitle {
+            font-size: 1rem;
             color: #667eea;
             font-weight: 600;
         }
@@ -326,43 +365,133 @@
         .duration {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
             font-weight: 500;
+            white-space: nowrap;
         }
 
-        .job-description {
+        .card-description {
             color: #666;
-            line-height: 1.8;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
-        .job-description ul {
+        .card-description ul {
             margin-left: 1rem;
-            margin-top: 1rem;
+            margin-top: 0.8rem;
         }
 
-        .job-description li {
-            margin-bottom: 0.5rem;
+        .card-description li {
+            margin-bottom: 0.4rem;
             position: relative;
         }
 
-        .job-description li::marker {
+        .card-description li::marker {
             color: #667eea;
         }
 
-        /* Skills */
+        /* Project Cards */
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #764ba2;
+        }
+
+        /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
         .skill-category {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
         }
 
@@ -373,7 +502,7 @@
         .skill-category h3 {
             color: #333;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -381,21 +510,21 @@
 
         .skill-category i {
             color: #667eea;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
         .skill-tag {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
             font-weight: 500;
             transition: transform 0.3s ease;
         }
@@ -404,31 +533,76 @@
             transform: scale(1.05);
         }
 
-        /* Contact */
+        /* Education & Certifications */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .education-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.12);
+        }
+
+        .education-icon {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .education-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+
+        .education-subtitle {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-year {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Grid */
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
         .contact-card {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(102, 126, 234, 0.1);
         }
 
         .contact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.12);
         }
 
         .contact-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             background: linear-gradient(45deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -439,6 +613,7 @@
         .contact-card h3 {
             color: #333;
             margin-bottom: 0.5rem;
+            font-size: 1rem;
         }
 
         .contact-card a {
@@ -446,6 +621,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .contact-card a:hover {
@@ -469,7 +645,7 @@
 
         .social-links a {
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             transition: all 0.3s ease;
             padding: 0.5rem;
             border-radius: 50%;
@@ -488,11 +664,11 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .cta-buttons {
@@ -500,13 +676,26 @@
                 align-items: center;
             }
 
-            .job-header {
+            .card-header {
                 flex-direction: column;
                 align-items: flex-start;
             }
 
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -531,7 +720,9 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -541,11 +732,19 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
+                <div class="profile-image">
+                    <!-- Replace with your actual photo -->
+                    <i class="fas fa-user"></i>
+                    <!-- Uncomment and add your photo:
+                    <img src="your-photo.jpg" alt="Ronald Onyango"> 
+                    -->
+                </div>
                 <h1>Ronald Onyango</h1>
-                <p>Senior Product Operations Leader driving exponential growth through strategic market expansion and data-driven decision making. Specializing in Go-to-Market Strategy, Cross-functional Leadership, and Mental Health Advocacy.</p>
+                <div class="subtitle">Senior Product Operations Leader</div>
+                <p>Driving exponential growth through strategic market expansion and data-driven decision making. Specializing in Go-to-Market Strategy, Cross-functional Leadership, and Mental Health Advocacy.</p>
                 <div class="cta-buttons">
-                    <a href="#experience" class="btn btn-primary">
-                        <i class="fas fa-briefcase"></i>
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
                         View My Work
                     </a>
                     <a href="#contact" class="btn btn-secondary">
@@ -594,16 +793,16 @@
                 <p>Driving growth and innovation across multiple African markets</p>
             </div>
             
-            <div class="experience-grid">
-                <div class="job-card animate-on-scroll">
-                    <div class="job-header">
+            <div class="content-grid">
+                <div class="card animate-on-scroll">
+                    <div class="card-header">
                         <div>
-                            <div class="job-title">Senior Product Operations Associate</div>
-                            <div class="company">Sun King</div>
+                            <div class="card-title">Senior Product Operations Associate</div>
+                            <div class="card-subtitle">Sun King</div>
                         </div>
                         <div class="duration">April 2025 - Present</div>
                     </div>
-                    <div class="job-description">
+                    <div class="card-description">
                         <ul>
                             <li>Lead go-to-market (GTM) strategy and execution across new and existing markets to drive high adoption rates</li>
                             <li>Coordinate across sales, operations, product and engineering teams to maintain alignment and execute strategic initiatives</li>
@@ -613,15 +812,15 @@
                     </div>
                 </div>
 
-                <div class="job-card animate-on-scroll">
-                    <div class="job-header">
+                <div class="card animate-on-scroll">
+                    <div class="card-header">
                         <div>
-                            <div class="job-title">Product Operations Associate</div>
-                            <div class="company">Sun King</div>
+                            <div class="card-title">Product Operations Associate</div>
+                            <div class="card-subtitle">Sun King</div>
                         </div>
                         <div class="duration">June 2024 - March 2025</div>
                     </div>
-                    <div class="job-description">
+                    <div class="card-description">
                         <ul>
                             <li>Streamlined product development process creating comprehensive documentation, boosting team efficiency by 25%</li>
                             <li>Successfully led launch of new products, features, and automations in multiple countries</li>
@@ -631,15 +830,15 @@
                     </div>
                 </div>
 
-                <div class="job-card animate-on-scroll">
-                    <div class="job-header">
+                <div class="card animate-on-scroll">
+                    <div class="card-header">
                         <div>
-                            <div class="job-title">Board Chairperson | Co-Founder</div>
-                            <div class="company">Amazing Minds Africa</div>
+                            <div class="card-title">Board Chairperson | Co-Founder</div>
+                            <div class="card-subtitle">Amazing Minds Africa</div>
                         </div>
                         <div class="duration">April 2021 - Present</div>
                     </div>
-                    <div class="job-description">
+                    <div class="card-description">
                         <ul>
                             <li>Conceptualized and implemented mental health therapy program contributing to 17% reduction in campus suicide rate</li>
                             <li>Developed comprehensive mental health toolkit equipping over 1,000 students with resources</li>
@@ -648,15 +847,15 @@
                     </div>
                 </div>
 
-                <div class="job-card animate-on-scroll">
-                    <div class="job-header">
+                <div class="card animate-on-scroll">
+                    <div class="card-header">
                         <div>
-                            <div class="job-title">Product Operations Specialist</div>
-                            <div class="company">MESH</div>
+                            <div class="card-title">Product Operations Specialist</div>
+                            <div class="card-subtitle">MESH</div>
                         </div>
                         <div class="duration">November 2021 - May 2024</div>
                     </div>
-                    <div class="job-description">
+                    <div class="card-description">
                         <ul>
                             <li>Contributed to successful launch of MESH networking platform growing user base to over 150K</li>
                             <li>Conducted sales analysis for Unilever partnership identifying strategies to boost sales by 35%</li>
@@ -669,55 +868,246 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+                <p>Strategic initiatives and personal projects driving meaningful impact</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <i class="fas fa-brain"></i>
+                        <!-- Replace with project image:
+                        <img src="project1-image.jpg" alt="Mental Health Platform">
+                        -->
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Mental Health Platform</h3>
+                        <p class="project-description">
+                            Developed comprehensive digital platform for Amazing Minds Africa, providing mental health resources and therapy matching for university students across Kenya.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Product Strategy</span>
+                            <span class="project-tag">User Research</span>
+                            <span class="project-tag">Social Impact</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                        <!-- Replace with project image:
+                        <img src="project2-image.jpg" alt="Analytics Dashboard">
+                        -->
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Product Analytics Dashboard</h3>
+                        <p class="project-description">
+                            Built comprehensive analytics dashboard for Sun King, providing real-time insights into product performance and user behavior across multiple markets.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Data Visualization</span>
+                            <span class="project-tag">Product Analytics</span>
+                            <span class="project-tag">Business Intelligence</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Dashboard
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-chart-bar"></i>
+                                Analytics
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <i class="fas fa-rocket"></i>
+                        <!-- Replace with project image:
+                        <img src="project3-image.jpg" alt="Go-to-Market Strategy">
+                        -->
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Multi-Market GTM Strategy</h3>
+                        <p class="project-description">
+                            Designed and executed go-to-market strategies for Sun King's expansion into 5 new African markets, resulting in accelerated user adoption and market penetration.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Market Expansion</span>
+                            <span class="project-tag">Strategic Planning</span>
+                            <span class="project-tag">Cross-functional Leadership</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Case Study
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-presentation"></i>
+                                Presentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Core Expertise</h2>
-                <p>Technical skills and strategic capabilities driving measurable results</p>
+                <h2>Core Competencies</h2>
+                <p>Technical expertise and strategic capabilities driving operational excellence</p>
             </div>
             
             <div class="skills-grid">
                 <div class="skill-category animate-on-scroll">
-                    <h3><i class="fas fa-rocket"></i> Go-to-Market Strategy</h3>
+                    <h3>
+                        <i class="fas fa-chart-line"></i>
+                        Product Strategy
+                    </h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Market Expansion</span>
-                        <span class="skill-tag">Product Launch</span>
-                        <span class="skill-tag">Strategic Planning</span>
-                        <span class="skill-tag">Cross-functional Leadership</span>
+                        <span class="skill-tag">Go-to-Market Strategy</span>
+                        <span class="skill-tag">Product Roadmapping</span>
+                        <span class="skill-tag">Market Research</span>
+                        <span class="skill-tag">Competitive Analysis</span>
+                        <span class="skill-tag">User Research</span>
                     </div>
                 </div>
 
                 <div class="skill-category animate-on-scroll">
-                    <h3><i class="fas fa-chart-line"></i> Data Analytics</h3>
+                    <h3>
+                        <i class="fas fa-cogs"></i>
+                        Operations
+                    </h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Google Analytics</span>
-                        <span class="skill-tag">Business Intelligence</span>
-                        <span class="skill-tag">Advanced Analytics</span>
-                    </div>
-                </div>
-
-                <div class="skill-category animate-on-scroll">
-                    <h3><i class="fas fa-cogs"></i> Product Operations</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Testing Frameworks</span>
                         <span class="skill-tag">Process Optimization</span>
-                        <span class="skill-tag">Documentation</span>
                         <span class="skill-tag">Quality Assurance</span>
+                        <span class="skill-tag">Cross-functional Leadership</span>
+                        <span class="skill-tag">Project Management</span>
+                        <span class="skill-tag">Issue Resolution</span>
+                    </div>
+                </div>
+
+                <div class="skill-category animate-on-scroll">
+                    <h3>
+                        <i class="fas fa-database"></i>
+                        Analytics & Data
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Business Intelligence</span>
+                        <span class="skill-tag">Performance Metrics</span>
+                        <span class="skill-tag">Reporting</span>
+                    </div>
+                </div>
+
+                <div class="skill-category animate-on-scroll">
+                    <h3>
+                        <i class="fas fa-code"></i>
+                        Technical
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">API Testing</span>
+                        <span class="skill-tag">Database Management</span>
+                        <span class="skill-tag">App Testing</span>
+                        <span class="skill-tag">Documentation</span>
                         <span class="skill-tag">Automation</span>
                     </div>
                 </div>
 
                 <div class="skill-category animate-on-scroll">
-                    <h3><i class="fas fa-users"></i> Leadership & Advocacy</h3>
+                    <h3>
+                        <i class="fas fa-users"></i>
+                        Leadership
+                    </h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Team Leadership</span>
-                        <span class="skill-tag">Mental Health Advocacy</span>
-                        <span class="skill-tag">Strategic Communications</span>
-                        <span class="skill-tag">Social Impact</span>
+                        <span class="skill-tag">Team Management</span>
+                        <span class="skill-tag">Strategic Planning</span>
+                        <span class="skill-tag">Stakeholder Management</span>
+                        <span class="skill-tag">Change Management</span>
+                        <span class="skill-tag">Mentoring</span>
                     </div>
+                </div>
+
+                <div class="skill-category animate-on-scroll">
+                    <h3>
+                        <i class="fas fa-heart"></i>
+                        Social Impact
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Mental Health Advocacy</span>
+                        <span class="skill-tag">Community Outreach</span>
+                        <span class="skill-tag">Program Development</span>
+                        <span class="skill-tag">Non-profit Management</span>
+                        <span class="skill-tag">Social Entrepreneurship</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education & Certifications</h2>
+                <p>Continuous learning and professional development</p>
+            </div>
+            
+            <div class="education-grid">
+                <div class="education-card animate-on-scroll">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-title">Bachelor of Science in Information Technology</div>
+                    <div class="education-subtitle">Kenyatta University</div>
+                    <div class="education-year">2019 - 2023</div>
+                </div>
+
+                <div class="education-card animate-on-scroll">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-title">Product Management Certificate</div>
+                    <div class="education-subtitle">Google</div>
+                    <div class="education-year">2024</div>
+                </div>
+
+                <div class="education-card animate-on-scroll">
+                    <div class="education-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="education-title">Data Analytics Professional Certificate</div>
+                    <div class="education-subtitle">IBM</div>
+                    <div class="education-year">2023</div>
+                </div>
+
+                <div class="education-card animate-on-scroll">
+                    <div class="education-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="education-title">Mental Health First Aid Certification</div>
+                    <div class="education-subtitle">Kenya Red Cross</div>
+                    <div class="education-year">2022</div>
                 </div>
             </div>
         </div>
@@ -728,7 +1118,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Let's Connect</h2>
-                <p>Ready to drive growth together? Let's discuss how we can collaborate</p>
+                <p>Ready to collaborate on your next big project</p>
             </div>
             
             <div class="contact-grid">
@@ -737,15 +1127,7 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                     <h3>Email</h3>
-                    <a href="mailto:ronaldonyango.ke@gmail.com">ronaldonyango.ke@gmail.com</a>
-                </div>
-
-                <div class="contact-card animate-on-scroll">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <h3>Phone</h3>
-                    <a href="tel:+254719253344">+254 719 253 344</a>
+                    <a href="mailto:ronald.onyango@example.com">ronald.onyango@example.com</a>
                 </div>
 
                 <div class="contact-card animate-on-scroll">
@@ -753,7 +1135,7 @@
                         <i class="fab fa-linkedin"></i>
                     </div>
                     <h3>LinkedIn</h3>
-                    <a href="https://www.linkedin.com/in/ronaldonyango" target="_blank">linkedin.com/in/ronaldonyango</a>
+                    <a href="https://linkedin.com/in/ronaldonyango" target="_blank">linkedin.com/in/ronaldonyango</a>
                 </div>
 
                 <div class="contact-card animate-on-scroll">
@@ -763,6 +1145,14 @@
                     <h3>GitHub</h3>
                     <a href="https://github.com/ronaldonyango" target="_blank">github.com/ronaldonyango</a>
                 </div>
+
+                <div class="contact-card animate-on-scroll">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <a href="tel:+254712345678">+254 712 345 678</a>
+                </div>
             </div>
         </div>
     </section>
@@ -771,12 +1161,20 @@
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/ronaldonyango" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/ronaldonyango" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://medium.com/@ronaldonyango" target="_blank"><i class="fab fa-medium"></i></a>
-                <a href="mailto:ronaldonyango.ke@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/ronaldonyango" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/ronaldonyango" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com/ronaldonyango" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="mailto:ronald.onyango@example.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
-            <p>&copy; 2025 Ronald Onyango. Driving growth through strategic innovation.</p>
+            <p>&copy; 2025 Ronald Onyango. All rights reserved.</p>
         </div>
     </footer>
 
@@ -801,7 +1199,7 @@
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
@@ -814,22 +1212,123 @@
             observer.observe(el);
         });
 
-        // Header background opacity on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            const scrollTop = window.pageYOffset;
+        // Add active class to navigation links based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
             
-            if (scrollTop > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
         });
 
+        // Add typing effect to hero subtitle
+        const subtitle = document.querySelector('.hero .subtitle');
+        const text = subtitle.textContent;
+        subtitle.textContent = '';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < text.length) {
+                subtitle.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+
+        // Start typing effect after hero animation
+        setTimeout(typeWriter, 1000);
+
+        // Add parallax effect to hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const speed = scrolled * 0.5;
+            hero.style.transform = `translateY(${speed}px)`;
+        });
+
+        // Add hover effects to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-8px) scale(1)';
+            });
+        });
+
+        // Add click analytics (placeholder for actual analytics)
+        document.querySelectorAll('.btn, .project-link, .contact-card a').forEach(element => {
+            element.addEventListener('click', function(e) {
+                // Analytics tracking would go here
+                console.log('Clicked:', this.textContent.trim() || this.href);
+            });
+        });
+
+        // Add mobile menu toggle (if needed)
+        const createMobileMenu = () => {
+            const nav = document.querySelector('.nav');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (window.innerWidth <= 768) {
+                if (!document.querySelector('.mobile-menu-toggle')) {
+                    const toggle = document.createElement('button');
+                    toggle.className = 'mobile-menu-toggle';
+                    toggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    toggle.style.cssText = `
+                        background: none;
+                        border: none;
+                        font-size: 1.5rem;
+                        color: #333;
+                        cursor: pointer;
+                        display: block;
+                    `;
+                    
+                    toggle.addEventListener('click', () => {
+                        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                        navLinks.style.flexDirection = 'column';
+                        navLinks.style.position = 'absolute';
+                        navLinks.style.top = '100%';
+                        navLinks.style.left = '0';
+                        navLinks.style.right = '0';
+                        navLinks.style.background = 'white';
+                        navLinks.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+                        navLinks.style.padding = '1rem';
+                    });
+                    
+                    nav.appendChild(toggle);
+                }
+            }
+        };
+
+        // Initialize mobile menu on load and resize
+        createMobileMenu();
+        window.addEventListener('resize', createMobileMenu);
+
+        // Add form submission handler for contact (if form is added)
+        const handleContactForm = (e) => {
+            e.preventDefault();
+            // Handle form submission
+            alert('Thank you for your message! I will get back to you soon.');
+        };
+
         // Add loading animation
-        window.addEventListener('load', function() {
-            document.body.style.opacity = '1';
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
         });
     </script>
-</body>
+</body>`
 </html>
