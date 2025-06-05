@@ -16,7 +16,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
             min-height: 100vh;
         }
 
@@ -45,12 +45,36 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
             font-size: 1.5rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .nav-profile-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #3b82f6;
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            overflow: hidden;
+        }
+
+        .nav-profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         .nav-links {
@@ -69,7 +93,7 @@
         }
 
         .nav-links a:hover {
-            color: #667eea;
+            color: #3b82f6;
         }
 
         .nav-links a::after {
@@ -79,7 +103,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
             transition: width 0.3s ease;
         }
 
@@ -230,7 +254,7 @@
 
         .btn-secondary {
             background: white;
-            color: #667eea;
+            color: #3b82f6;
             border: 2px solid white;
         }
 
@@ -249,7 +273,7 @@
         }
 
         .section:nth-child(even) {
-            background: #f8f9ff;
+            background: #f8faff;
         }
 
         .section-title {
@@ -272,7 +296,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
             border-radius: 2px;
         }
 
@@ -296,18 +320,18 @@
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.1);
         }
 
         .stat-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.12);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.12);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -331,13 +355,13 @@
             padding: 1.8rem;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #3b82f6;
             transition: all 0.3s ease;
         }
 
         .card:hover {
             transform: translateX(8px);
-            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.12);
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.12);
         }
 
         .card-header {
@@ -358,12 +382,12 @@
 
         .card-subtitle {
             font-size: 1rem;
-            color: #667eea;
+            color: #3b82f6;
             font-weight: 600;
         }
 
         .duration {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
             color: white;
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
@@ -389,7 +413,7 @@
         }
 
         .card-description li::marker {
-            color: #667eea;
+            color: #3b82f6;
         }
 
         /* Project Cards */
@@ -399,18 +423,18 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             overflow: hidden;
-            border: 1px solid rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.1);
         }
 
         .project-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
         }
 
         .project-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -452,8 +476,8 @@
         }
 
         .project-tag {
-            background: rgba(102, 126, 234, 0.1);
-            color: #667eea;
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
             font-size: 0.8rem;
@@ -466,7 +490,7 @@
         }
 
         .project-link {
-            color: #667eea;
+            color: #3b82f6;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
@@ -477,61 +501,300 @@
         }
 
         .project-link:hover {
-            color: #764ba2;
+            color: #1e3a8a;
         }
 
-        /* Skills Grid */
-        .skills-grid {
+        /* Skills Grid - Enhanced Creative Design */
+        .skills-showcase {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
         }
 
-        .skill-category {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
+        .skill-domain {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .skill-category:hover {
-            transform: translateY(-5px);
+        .skill-domain::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
 
-        .skill-category h3 {
-            color: #333;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+        .skill-domain:hover::before {
+            opacity: 1;
+        }
+
+        .skill-domain:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .domain-header {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .skill-category i {
-            color: #667eea;
-            font-size: 1.3rem;
-        }
-
-        .skill-tags {
+        .domain-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .skill-tag {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
+        .domain-icon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(47, 48, 130, 0.2), rgba(236, 72, 153, 0.2));
+            border-radius: inherit;
+        }
+
+        .domain-icon i {
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .domain-title {
+            flex: 1;
+        }
+
+        .domain-title h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #0a0a0a;
+        }
+
+        .domain-subtitle {
+            font-size: 0.9rem;
+            color: #0c264a;
+            font-weight: 400;
+        }
+
+        .skills-constellation {
+            position: relative;
+            height: 300px;
+            margin-bottom: 2rem;
+        }
+
+        .skill-node {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #100e0e;
             font-size: 0.8rem;
             font-weight: 500;
-            transition: transform 0.3s ease;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            line-height: 1.2;
+            padding: 0.5rem;
         }
 
-        .skill-tag:hover {
-            transform: scale(1.05);
+        .skill-node:hover {
+            transform: scale(1.1);
+            background: rgba(64, 66, 231, 0.2);
+            border-color: rgba(99, 102, 241, 0.6);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+            z-index: 10;
         }
+
+        .skill-node.primary {
+            width: 80px;
+            height: 80px;
+            font-size: 0.9rem;
+            border-color: rgba(236, 72, 153, 0.5);
+            background: rgba(236, 72, 153, 0.1);
+        }
+
+        .skill-node.primary:hover {
+            border-color: rgba(236, 72, 153, 0.8);
+            background: rgba(236, 72, 153, 0.3);
+            box-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
+        }
+
+        .skill-node.secondary {
+            width: 60px;
+            height: 60px;
+        }
+
+        .skill-node.tertiary {
+            width: 45px;
+            height: 45px;
+            font-size: 0.7rem;
+        }
+
+        .connection-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(13, 16, 14, 0.998), rgba(236, 72, 153, 0.2));
+            transform-origin: left center;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .skill-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #6366f1;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: #15171a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Unique layouts for each domain */
+        .skill-domain:nth-child(1) .domain-icon::before {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(59, 130, 246, 0.2));
+        }
+
+        .skill-domain:nth-child(2) .domain-icon::before {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+        }
+
+        .skill-domain:nth-child(3) .domain-icon::before {
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(236, 72, 153, 0.2));
+        }
+
+        .skill-domain:nth-child(4) .domain-icon::before {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(239, 68, 68, 0.2));
+        }
+
+        .skill-domain:nth-child(5) .domain-icon::before {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(236, 72, 153, 0.2));
+        }
+
+        .skill-domain:nth-child(6) .domain-icon::before {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(168, 85, 247, 0.2));
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .skills-showcase {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .skill-domain {
+                padding: 2rem;
+            }
+            
+            .skills-constellation {
+                height: 250px;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Animation delays */
+        .skill-domain {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .skill-domain:nth-child(1) { animation-delay: 0.1s; }
+        .skill-domain:nth-child(2) { animation-delay: 0.2s; }
+        .skill-domain:nth-child(3) { animation-delay: 0.3s; }
+        .skill-domain:nth-child(4) { animation-delay: 0.4s; }
+        .skill-domain:nth-child(5) { animation-delay: 0.5s; }
+        .skill-domain:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Pulse animation for skill nodes */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .skill-node.primary {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes float-up {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes float-down {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(5px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { 
+                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            }
+            50% { 
+                box-shadow: 0 4px 25px rgba(59, 130, 246, 0.6);
+            }
+        }
+
+        /* Add individual delays to skill tags */
+        .skill-tag:nth-child(1) { --i: 1; }
+        .skill-tag:nth-child(2) { --i: 2; }
+        .skill-tag:nth-child(3) { --i: 3; }
+        .skill-tag:nth-child(4) { --i: 4; }
+        .skill-tag:nth-child(5) { --i: 5; }
 
         /* Education & Certifications */
         .education-grid {
@@ -545,18 +808,18 @@
             padding: 1.5rem;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #3b82f6;
             transition: all 0.3s ease;
         }
 
         .education-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.12);
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.12);
         }
 
         .education-icon {
             font-size: 2.5rem;
-            color: #667eea;
+            color: #3b82f6;
             margin-bottom: 1rem;
         }
 
@@ -568,7 +831,7 @@
         }
 
         .education-subtitle {
-            color: #667eea;
+            color: #3b82f6;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
@@ -593,17 +856,17 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.1);
         }
 
         .contact-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.12);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.12);
         }
 
         .contact-icon {
             font-size: 2.5rem;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -617,7 +880,7 @@
         }
 
         .contact-card a {
-            color: #667eea;
+            color: #3b82f6;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
@@ -625,7 +888,7 @@
         }
 
         .contact-card a:hover {
-            color: #764ba2;
+            color: #1e3a8a;
         }
 
         /* Footer */
@@ -653,7 +916,7 @@
         }
 
         .social-links a:hover {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
             transform: translateY(-3px);
         }
 
@@ -661,6 +924,17 @@
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+            }
+
+            .logo {
+                gap: 0.5rem;
+                font-size: 1.3rem;
+            }
+
+            .nav-profile-image {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
             }
 
             .hero h1 {
@@ -716,7 +990,16 @@
     <!-- Header -->
     <header class="header">
         <nav class="nav container">
-            <div class="logo">Ronald Onyango</div>
+            <div class="logo">
+                <div class="nav-profile-image">
+                    <!-- Replace with your actual photo -->
+                    <i class="fas fa-user"></i>
+                    <!-- Uncomment and add your photo:
+                    <img src="your-photo.jpg" alt="Ronald Onyango"> 
+                    -->
+                </div>
+                Ronald Onyango
+            </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -970,95 +1253,202 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section">
+   <section id="skills" class="section">
         <div class="container">
             <div class="section-title">
                 <h2>Core Competencies</h2>
-                <p>Technical expertise and strategic capabilities driving operational excellence</p>
+                <p>Strategic expertise mapped across interconnected domains of excellence</p>
             </div>
             
-            <div class="skills-grid">
-                <div class="skill-category animate-on-scroll">
-                    <h3>
-                        <i class="fas fa-chart-line"></i>
-                        Product Strategy
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Go-to-Market Strategy</span>
-                        <span class="skill-tag">Product Roadmapping</span>
-                        <span class="skill-tag">Market Research</span>
-                        <span class="skill-tag">Competitive Analysis</span>
-                        <span class="skill-tag">User Research</span>
+            <div class="skills-showcase">
+                <!-- Product Strategy Domain -->
+                <div class="skill-domain">
+                    <div class="domain-header">
+                        <div class="domain-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="domain-title">
+                            <h3>Product Strategy</h3>
+                            <div class="domain-subtitle">Market-driven innovation leadership</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-constellation" id="strategy-constellation">
+                        <!-- Nodes will be positioned by JavaScript -->
+                    </div>
+                    
+                    <div class="skill-metrics">
+                        <div class="metric">
+                            <div class="metric-value">5+</div>
+                            <div class="metric-label">Years</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">12</div>
+                            <div class="metric-label">Launches</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">95%</div>
+                            <div class="metric-label">Success</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-category animate-on-scroll">
-                    <h3>
-                        <i class="fas fa-cogs"></i>
-                        Operations
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Process Optimization</span>
-                        <span class="skill-tag">Quality Assurance</span>
-                        <span class="skill-tag">Cross-functional Leadership</span>
-                        <span class="skill-tag">Project Management</span>
-                        <span class="skill-tag">Issue Resolution</span>
+                <!-- Operations Domain -->
+                <div class="skill-domain">
+                    <div class="domain-header">
+                        <div class="domain-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="domain-title">
+                            <h3>Operations</h3>
+                            <div class="domain-subtitle">Systematic excellence delivery</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-constellation" id="operations-constellation">
+                        <!-- Nodes will be positioned by JavaScript -->
+                    </div>
+                    
+                    <div class="skill-metrics">
+                        <div class="metric">
+                            <div class="metric-value">30%</div>
+                            <div class="metric-label">Efficiency</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">99.9%</div>
+                            <div class="metric-label">Uptime</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">15</div>
+                            <div class="metric-label">Teams</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-category animate-on-scroll">
-                    <h3>
-                        <i class="fas fa-database"></i>
-                        Analytics & Data
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Data Analysis</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Business Intelligence</span>
-                        <span class="skill-tag">Performance Metrics</span>
-                        <span class="skill-tag">Reporting</span>
+                <!-- Analytics & Data Domain -->
+                <div class="skill-domain">
+                    <div class="domain-header">
+                        <div class="domain-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="domain-title">
+                            <h3>Analytics & Data</h3>
+                            <div class="domain-subtitle">Intelligence-driven decisions</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-constellation" id="analytics-constellation">
+                        <!-- Nodes will be positioned by JavaScript -->
+                    </div>
+                    
+                    <div class="skill-metrics">
+                        <div class="metric">
+                            <div class="metric-value">1M+</div>
+                            <div class="metric-label">Records</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">25</div>
+                            <div class="metric-label">Models</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">Real-time</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-category animate-on-scroll">
-                    <h3>
-                        <i class="fas fa-code"></i>
-                        Technical
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">API Testing</span>
-                        <span class="skill-tag">Database Management</span>
-                        <span class="skill-tag">App Testing</span>
-                        <span class="skill-tag">Documentation</span>
-                        <span class="skill-tag">Automation</span>
+                <!-- Technical Domain -->
+                <div class="skill-domain">
+                    <div class="domain-header">
+                        <div class="domain-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="domain-title">
+                            <h3>Technical</h3>
+                            <div class="domain-subtitle">Full-stack implementation</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-constellation" id="technical-constellation">
+                        <!-- Nodes will be positioned by JavaScript -->
+                    </div>
+                    
+                    <div class="skill-metrics">
+                        <div class="metric">
+                            <div class="metric-value">99%</div>
+                            <div class="metric-label">Coverage</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">50+</div>
+                            <div class="metric-label">APIs</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">24/7</div>
+                            <div class="metric-label">Monitor</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-category animate-on-scroll">
-                    <h3>
-                        <i class="fas fa-users"></i>
-                        Leadership
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Team Management</span>
-                        <span class="skill-tag">Strategic Planning</span>
-                        <span class="skill-tag">Stakeholder Management</span>
-                        <span class="skill-tag">Change Management</span>
-                        <span class="skill-tag">Mentoring</span>
+                <!-- Leadership Domain -->
+                <div class="skill-domain">
+                    <div class="domain-header">
+                        <div class="domain-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="domain-title">
+                            <h3>Leadership</h3>
+                            <div class="domain-subtitle">People-first transformation</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-constellation" id="leadership-constellation">
+                        <!-- Nodes will be positioned by JavaScript -->
+                    </div>
+                    
+                    <div class="skill-metrics">
+                        <div class="metric">
+                            <div class="metric-value">50+</div>
+                            <div class="metric-label">People</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">8</div>
+                            <div class="metric-label">Mentees</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4.9</div>
+                            <div class="metric-label">Rating</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-category animate-on-scroll">
-                    <h3>
-                        <i class="fas fa-heart"></i>
-                        Social Impact
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Mental Health Advocacy</span>
-                        <span class="skill-tag">Community Outreach</span>
-                        <span class="skill-tag">Program Development</span>
-                        <span class="skill-tag">Non-profit Management</span>
-                        <span class="skill-tag">Social Entrepreneurship</span>
+                <!-- Social Impact Domain -->
+                <div class="skill-domain">
+                    <div class="domain-header">
+                        <div class="domain-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="domain-title">
+                            <h3>Social Impact</h3>
+                            <div class="domain-subtitle">Purpose-driven initiatives</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-constellation" id="social-constellation">
+                        <!-- Nodes will be positioned by JavaScript -->
+                    </div>
+                    
+                    <div class="skill-metrics">
+                        <div class="metric">
+                            <div class="metric-value">1K+</div>
+                            <div class="metric-label">Lives</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">5</div>
+                            <div class="metric-label">Programs</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">3</div>
+                            <div class="metric-label">Awards</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1277,6 +1667,161 @@
                 console.log('Clicked:', this.textContent.trim() || this.href);
             });
         });
+
+        const skillDomains = {
+            'strategy-constellation': {
+                primary: ['Market Research'],
+                secondary: ['Go-to-Market', 'Product Road-mapping', 'Competitive Analysis'],
+                tertiary: ['User Research', 'Positioning', 'Pricing']
+            },
+            'operations-constellation': {
+                primary: ['Process Optimization'],
+                secondary: ['Quality Assurance', 'Cross-functional Leadership', 'Project Management'],
+                tertiary: ['Issue Resolution', 'Workflow', 'Standards']
+            },
+            'analytics-constellation': {
+                primary: ['Data Analysis'],
+                secondary: ['SQL', 'Business Intelligence', 'Performance Metrics'],
+                tertiary: ['Reporting', 'Visualization', 'Insights']
+            },
+            'technical-constellation': {
+                primary: ['API Testing'],
+                secondary: ['Database Management', 'App Testing', 'Documentation'],
+                tertiary: ['Automation', 'Integration', 'Monitoring']
+            },
+            'leadership-constellation': {
+                primary: ['Team Management'],
+                secondary: ['Strategic Planning', 'Stakeholder Management', 'Change Management'],
+                tertiary: ['Mentoring', 'Communication', 'Vision']
+            },
+            'social-constellation': {
+                primary: ['Mental Health Advocacy'],
+                secondary: ['Community Outreach', 'Program Development', 'Non-profit Management'],
+                tertiary: ['Social Entrepreneurship', 'Fundraising', 'Awareness']
+            }
+        };
+
+        // Create constellation for each skill domain
+        Object.entries(skillDomains).forEach(([domainId, skills]) => {
+            createConstellation(domainId, skills);
+        });
+
+        function createConstellation(containerId, skills) {
+            const container = document.getElementById(containerId);
+            const containerRect = container.getBoundingClientRect();
+            const centerX = containerRect.width / 2;
+            const centerY = containerRect.height / 2;
+
+            // Create primary node (center)
+            skills.primary.forEach((skill, index) => {
+                const node = createSkillNode(skill, 'primary');
+                node.style.left = (centerX - 40) + 'px';
+                node.style.top = (centerY - 40) + 'px';
+                container.appendChild(node);
+            });
+
+            // Create secondary nodes (around center)
+            const secondaryRadius = 80;
+            skills.secondary.forEach((skill, index) => {
+                const angle = (index * 360 / skills.secondary.length) * Math.PI / 180;
+                const x = centerX + Math.cos(angle) * secondaryRadius - 30;
+                const y = centerY + Math.sin(angle) * secondaryRadius - 30;
+                
+                const node = createSkillNode(skill, 'secondary');
+                node.style.left = x + 'px';
+                node.style.top = y + 'px';
+                container.appendChild(node);
+
+                // Create connection line
+                const line = createConnectionLine(centerX, centerY, x + 30, y + 30);
+                container.appendChild(line);
+            });
+
+            // Create tertiary nodes (outer ring)
+            const tertiaryRadius = 130;
+            skills.tertiary.forEach((skill, index) => {
+                const angle = ((index * 360 / skills.tertiary.length) + 30) * Math.PI / 180;
+                const x = centerX + Math.cos(angle) * tertiaryRadius - 22.5;
+                const y = centerY + Math.sin(angle) * tertiaryRadius - 22.5;
+                
+                const node = createSkillNode(skill, 'tertiary');
+                node.style.left = x + 'px';
+                node.style.top = y + 'px';
+                container.appendChild(node);
+
+                // Find nearest secondary node for connection
+                let minDistance = Infinity;
+                let nearestSecondary = null;
+                skills.secondary.forEach((secondarySkill, secIndex) => {
+                    const secAngle = (secIndex * 360 / skills.secondary.length) * Math.PI / 180;
+                    const secX = centerX + Math.cos(secAngle) * secondaryRadius;
+                    const secY = centerY + Math.sin(secAngle) * secondaryRadius;
+                    const distance = Math.sqrt((x + 22.5 - secX)^2 + (y + 22.5 - secY)^2);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        nearestSecondary = { x: secX, y: secY };
+                    }
+                });
+
+                if (nearestSecondary) {
+                    const line = createConnectionLine(nearestSecondary.x, nearestSecondary.y, x + 22.5, y + 22.5);
+                    line.style.opacity = '0.3';
+                    container.appendChild(line);
+                }
+            });
+        }
+
+        function createSkillNode(text, type) {
+            const node = document.createElement('div');
+            node.className = `skill-node ${type}`;
+            node.textContent = text;
+            
+            // Add hover effect to highlight connections
+            node.addEventListener('mouseenter', function() {
+                const container = this.parentElement;
+                const lines = container.querySelectorAll('.connection-line');
+                lines.forEach(line => {
+                    line.style.opacity = parseFloat(line.style.opacity || '1') * 1.5;
+                });
+            });
+            
+            node.addEventListener('mouseleave', function() {
+                const container = this.parentElement;
+                const lines = container.querySelectorAll('.connection-line');
+                lines.forEach(line => {
+                    line.style.opacity = parseFloat(line.style.opacity || '1') / 1.5;
+                });
+            });
+            
+            return node;
+        }
+
+        function createConnectionLine(x1, y1, x2, y2) {
+            const line = document.createElement('div');
+            line.className = 'connection-line';
+            
+            const length = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+            const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+            
+            line.style.width = length + 'px';
+            line.style.left = x1 + 'px';
+            line.style.top = y1 + 'px';
+            line.style.transform = `rotate(${angle}deg)`;
+            
+            return line;
+        }
+
+        // Add subtle animation to connection lines
+        setInterval(() => {
+            document.querySelectorAll('.connection-line').forEach(line => {
+                const opacity = Math.random() * 0.3 + 0.1;
+                line.style.opacity = opacity;
+                setTimeout(() => {
+                    line.style.opacity = '0.2';
+                }, 500);
+            });
+        }, 3000);
+        
 
         // Add mobile menu toggle (if needed)
         const createMobileMenu = () => {
