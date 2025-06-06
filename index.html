@@ -505,246 +505,311 @@
             color: #1e3a8a;
         }
 
-        /* Skills Grid - Enhanced Creative Design */
+        /** Skills Grid **/
         .skills-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 3rem;
-            position: relative;
-            z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 3rem;
+        position: relative;
+        z-index: 2;
         }
 
         .skill-domain {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 3rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(255, 255, 255, 0.12);
+        border-radius: 24px;
+        padding: 3rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        /* Enhanced border visibility for mobile */
+        @media (max-width: 768px) {
+        .skill-domain {
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15), 
+                        inset 0 2px 0 rgba(255, 255, 255, 0.15),
+                        0 0 0 1px rgba(99, 102, 241, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+        }
         }
 
         .skill-domain::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.5s ease;
         }
 
         .skill-domain:hover::before {
-            opacity: 1;
+        opacity: 1;
         }
 
         .skill-domain:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        transform: translateY(-8px);
+        border-color: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
         }
 
         .domain-header {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .domain-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            position: relative;
-            overflow: hidden;
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        position: relative;
+        overflow: hidden;
         }
 
         .domain-icon::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(47, 48, 130, 0.2), rgba(236, 72, 153, 0.2));
-            border-radius: inherit;
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(47, 48, 130, 0.2), rgba(236, 72, 153, 0.2));
+        border-radius: inherit;
         }
 
         .domain-icon i {
-            position: relative;
-            z-index: 1;
-            background: linear-gradient(135deg, #6366f1, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        position: relative;
+        z-index: 1;
+        background: linear-gradient(135deg, #6366f1, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
         }
 
         .domain-title {
-            flex: 1;
+        flex: 1;
         }
 
         .domain-title h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #0a0a0a;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #0a0a0a;
         }
 
         .domain-subtitle {
-            font-size: 0.9rem;
-            color: #0c264a;
-            font-weight: 400;
+        font-size: 0.9rem;
+        color: #0c264a;
+        font-weight: 400;
         }
 
         .skills-constellation {
-            position: relative;
-            height: 300px;
-            margin-bottom: 2rem;
+        position: relative;
+        height: 340px;
+        margin-bottom: 2rem;
+        width: 100%;
+        overflow: visible;
         }
 
+        /* Fixed skill node text overflow and improved visibility */
         .skill-node {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(99, 102, 241, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #100e0e;
-            font-size: 0.8rem;
-            font-weight: 500;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            line-height: 1.2;
-            padding: 0.5rem;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid rgba(99, 102, 241, 0.4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #1a1a1a;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        line-height: 1.1;
+        padding: 0.3rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        word-break: break-word;
+        /* Improved text contrast */
+        text-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
         }
 
         .skill-node:hover {
-            transform: scale(1.1);
-            background: rgba(64, 66, 231, 0.2);
-            border-color: rgba(99, 102, 241, 0.6);
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
-            z-index: 10;
+        transform: scale(1.1);
+        background: rgba(99, 102, 241, 0.2);
+        border-color: rgba(99, 102, 241, 0.6);
+        box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+        z-index: 10;
+        color: #000;
         }
 
         .skill-node.primary {
-            width: 80px;
-            height: 80px;
-            font-size: 0.9rem;
-            border-color: rgba(236, 72, 153, 0.5);
-            background: rgba(236, 72, 153, 0.1);
+        width: 90px;
+        height: 90px;
+        font-size: 0.8rem;
+        border-color: rgba(236, 72, 153, 0.6);
+        background: rgba(236, 72, 153, 0.15);
+        padding: 0.5rem;
         }
 
         .skill-node.primary:hover {
-            border-color: rgba(236, 72, 153, 0.8);
-            background: rgba(236, 72, 153, 0.3);
-            box-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
+        border-color: rgba(236, 72, 153, 0.8);
+        background: rgba(236, 72, 153, 0.3);
+        box-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
         }
 
         .skill-node.secondary {
-            width: 60px;
-            height: 60px;
+        width: 70px;
+        height: 70px;
+        font-size: 0.7rem;
+        padding: 0.4rem;
         }
 
         .skill-node.tertiary {
-            width: 45px;
-            height: 45px;
-            font-size: 0.7rem;
+        width: 55px;
+        height: 55px;
+        font-size: 0.65rem;
+        padding: 0.3rem;
         }
 
         .connection-line {
-            position: absolute;
-            height: 2px;
-            background: linear-gradient(90deg, rgba(13, 16, 14, 0.998), rgba(236, 72, 153, 0.2));
-            transform-origin: left center;
-            pointer-events: none;
-            transition: all 0.3s ease;
+        position: absolute;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(99, 102, 241, 0.3), rgba(236, 72, 153, 0.3));
+        transform-origin: left center;
+        pointer-events: none;
+        transition: all 0.3s ease;
         }
 
+        /* Enhanced metrics section with better mobile visibility */
         .skill-metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
         }
 
         .metric {
-            text-align: center;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        /* Enhanced metric visibility for mobile */
+        @media (max-width: 768px) {
+        .metric {
+            border: 2.5px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15),
+                        inset 0 2px 0 rgba(255, 255, 255, 0.2),
+                        0 0 0 1px rgba(99, 102, 241, 0.1);
+            padding: 1.3rem;
+        }
+        }
+
+        .metric:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
         }
 
         .metric-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #6366f1;
-            margin-bottom: 0.25rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #6366f1;
+        margin-bottom: 0.25rem;
+        text-shadow: 0 1px 3px rgba(99, 102, 241, 0.3);
         }
 
         .metric-label {
-            font-size: 0.8rem;
-            color: #15171a;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        font-size: 0.8rem;
+        color: #2d3748;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 500;
         }
 
-        /* Unique layouts for each domain */
-        .skill-domain:nth-child(1) .domain-icon::before {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(59, 130, 246, 0.2));
-        }
-
-        .skill-domain:nth-child(2) .domain-icon::before {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
-        }
-
-        .skill-domain:nth-child(3) .domain-icon::before {
-            background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(236, 72, 153, 0.2));
-        }
-
-        .skill-domain:nth-child(4) .domain-icon::before {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(239, 68, 68, 0.2));
-        }
-
-        .skill-domain:nth-child(5) .domain-icon::before {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(236, 72, 153, 0.2));
-        }
-
-        .skill-domain:nth-child(6) .domain-icon::before {
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(168, 85, 247, 0.2));
-        }
-
-        /* Responsive design */
+        /** Responsive design enhancements **/
         @media (max-width: 768px) {
-            .skills-showcase {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .skill-domain {
-                padding: 2rem;
-            }
-            
-            .skills-constellation {
-                height: 250px;
-            }
-            
-            .container {
-                padding: 0 1rem;
-            }
+        .skills-showcase {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .skill-domain {
+            padding: 2rem;
+        }
+        
+        .skills-constellation {
+            height: 280px;
+        }
+        
+        /* Adjusted node sizes for mobile */
+        .skill-node.primary {
+            width: 80px;
+            height: 80px;
+            font-size: 0.7rem;
+        }
+        
+        .skill-node.secondary {
+            width: 60px;
+            height: 60px;
+            font-size: 0.65rem;
+        }
+        
+        .skill-node.tertiary {
+            width: 45px;
+            height: 45px;
+            font-size: 0.6rem;
+        }
+        
+        .container {
+            padding: 0 1rem;
+        }
+        
+        .domain-header {
+            gap: 1rem;
+        }
+        
+        .domain-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+        }
         }
 
-        /* Animation delays */
+        /* Enhanced connection line visibility */
+        @media (max-width: 768px) {
+        .connection-line {
+            height: 1.5px;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.4), rgba(236, 72, 153, 0.4));
+            opacity: 0.7;
+        }
+        }
+
+        /** Animation delays **/
         .skill-domain {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s ease forwards;
         }
 
         .skill-domain:nth-child(1) { animation-delay: 0.1s; }
@@ -755,47 +820,46 @@
         .skill-domain:nth-child(6) { animation-delay: 0.6s; }
 
         @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
         }
 
-        /* Pulse animation for skill nodes */
+        /** Pulse animation for skill nodes **/
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
         }
 
         .skill-node.primary {
-            animation: pulse 3s ease-in-out infinite;
+        animation: pulse 3s ease-in-out infinite;
         }
 
-        @keyframes float-up {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
+        /* Unique domain styling */
+        .skill-domain:nth-child(1) .domain-icon::before {
+        background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(59, 130, 246, 0.2));
         }
 
-        @keyframes float-down {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(5px); }
+        .skill-domain:nth-child(2) .domain-icon::before {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
         }
 
-        @keyframes pulse-glow {
-            0%, 100% { 
-                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-            }
-            50% { 
-                box-shadow: 0 4px 25px rgba(59, 130, 246, 0.6);
-            }
+        .skill-domain:nth-child(3) .domain-icon::before {
+        background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(236, 72, 153, 0.2));
         }
 
-        /* Add individual delays to skill tags */
-        .skill-tag:nth-child(1) { --i: 1; }
-        .skill-tag:nth-child(2) { --i: 2; }
-        .skill-tag:nth-child(3) { --i: 3; }
-        .skill-tag:nth-child(4) { --i: 4; }
-        .skill-tag:nth-child(5) { --i: 5; }
+        .skill-domain:nth-child(4) .domain-icon::before {
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(239, 68, 68, 0.2));
+        }
+
+        .skill-domain:nth-child(5) .domain-icon::before {
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(236, 72, 153, 0.2));
+        }
+
+        .skill-domain:nth-child(6) .domain-icon::before {
+        background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(168, 85, 247, 0.2));
+        }
 
         /* Education & Certifications */
         .education-grid {
@@ -1739,95 +1803,121 @@
             createConstellation(domainId, skills);
         });
 
-        function createConstellation(containerId, skills) {
-            const container = document.getElementById(containerId);
-            const containerRect = container.getBoundingClientRect();
-            const centerX = containerRect.width / 2;
-            const centerY = containerRect.height / 2;
-
-            // Create primary node (center)
-            skills.primary.forEach((skill, index) => {
-                const node = createSkillNode(skill, 'primary');
-                node.style.left = (centerX - 40) + 'px';
-                node.style.top = (centerY - 40) + 'px';
-                container.appendChild(node);
-            });
-
-            // Create secondary nodes (around center)
-            const secondaryRadius = 80;
-            skills.secondary.forEach((skill, index) => {
-                const angle = (index * 360 / skills.secondary.length) * Math.PI / 180;
-                const x = centerX + Math.cos(angle) * secondaryRadius - 30;
-                const y = centerY + Math.sin(angle) * secondaryRadius - 30;
-                
-                const node = createSkillNode(skill, 'secondary');
-                node.style.left = x + 'px';
-                node.style.top = y + 'px';
-                container.appendChild(node);
-
-                // Create connection line
-                const line = createConnectionLine(centerX, centerY, x + 30, y + 30);
-                container.appendChild(line);
-            });
-
-            // Create tertiary nodes (outer ring)
-            const tertiaryRadius = 130;
-            skills.tertiary.forEach((skill, index) => {
-                const angle = ((index * 360 / skills.tertiary.length) + 30) * Math.PI / 180;
-                const x = centerX + Math.cos(angle) * tertiaryRadius - 22.5;
-                const y = centerY + Math.sin(angle) * tertiaryRadius - 22.5;
-                
-                const node = createSkillNode(skill, 'tertiary');
-                node.style.left = x + 'px';
-                node.style.top = y + 'px';
-                container.appendChild(node);
-
-                // Find nearest secondary node for connection
-                let minDistance = Infinity;
-                let nearestSecondary = null;
-                skills.secondary.forEach((secondarySkill, secIndex) => {
-                    const secAngle = (secIndex * 360 / skills.secondary.length) * Math.PI / 180;
-                    const secX = centerX + Math.cos(secAngle) * secondaryRadius;
-                    const secY = centerY + Math.sin(secAngle) * secondaryRadius;
-                    const distance = Math.sqrt((x + 22.5 - secX)^2 + (y + 22.5 - secY)^2);
-                    if (distance < minDistance) {
-                        minDistance = distance;
-                        nearestSecondary = { x: secX, y: secY };
-                    }
-                });
-
-                if (nearestSecondary) {
-                    const line = createConnectionLine(nearestSecondary.x, nearestSecondary.y, x + 22.5, y + 22.5);
-                    line.style.opacity = '0.3';
-                    container.appendChild(line);
-                }
-            });
-        }
-
         function createSkillNode(text, type) {
-            const node = document.createElement('div');
-            node.className = `skill-node ${type}`;
-            node.textContent = text;
-            
-            // Add hover effect to highlight connections
-            node.addEventListener('mouseenter', function() {
-                const container = this.parentElement;
-                const lines = container.querySelectorAll('.connection-line');
-                lines.forEach(line => {
-                    line.style.opacity = parseFloat(line.style.opacity || '1') * 1.5;
-                });
-            });
-            
-            node.addEventListener('mouseleave', function() {
-                const container = this.parentElement;
-                const lines = container.querySelectorAll('.connection-line');
-                lines.forEach(line => {
-                    line.style.opacity = parseFloat(line.style.opacity || '1') / 1.5;
-                });
-            });
-            
-            return node;
+    const node = document.createElement('div');
+    node.className = `skill-node ${type}`;
+    
+    // Handle text wrapping for longer skill names
+    let displayText = text;
+    if (text.length > 12) {
+        // Split long text into multiple lines
+        const words = text.split(' ');
+        if (words.length > 1) {
+            const midpoint = Math.ceil(words.length / 2);
+            displayText = words.slice(0, midpoint).join(' ') + '\n' + words.slice(midpoint).join(' ');
+        } else {
+            // For single long words, add soft hyphens
+            displayText = text.replace(/(.{6})/g, '$1\u00AD');
         }
+    }
+    
+    node.textContent = displayText;
+    
+    // Add hover effect to highlight connections
+    node.addEventListener('mouseenter', function() {
+        const container = this.parentElement;
+        const lines = container.querySelectorAll('.connection-line');
+        lines.forEach(line => {
+            line.style.opacity = parseFloat(line.style.opacity || '0.3') * 2;
+            line.style.background = 'linear-gradient(90deg, rgba(99, 102, 241, 0.6), rgba(236, 72, 153, 0.6))';
+        });
+        
+        // Add glow effect
+        this.style.boxShadow = `0 0 20px rgba(99, 102, 241, 0.5)`;
+    });
+    
+    node.addEventListener('mouseleave', function() {
+        const container = this.parentElement;
+        const lines = container.querySelectorAll('.connection-line');
+        lines.forEach(line => {
+            line.style.opacity = parseFloat(line.style.opacity || '0.6') / 2;
+            line.style.background = 'linear-gradient(90deg, rgba(99, 102, 241, 0.3), rgba(236, 72, 153, 0.3))';
+        });
+        
+        // Remove glow effect
+        this.style.boxShadow = '';
+    });
+    
+    return node;
+}
+
+function createConstellation(containerId, skills) {
+    const container = document.getElementById(containerId);
+    container.style.position = 'relative';
+    container.style.width = '100%';
+    container.style.height = '340px';
+    
+    const centerX = 170; // Fixed center for consistency
+    const centerY = 170;
+
+    // Create primary node (center) with better spacing
+    skills.primary.forEach((skill, index) => {
+        const node = createSkillNode(skill, 'primary');
+        node.style.left = (centerX - 45) + 'px'; // Adjusted for new size
+        node.style.top = (centerY - 45) + 'px';
+        container.appendChild(node);
+    });
+
+    // Create secondary nodes with increased spacing
+    const secondaryRadius = 100; // Increased from 80
+    skills.secondary.forEach((skill, index) => {
+        const angle = (index * 360 / skills.secondary.length) * Math.PI / 180;
+        const x = centerX + Math.cos(angle) * secondaryRadius - 35; // Adjusted for new size
+        const y = centerY + Math.sin(angle) * secondaryRadius - 35;
+        
+        const node = createSkillNode(skill, 'secondary');
+        node.style.left = x + 'px';
+        node.style.top = y + 'px';
+        container.appendChild(node);
+
+        // Create connection line
+        const line = createConnectionLine(centerX, centerY, x + 35, y + 35);
+        container.appendChild(line);
+    });
+
+    // Create tertiary nodes with better spacing
+    const tertiaryRadius = 160; // Increased from 130
+    skills.tertiary.forEach((skill, index) => {
+        const angle = ((index * 360 / skills.tertiary.length) + 30) * Math.PI / 180;
+        const x = centerX + Math.cos(angle) * tertiaryRadius - 27.5; // Adjusted for new size
+        const y = centerY + Math.sin(angle) * tertiaryRadius - 27.5;
+        
+        const node = createSkillNode(skill, 'tertiary');
+        node.style.left = x + 'px';
+        node.style.top = y + 'px';
+        container.appendChild(node);
+
+        // Find nearest secondary node for connection with improved spacing
+        let minDistance = Infinity;
+        let nearestSecondary = null;
+        skills.secondary.forEach((secondarySkill, secIndex) => {
+            const secAngle = (secIndex * 360 / skills.secondary.length) * Math.PI / 180;
+            const secX = centerX + Math.cos(secAngle) * secondaryRadius;
+            const secY = centerY + Math.sin(secAngle) * secondaryRadius;
+            const distance = Math.sqrt(Math.pow(x + 27.5 - secX, 2) + Math.pow(y + 27.5 - secY, 2));
+            if (distance < minDistance) {
+                minDistance = distance;
+                nearestSecondary = { x: secX, y: secY };
+            }
+        });
+
+        if (nearestSecondary) {
+            const line = createConnectionLine(nearestSecondary.x, nearestSecondary.y, x + 27.5, y + 27.5);
+            line.style.opacity = '0.3';
+            container.appendChild(line);
+        }
+    });
+}
 
         function createConnectionLine(x1, y1, x2, y2) {
             const line = document.createElement('div');
