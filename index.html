@@ -306,43 +306,148 @@
             font-size: 1rem;
         }
 
-        /* Stats */
+        /* About Section */
+        .about-content {
+            max-width: 1200px;
+            text-align: left;
+        }
+
+        .about-paragraph {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            color: #444;
+        }
+
+        .highlight {
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        .quote-block {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 24px 30px;
+            margin: 32px 0;
+            font-style: italic;
+            font-size: 1.125rem;
+            color: #555;
+        }
+
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 64px;
+            padding-top: 48px;
+            border-top: 1px solid #e9ecef;
         }
 
         .stat-card {
+            background: #fef68a;
+            border: none;
+            border-radius: 0;
+            padding: 24px 20px;
             text-align: center;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+            position: relative;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        .stat-card:nth-child(2) {
+            background: #a7f3d0;
+            transform: rotate(1deg);
+        }
+
+        .stat-card:nth-child(3) {
+            background: #fbbf24;
+            transform: rotate(-1deg);
+        }
+
+        .stat-card:nth-child(4) {
+            background: #f8b4cb;
+            transform: rotate(2deg);
         }
 
         .stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.12);
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #ff6b6b 30%, transparent 31%);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            color: #2d3748;
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
             display: block;
-            margin-bottom: 0.3rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
         .stat-label {
-            font-size: 0.95rem;
-            color: #666;
+            color: #4a5568;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 0;
+            line-height: 1.3;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .about-paragraph {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+            
+            .quote-block {
+                padding: 20px 24px;
+                margin: 24px 0;
+                font-size: 1rem;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                margin-top: 48px;
+                padding-top: 32px;
+            }
+            
+            .stat-card {
+                padding: 24px 16px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
         }
 
         /* Experience & Projects Grid */
@@ -527,7 +632,7 @@
                     inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
-        /* Enhanced border visibility for mobile */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
         .skill-domain {
             border: 3px solid rgba(255, 255, 255, 0.2);
@@ -623,7 +728,6 @@
         overflow: visible;
         }
 
-        /* Fixed skill node text overflow and improved visibility */
         .skill-node {
         position: absolute;
         background: rgba(255, 255, 255, 0.08);
@@ -644,7 +748,6 @@
         overflow-wrap: break-word;
         hyphens: auto;
         word-break: break-word;
-        /* Improved text contrast */
         text-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
         }
 
@@ -695,7 +798,6 @@
         transition: all 0.3s ease;
         }
 
-        /* Enhanced metrics section with better mobile visibility */
         .skill-metrics {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -713,7 +815,6 @@
                     inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
-        /* Enhanced metric visibility for mobile */
         @media (max-width: 768px) {
         .metric {
             border: 2.5px solid rgba(255, 255, 255, 0.25);
@@ -747,7 +848,6 @@
         font-weight: 500;
         }
 
-        /** Responsive design enhancements **/
         @media (max-width: 768px) {
         .skills-showcase {
             grid-template-columns: 1fr;
@@ -761,8 +861,7 @@
         .skills-constellation {
             height: 280px;
         }
-        
-        /* Adjusted node sizes for mobile */
+      
         .skill-node.primary {
             width: 80px;
             height: 80px;
@@ -796,7 +895,6 @@
         }
         }
 
-        /* Enhanced connection line visibility */
         @media (max-width: 768px) {
         .connection-line {
             height: 1.5px;
@@ -983,16 +1081,6 @@
         .social-links a:hover {
             background: linear-gradient(45deg, #1e3a8a, #3b82f6);
             transform: translateY(-3px);
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(to right, #160602, #e3e1e0);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
         
         .subtitle {
@@ -1287,6 +1375,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -1300,6 +1389,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#impact-journey">Impact Journey</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
@@ -1316,8 +1406,7 @@
                     <img src="profile-image.jpeg" alt="Ronald Onyango"> 
                 </div>
                 <h1>Ronald Onyango</h1>
-                <div class="subtitle">Product Management | Go-to-Market Strategy & Execution | 
-                    Data-Driven Growth Expert</div>
+                <div class="subtitle">Product Management | Go-to-Market Strategy & Execution</div>
                 <p>Driving exponential growth through strategic market expansion and data-driven decision making.</p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">
@@ -1338,27 +1427,62 @@
         <div class="container">
             <div class="section-title">
                 <h2>About Me</h2>
-                <p>Product Operations Leader driving exponential growth through strategic market expansion and data-driven decision making.
-                    I specialize in transforming user insights into scalable operational frameworks, having successfully launched products across multiple African markets while achieving 95%+ success rates in product testing and 90% SLA adherence.
+            </div>
+            
+            <div class="about-content">
+                <p class="about-paragraph">
+                    Hey! I'm Ronald, and honestly, I'm just a guy who gets way too excited about solving problems that actually matter. You know that feeling when you're talking to someone and they mention this tiny frustration in their day, and suddenly your brain goes <span class="highlight">"wait, what if we could fix that?"</span> Yeah, that's me. I've spent the last few years turning those conversations into products that somehow reached over 300,000 people across Africa.
+                </p>
+                
+                <p class="about-paragraph">
+                    The thing is, I never set out to build something massive. It started with me just being curious about one person's problem, then another, and before I knew it, I had this philosophy: <span class="highlight">listen first, build second, and never stop asking "but why?"</span> Sounds simple, right? But you'd be surprised how many brilliant people skip that first part and wonder why their genius idea flopped.
+                </p>
+                <p class="about-paragraph">
+                    I mean, sure, I can talk about my years in product management, my obsession with data-driven decisions, or how I can turn a vague idea into a fully-fledged product roadmap. But honestly? What gets me out of bed every morning is the chance to make a real difference. Whether it's through launching products that actually solve problems or mentoring young entrepreneurs who remind me why I fell in love with this work - it's all about creating solutions that matter.
+                    I'm especially passionate about mental health advocacy. Co-founding an initiative that reached 200,000+ young people taught me that sometimes the most important metrics aren't the ones on your dashboard.
+                </p>
+                
+                <p class="about-paragraph">
+                    When I'm not diving deep into Python scripts (yes, I'm one of those weird people who finds debugging oddly therapeutic) or getting lost in user analytics at 2 AM, you'll find me exploring how emerging tech can drive real social change. I live for those <span class="highlight">late-night conversations about what's possible</span> when technology meets genuine human need.
+                </p>
+                
+                <div class="quote-block">
+                    Here's my favorite story: I once had what everyone called a "failed" product launch. Instead of immediately pivoting like everyone expected, I spent weeks just talking to users about what went wrong. Turns out, they didn't want what we built - they needed something completely different. That "failure" became our most successful feature and taught me that sometimes the best strategy is simply shutting up and listening.
+                </div>
+                
+                <p class="about-paragraph">
+                    These days, I build that listening philosophy into everything I do. Because here's what I've learned: <span class="highlight">the best products aren't born from boardrooms or brilliant eureka moments</span> - they come from real conversations with real people about real problems. And honestly? That's way more fun than any algorithm I've ever written.
                 </p>
             </div>
             
-            <div class="stats animate-on-scroll">
+            <div class="stats">
                 <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
                     <span class="stat-number">7+</span>
-                    <div class="stat-label">Successful Product Launches</div>
+                    <div class="stat-label">Product Launches</div>
                 </div>
                 <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
                     <span class="stat-number">90%</span>
-                    <div class="stat-label">Testing Success Rate</div>
+                    <div class="stat-label">Testing Success</div>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">300K+</span>
-                    <div class="stat-label">Youths Impacted</div>
+                    <div class="stat-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <span class="stat-number">500K+</span>
+                    <div class="stat-label">Lives Impacted</div>
                 </div>
                 <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <span class="stat-number">65%</span>
-                    <div class="stat-label">Efficiency Improvement</div>
+                    <div class="stat-label">Efficiency Gains</div>
                 </div>
             </div>
         </div>
@@ -1447,7 +1571,7 @@
         </div>
     </section>
 
-    <section id="my-career-journey" class="section">
+    <section id="impact-journey" class="section">
         <div class="container">
             <div class="section-title">
                 <h2>My Career Journey</h2>
