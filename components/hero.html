@@ -9,8 +9,13 @@
             <div class="subtitle">Product Management | Go-to-Market Strategy & Execution</div>
             <p>Driving exponential growth through strategic market expansion and data-driven decision making.</p>
             <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-rocket"></i>
+                <a 
+                    href="#projects" class="btn btn-primary" title="View My Work" aria-label="View My Work" role="button"
+                    data-track="button-cta" data-section="hero" data-track-label="View My Work"
+                    data-track-value="100" data-action="view_work"
+                    onclick="HeroClick('View My Work', 'hero', 'View My Work', 100, 'view_work');"
+                >
+                    <i class="fas fa-briefcase"></i>
                     View My Work
                 </a>
                 <a href="#contact" class="btn btn-secondary">
