@@ -8,7 +8,36 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-FEKWCRZMM4');
+        gtag('config', 'G-FEKWCRZMM4', { 
+        // cookie_domain: 'ronaldonyango.github.io',
+        cookie_flags: 'SameSite=None;Secure',
+        
+        // Alternative: Use 'auto' if you want GA4 to auto-detect
+        cookie_domain: 'auto',
+        
+        // Additional security and performance settings
+        anonymize_ip: true,
+        allow_google_signals: true,
+        allow_ad_personalization_signals: false, // Good for privacy
+        
+        // Custom settings for better tracking
+        send_page_view: true,
+        debug_mode: false, // Set to true for testing
+        
+        // Cookie settings
+        cookie_expires: 63072000, // 2 years in seconds
+        cookie_update: true,
+        cookie_prefix: '_ga',
+        
+        // Privacy settings
+        client_storage: 'cookies', // or 'none' to disable cookies entirely
+        
+        // For GitHub Pages specific issues
+        linker: {
+            domains: ['ronaldonyango.github.io']
+        }
+        });
+            gtag('set', 'developer_id.dJ9j8', 'Ronald Onyango');
     </script>
 
     <!-- Google Tag Manager -->
