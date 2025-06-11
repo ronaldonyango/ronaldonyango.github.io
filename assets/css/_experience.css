@@ -1,0 +1,70 @@
+.content-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.card {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #3b82f6;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateX(8px);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.12);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.career-duration {
+    background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.card-description {
+    color: #666;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.card-description ul {
+    margin-left: 1rem;
+    margin-top: 0.8rem;
+}
+
+.card-description li {
+    margin-bottom: 0.4rem;
+    position: relative;
+}
+
+.card-description li::marker {
+    color: #3b82f6;
+}
