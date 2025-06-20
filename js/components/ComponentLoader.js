@@ -1,3 +1,4 @@
+// ComponentLoader.js - Traditional script version
 class ComponentLoader {
     constructor() {
         this.components = [
@@ -149,68 +150,53 @@ class ComponentLoader {
                 console.log('✅ PortfolioWebsite class found, initializing...');
                 window.portfolioInstance = new PortfolioWebsite();
             } else {
-                console.log('⚠️ PortfolioWebsite class not found, loading script...');
-                this.loadMainScript();
+                console.log('⚠️ PortfolioWebsite class not found, will be loaded by main.js');
             }
         } catch (error) {
             console.error('❌ Error initializing features:', error);
         }
     }
-
-    loadMainScript() {
-        const script = document.createElement('script');
-        script.src = 'js/script.js';
-        script.onload = () => {
-            console.log('✅ Main script loaded');
-            if (typeof PortfolioWebsite !== 'undefined') {
-                window.portfolioInstance = new PortfolioWebsite();
-            }
-        };
-        script.onerror = () => {
-            console.error('❌ Failed to load main script');
-        };
-        document.head.appendChild(script);
-    }
 }
 
 // Network status monitoring
-function monitorNetworkStatus() {
-    if ('navigator' in window && 'onLine' in navigator) {
-        const updateStatus = () => {
-            const status = navigator.onLine ? 'Online' : 'Offline';
-            console.log(`🌐 Network Status: ${status}`);
-        };
-        
-        window.addEventListener('online', updateStatus);
-        window.addEventListener('offline', updateStatus);
-        updateStatus();
+class NetworkMonitor {
+    static monitor() {
+        if ('navigator' in window && 'onLine' in navigator) {
+            const updateStatus = () => {
+                const status = navigator.onLine ? 'Online' : 'Offline';
+                console.log(`🌐 Network Status: ${status}`);
+            };
+            
+            window.addEventListener('online', updateStatus);
+            window.addEventListener('offline', updateStatus);
+            updateStatus();
+        }
     }
-}
 
-// File system check
-function checkFileSystem() {
-    console.log('📁 Checking file system structure...');
-    
-    // Try to fetch a component to test the setup
-    fetch('components/header.html')
-        .then(response => {
-            if (response.ok) {
-                console.log('✅ Component directory is accessible');
-            } else {
-                console.error('❌ Component directory may not exist or be accessible');
-            }
-        })
-        .catch(error => {
-            console.error('❌ Error accessing components:', error);
-            console.log('💡 Make sure you have a "components" directory with HTML files');
-        });
+    static checkFileSystem() {
+        console.log('📁 Checking file system structure...');
+        
+        // Try to fetch a component to test the setup
+        fetch('components/header.html')
+            .then(response => {
+                if (response.ok) {
+                    console.log('✅ Component directory is accessible');
+                } else {
+                    console.error('❌ Component directory may not exist or be accessible');
+                }
+            })
+            .catch(error => {
+                console.error('❌ Error accessing components:', error);
+                console.log('💡 Make sure you have a "components" directory with HTML files');
+            });
+    }
 }
 
 // Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🏁 DOM Content Loaded');
-    monitorNetworkStatus();
-    checkFileSystem();
+    NetworkMonitor.monitor();
+    NetworkMonitor.checkFileSystem();
     
     // Start component loading
     window.componentLoader = new ComponentLoader();
@@ -222,8 +208,8 @@ if (document.readyState === 'loading') {
 } else {
     // DOM is already loaded
     console.log('🏁 DOM Already Loaded');
-    monitorNetworkStatus();
-    checkFileSystem();
+    NetworkMonitor.monitor();
+    NetworkMonitor.checkFileSystem();
     window.componentLoader = new ComponentLoader();
 }
 
@@ -236,3 +222,7 @@ window.addEventListener('error', (event) => {
 window.addEventListener('unhandledrejection', (event) => {
     console.error('🚨 Unhandled Promise Rejection:', event.reason);
 });
+
+// Make ComponentLoader available globally
+export default ComponentLoader;
+export { NetworkMonitor };

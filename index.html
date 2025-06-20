@@ -7,31 +7,30 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
-        gtag('config', 'G-FEKWCRZMM4', { 
+        gtag('config', 'G-FEKWCRZMM4', {
         cookie_domain: 'ronaldonyango.github.io',
         cookie_flags: 'SameSite=None;Secure',
-        
+       
         // Alternative: Use 'auto' if you want GA4 to auto-detect
         //cookie_domain: 'auto',
-        
+       
         // Additional security and performance settings
         anonymize_ip: true,
         allow_google_signals: true,
         allow_ad_personalization_signals: false, // Good for privacy
-        
+       
         // Custom settings for better tracking
         send_page_view: true,
         debug_mode: false, // Set to true for testing
-        
+       
         // Cookie settings
         cookie_expires: 63072000, // 2 years in seconds
         cookie_update: true,
         cookie_prefix: '_ga',
-        
+       
         // Privacy settings
         client_storage: 'cookies', // or 'none' to disable cookies entirely
-        
+       
         // For GitHub Pages specific issues
         linker: {
             domains: ['ronaldonyango.github.io']
@@ -39,7 +38,6 @@
         });
             gtag('set', 'developer_id.dJ9j8', 'Ronald Onyango');
     </script>
-
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -47,11 +45,9 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-5PZQ84CJ');</script>
     <!-- End Google Tag Manager -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ronald Onyango | Product Operations Leader</title>
-
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
@@ -59,7 +55,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Ronald Onyango" />
     <link rel="manifest" href="favicon/site.webmanifest" />
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/hero.css">
@@ -72,13 +67,11 @@
     <link rel="stylesheet" href="assets/css/contact.css">
     <link rel="stylesheet" href="assets/css/footer.css">
 </head>
-
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PZQ84CJ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-
     <!-- Components -->
     <div id="header-component"></div>
     <div id="hero-component"></div>
@@ -90,9 +83,9 @@
     <div id="education-component"></div>
     <div id="contact-component"></div>
     <div id="footer-component"></div>
-
-    <script src="js/load-components.js"> </script>
-    <script src="js/script.js"></script>
+    
+    <!-- Load main script as module -->
+    <script type="module" src="js/main.js"></script>
     <script src="js/analytics.js"></script>
 </body>
 </html>
