@@ -1,4 +1,3 @@
-// ScrollAnimations.js
 class ScrollAnimations {
     constructor(portfolio) {
         this.portfolio = portfolio;

@@ -109,7 +109,6 @@ class CareerMap {
     setupCareerMap() {
         console.log('Setting up SVG career map...');
 
-        // Function to update career card with smooth animations
         const updateCareerCard = (country) => {
             console.log(`Updating career card for: ${country}`);
 
@@ -119,7 +118,6 @@ class CareerMap {
                 return;
             }
 
-            // Get or create career card elements
             const elements = this.getOrCreateCardElements();
 
             if (!elements.careerCard) {
@@ -127,64 +125,47 @@ class CareerMap {
                 return;
             }
 
-            // Add loading state
             elements.careerCard.classList.add('updating');
 
-            // Fade out current content
             elements.careerCard.style.opacity = '0.5';
             elements.careerCard.style.transform = 'translateY(-10px)';
 
             setTimeout(() => {
-                // Update all content
                 this.updateCardContent(elements, data, country);
 
-                // Theme the card with country color
                 elements.careerCard.style.borderTop = `6px solid ${data.color}`;
                 elements.careerCard.style.background = `linear-gradient(135deg, rgba(25, 25, 50, 0.98) 0%, ${data.color}10 100%)`;
                 elements.careerCard.style.boxShadow = `0 15px 45px rgba(0, 0, 0, 0.5), 0 0 20px ${data.color}20`;
 
-                // Fade in new content
                 elements.careerCard.style.opacity = '1';
                 elements.careerCard.style.transform = 'translateY(0)';
                 elements.careerCard.style.display = 'block';
-
-                // Remove loading state
                 elements.careerCard.classList.remove('updating');
 
                 console.log(`✅ Career card updated successfully for ${country}`);
             }, 200);
         };
 
-        // Setup SVG country click handlers
         this.setupSVGCountryHandlers(updateCareerCard);
-
-        // Setup Marker click handlers
         this.setupMarkerHandlers(updateCareerCard);
 
-        // Initialize with Kenya
         setTimeout(() => {
             updateCareerCard('Kenya');
             this.highlightSVGCountry('Kenya');
         }, 500);
 
-        // Add enhanced styles
         this.addSVGCareerMapStyles();
     }
 
-    // Setup click handlers for SVG countries
     setupSVGCountryHandlers(updateCallback) {
-        // Multiple strategies to find SVG countries
         const selectors = [
-            // Common SVG country selectors
             'svg [data-country]',
             'svg path[data-country]',
             'svg g[data-country]',
             'svg [id*="kenya" i], svg [id*="tanzania" i], svg [id*="zambia" i], svg [id*="benin republic" i]',
             'svg path[id*="kenya" i], svg path[id*="tanzania" i], svg path[id*="zambia" i], svg path[id*="benin republic" i], svg path[id*="uganda" i], svg path[id*="malawi" i], svg path[id*="nigeria" i], svg path[id*="south africa" i], svg path[id*="togo" i], svg path[id*="cameroon" i], svg path[id*="mozambique" i]',
-            // Class-based selectors
             'svg .kenya, svg .tanzania, svg .zambia, svg .benin republic, svg .uganda, svg .malawi, svg .nigeria, svg .south-africa, svg .togo, svg .cameroon, svg .mozambique',
             'svg path.kenya, svg path.tanzania, svg path.zambia, svg path.benin republic, svg path.uganda, svg path.malawi, svg path.nigeria, svg path.south-africa, svg path.togo, svg path.cameroon, svg path.mozambique',
-            // Title-based selectors
             'svg [title*="Kenya" i], svg [title*="Tanzania" i], svg [title*="Zambia" i], svg [title*="Benin Republic" i], svg [title*="Uganda" i], svg [title*="Malawi" i], svg [title*="Nigeria" i], svg [title*="South Africa" i], svg [title*="Togo" i], svg [title*="Cameroon" i], svg [title*="Mozambique" i]'
         ];
 
@@ -209,7 +190,6 @@ class CareerMap {
 
         console.log(`Found countries in SVG:`, Array.from(foundCountries));
 
-        // If no countries found, set up generic SVG click handler
         if (foundCountries.size === 0) {
             this.setupGenericSVGHandler(updateCallback);
         }
@@ -217,13 +197,10 @@ class CareerMap {
         return foundCountries;
     }
 
-    // Extract country name from SVG element
     extractCountryName(element) {
-        // Try data-country attribute first
         let country = element.getAttribute('data-country');
         if (country) return this.normalizeCountryName(country);
 
-        // Try id attribute
         const id = element.getAttribute('id') || '';
         if (id.toLowerCase().includes('kenya')) return 'Kenya';
         if (id.toLowerCase().includes('tanzania')) return 'Tanzania';
@@ -238,7 +215,6 @@ class CareerMap {
         if (id.toLowerCase().includes('mozambique')) return 'Mozambique';
         if (id.toLowerCase().includes('myanmar')) return 'Myanmar';
 
-        // Try class attribute
         const className = element.getAttribute('class') || '';
         if (className.toLowerCase().includes('kenya')) return 'Kenya';
         if (className.toLowerCase().includes('tanzania')) return 'Tanzania';
@@ -253,7 +229,6 @@ class CareerMap {
         if (className.toLowerCase().includes('mozambique')) return 'Mozambique';
         if (className.toLowerCase().includes('myanmar')) return 'Myanmar';
 
-        // Try title attribute
         const title = element.getAttribute('title') || '';
         if (title.toLowerCase().includes('kenya')) return 'Kenya';
         if (title.toLowerCase().includes('tanzania')) return 'Tanzania';
@@ -271,7 +246,6 @@ class CareerMap {
         return null;
     }
 
-    // Normalize country name
     normalizeCountryName(name) {
         const normalized = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
         const validCountries = [
@@ -284,39 +258,31 @@ class CareerMap {
         ) || null;
     }
 
-    // Setup click handler for individual country element
     setupCountryClickHandler(element, country, updateCallback) {
         console.log(`Setting up click handler for ${country}`);
 
-        // Make element interactive
         element.style.cursor = 'pointer';
         element.style.transition = 'all 0.3s ease';
 
-        // Store original styles
         const originalFill = element.getAttribute('fill') || element.style.fill;
         const originalStroke = element.getAttribute('stroke') || element.style.stroke;
 
-        // Add click event
         element.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
 
             console.log(`🖱️ SVG Country clicked: ${country}`);
 
-            // Update career card
             updateCallback(country);
 
-            // Update visual state
             this.updateSVGCountryStates(country);
 
-            // Add click animation
             element.style.transform = 'scale(1.05)';
             setTimeout(() => {
                 element.style.transform = 'scale(1)';
             }, 150);
         });
 
-        // Add hover effects
         element.addEventListener('mouseenter', () => {
             if (!element.classList.contains('active-country')) {
                 element.style.opacity = '0.8';
@@ -331,11 +297,9 @@ class CareerMap {
             }
         });
 
-        // Store reference for later use
         element.setAttribute('data-country-handler', country);
     }
 
-    // Setup generic SVG handler as fallback
     setupGenericSVGHandler(updateCallback) {
         console.log('Setting up generic SVG click handler...');
 
@@ -356,7 +320,6 @@ class CareerMap {
 
             clickCount++;
 
-            // Visual feedback
             svg.style.transform = 'scale(0.98)';
             setTimeout(() => {
                 svg.style.transform = 'scale(1)';
@@ -366,9 +329,7 @@ class CareerMap {
         console.log('Generic SVG handler set up - click anywhere on the map to cycle through countries');
     }
 
-    // Update SVG country visual states
     updateSVGCountryStates(activeCountry) {
-        // Reset all countries to default grey
         document.querySelectorAll('svg path[id]').forEach(element => {
             element.classList.remove('active-country');
             element.style.fill = '#D3D3D3';
@@ -376,17 +337,14 @@ class CareerMap {
             element.style.opacity = '1';
         });
 
-        // Reset all markers
         document.querySelectorAll('.marker').forEach(marker => {
             marker.classList.remove('active-marker');
-            marker.style.background = ''; // Logic handled by CSS class or default gradient
+            marker.style.background = '';
             marker.style.transform = '';
         });
 
-        // Add active state and specific color to the selected country
         const data = this.careerData[activeCountry];
         if (data) {
-            // Highlight SVG path
             document.querySelectorAll(`[data-country-handler="${activeCountry}"]`).forEach(element => {
                 element.classList.add('active-country');
                 element.style.fill = data.color;
@@ -394,7 +352,6 @@ class CareerMap {
                 element.style.opacity = '1';
             });
 
-            // Highlight corresponding marker
             const marker = document.querySelector(`.marker[data-country="${activeCountry}"]`);
             if (marker) {
                 marker.classList.add('active-marker');
@@ -404,16 +361,12 @@ class CareerMap {
         }
     }
 
-    // Highlight specific SVG country
     highlightSVGCountry(country) {
         this.updateSVGCountryStates(country);
     }
-
-    // Get or create career card elements
     getOrCreateCardElements() {
         let careerCard = document.getElementById('career-card');
 
-        // If card doesn't exist, create it
         if (!careerCard) {
             console.log('Creating career card...');
             careerCard = this.createCareerCard();
@@ -430,7 +383,6 @@ class CareerMap {
         };
     }
 
-    // Create career card if it doesn't exist
     createCareerCard() {
         const careerCard = document.createElement('div');
         careerCard.id = 'career-card';
@@ -449,7 +401,6 @@ class CareerMap {
             </div>
         `;
 
-        // Find best location to insert the card
         const targetContainers = [
             '.career-section',
             '.map-section',
@@ -472,36 +423,27 @@ class CareerMap {
         return careerCard;
     }
 
-    // Update card content
     updateCardContent(elements, data, country) {
-        // Update country name
         if (elements.countryName) {
             elements.countryName.textContent = country;
             elements.countryName.style.color = data.color;
         }
 
-        // Update capital
         if (elements.capital) {
             elements.capital.textContent = `Capital: ${data.capital}`;
         }
-
-        // Update duration
         if (elements.duration) {
             elements.duration.textContent = data.duration;
             elements.duration.style.background = data.color;
         }
 
-        // Update role
         if (elements.role) {
             elements.role.textContent = data.role;
         }
-
-        // Update achievements
         if (elements.achievements) {
             elements.achievements.textContent = data.achievements;
         }
 
-        // Update flag
         if (elements.countryFlag) {
             elements.countryFlag.innerHTML = '';
 
@@ -537,14 +479,13 @@ class CareerMap {
         }
     }
 
-    // Enhanced styles for SVG map integration
     addSVGCareerMapStyles() {
         if (document.getElementById('svg-career-map-styles')) return;
 
         const style = document.createElement('style');
         style.id = 'svg-career-map-styles';
         style.textContent = `
-            /* Career Card Styles */
+            /* Career card styles */
             #career-card {
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 color: white;
@@ -699,7 +640,6 @@ class CareerMap {
         document.head.appendChild(style);
     }
 
-    // Setup click handlers for markers in the journey-path
     setupMarkerHandlers(updateCallback) {
         const markers = document.querySelectorAll('.marker[data-country]');
         console.log(`Setting up ${markers.length} marker handlers...`);
@@ -720,7 +660,6 @@ class CareerMap {
                 updateCallback(country);
                 this.updateSVGCountryStates(country);
 
-                // Also scroll to top of section if on mobile for better visibility
                 if (window.innerWidth < 768) {
                     const section = document.getElementById('impact-journey');
                     if (section) {
@@ -731,14 +670,12 @@ class CareerMap {
         });
     }
 
-    // Debug helper function
     enableDebugMode() {
         const debug = document.createElement('div');
         debug.className = 'debug-info';
         debug.style.display = 'block';
         document.body.appendChild(debug);
 
-        // Log SVG structure
         const svg = document.querySelector('svg');
         if (svg) {
             debug.innerHTML = `SVG found. Countries detected: checking...`;

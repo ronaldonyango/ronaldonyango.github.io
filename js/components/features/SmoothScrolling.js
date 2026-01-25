@@ -1,4 +1,3 @@
-// SmoothScrolling.js
 class SmoothScrolling {
     constructor() {
         document.addEventListener('click', (e) => {

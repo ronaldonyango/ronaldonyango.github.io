@@ -8,7 +8,6 @@ class Analytics {
 
         trackableElements.forEach(element => {
             element.addEventListener('click', (e) => {
-                // Replace this with actual tracking logic
                 console.log(`Tracked interaction with: ${e.target}`);
             });
         });
