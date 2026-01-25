@@ -9,29 +9,93 @@ class CareerMap {
                 flagImage: "https://flagsapi.com/KE/flat/64.png",
                 color: "#FF6B6B"
             },
+            "Uganda": {
+                capital: "Kampala",
+                duration: "2023-Present",
+                role: "Senior Product Operations",
+                achievements: "Expanding MESH community and optimizing product-market fit. Streamlining operations for local market nuances and merchant engagement while driving cross-border integration.",
+                flagImage: "https://flagsapi.com/UG/flat/64.png",
+                color: "#F9D423"
+            },
             "Tanzania": {
-                capital: "Dodoma", 
+                capital: "Dodoma",
                 duration: "2024-Present",
                 role: "Senior Product Operations",
-                achievements: "Led smooth product launch and market entry strategy for expansion. Implemented structured issue resolution frameworks ensuring 90% SLA adherence. Conducted comprehensive market analysis and user research to optimize product-market fit for East African markets.",
+                achievements: "Led smooth product launch and market entry strategy for expansion. Implemented structured issue resolution frameworks ensuring 90% SLA adherence. Conducted comprehensive market analysis.",
                 flagImage: "https://flagsapi.com/TZ/flat/64.png",
                 color: "#4ECDC4"
             },
-            "Zambia": {
-                capital: "Lusaka",
-                duration: "2024-Present", 
+            "Malawi": {
+                capital: "Lilongwe",
+                duration: "2024-Present",
+                role: "Strategic Advisor",
+                achievements: "Strategic advisory on product expansion and community impact initiatives. Leveraging data to drive user engagement in emerging tech corridors and supporting local entrepreneurship ecosystems.",
+                flagImage: "https://flagsapi.com/MW/flat/64.png",
+                color: "#E1306C"
+            },
+            "Nigeria": {
+                capital: "Abuja",
+                duration: "2023-Present",
                 role: "Senior Product Operations",
-                achievements: "Successfully launched and expanded our product within 7 months. Coordinated cross-functional teams (Sales, Product, Engineering, Operations) to execute strategic initiatives. Developed comprehensive testing and documentation processes that reduced support queries and enhanced user experience across new markets.",
-                flagImage: "https://flagsapi.com/ZM/flat/64.png",
-                color: "#45B7D1"
+                achievements: "Spearheading product operations for high-growth markets. Implemented robust analytics framework to monitor real-time growth and merchant success in the West African hub.",
+                flagImage: "https://flagsapi.com/NG/flat/64.png",
+                color: "#008751"
+            },
+            "South Africa": {
+                capital: "Cape Town",
+                duration: "2023-Present",
+                role: "Senior Product Operations",
+                achievements: "Driving operational excellence and scalability for product ecosystems. Focused on cross-border logistics and merchant payment solutions to enhance regional trade efficiency.",
+                flagImage: "https://flagsapi.com/ZA/flat/64.png",
+                color: "#007A33"
+            },
+            "Togo": {
+                capital: "Lomé",
+                duration: "2024-Present",
+                role: "Senior Product Operations",
+                achievements: "Market entry strategy and regulatory compliance. Building foundational networks for product adoption in the Francophone West African region with focus on sustainable growth.",
+                flagImage: "https://flagsapi.com/TG/flat/64.png",
+                color: "#FFCE00"
+            },
+            "Cameroon": {
+                capital: "Yaoundé",
+                duration: "2024-Present",
+                role: "Product Operations Lead",
+                achievements: "Executing product roadmaps and localizing user experiences. Bridging the gap between technology and traditional trade systems to foster digital transformation.",
+                flagImage: "https://flagsapi.com/CM/flat/64.png",
+                color: "#007A5E"
             },
             "Benin": {
                 capital: "Porto-Novo",
                 duration: "2024-Present",
                 role: "Senior Product Operations",
-                achievements: "Leading go-to-market strategy and execution in Benin Republic and West African markets. Driving high adoption rates through data-driven decision making and strategic market analysis. Establishing operational frameworks for sustainable growth in emerging markets while maintaining high success rates.",
-                flagImage: "https://flagsapi.com/BJ/flat/64.png", 
-                color: "#96CEB4"
+                achievements: "Leading go-to-market strategy and execution in Benin Republic. Driving high adoption rates through data-driven decision making and strategic market analysis.",
+                flagImage: "https://flagsapi.com/BJ/flat/64.png",
+                color: "#FCD116"
+            },
+            "Myanmar": {
+                capital: "Naypyidaw",
+                duration: "2023-Present",
+                role: "Global Product Initiatives",
+                achievements: "Leading global product initiatives and remote operations. Driving social impact through technology in complex, high-stakes environments and facilitating cross-cultural collaboration.",
+                flagImage: "https://flagsapi.com/MM/flat/64.png",
+                color: "#FECB00"
+            },
+            "Zambia": {
+                capital: "Lusaka",
+                duration: "2024-Present",
+                role: "Senior Product Operations",
+                achievements: "Successfully launched and expanded our product within 7 months. Coordinated cross-functional teams to execute strategic initiatives and reduced support queries.",
+                flagImage: "https://flagsapi.com/ZM/flat/64.png",
+                color: "#198A00"
+            },
+            "Mozambique": {
+                capital: "Maputo",
+                duration: "2024-Present",
+                role: "Strategic Planning",
+                achievements: "Strategic planning for market penetration and community development. Enhancing product accessibility for diverse linguistic and demographic groups in the SADC region.",
+                flagImage: "https://flagsapi.com/MZ/flat/64.png",
+                color: "#D21034"
             }
         };
 
@@ -44,11 +108,11 @@ class CareerMap {
 
     setupCareerMap() {
         console.log('Setting up SVG career map...');
-        
+
         // Function to update career card with smooth animations
         const updateCareerCard = (country) => {
             console.log(`Updating career card for: ${country}`);
-            
+
             const data = this.careerData[country];
             if (!data) {
                 console.warn(`No data found for country: ${country}`);
@@ -57,7 +121,7 @@ class CareerMap {
 
             // Get or create career card elements
             const elements = this.getOrCreateCardElements();
-            
+
             if (!elements.careerCard) {
                 console.error('Could not create or find career card');
                 return;
@@ -65,30 +129,38 @@ class CareerMap {
 
             // Add loading state
             elements.careerCard.classList.add('updating');
-            
+
             // Fade out current content
             elements.careerCard.style.opacity = '0.5';
             elements.careerCard.style.transform = 'translateY(-10px)';
-            
+
             setTimeout(() => {
                 // Update all content
                 this.updateCardContent(elements, data, country);
-                
+
+                // Theme the card with country color
+                elements.careerCard.style.borderTop = `6px solid ${data.color}`;
+                elements.careerCard.style.background = `linear-gradient(135deg, rgba(25, 25, 50, 0.98) 0%, ${data.color}10 100%)`;
+                elements.careerCard.style.boxShadow = `0 15px 45px rgba(0, 0, 0, 0.5), 0 0 20px ${data.color}20`;
+
                 // Fade in new content
                 elements.careerCard.style.opacity = '1';
                 elements.careerCard.style.transform = 'translateY(0)';
                 elements.careerCard.style.display = 'block';
-                
+
                 // Remove loading state
                 elements.careerCard.classList.remove('updating');
-                
+
                 console.log(`✅ Career card updated successfully for ${country}`);
             }, 200);
         };
 
         // Setup SVG country click handlers
         this.setupSVGCountryHandlers(updateCareerCard);
-        
+
+        // Setup Marker click handlers
+        this.setupMarkerHandlers(updateCareerCard);
+
         // Initialize with Kenya
         setTimeout(() => {
             updateCareerCard('Kenya');
@@ -108,21 +180,21 @@ class CareerMap {
             'svg path[data-country]',
             'svg g[data-country]',
             'svg [id*="kenya" i], svg [id*="tanzania" i], svg [id*="zambia" i], svg [id*="benin" i]',
-            'svg path[id*="kenya" i], svg path[id*="tanzania" i], svg path[id*="zambia" i], svg path[id*="benin" i]',
+            'svg path[id*="kenya" i], svg path[id*="tanzania" i], svg path[id*="zambia" i], svg path[id*="benin" i], svg path[id*="uganda" i], svg path[id*="malawi" i], svg path[id*="nigeria" i], svg path[id*="south africa" i], svg path[id*="togo" i], svg path[id*="cameroon" i], svg path[id*="mozambique" i]',
             // Class-based selectors
-            'svg .kenya, svg .tanzania, svg .zambia, svg .benin',
-            'svg path.kenya, svg path.tanzania, svg path.zambia, svg path.benin',
+            'svg .kenya, svg .tanzania, svg .zambia, svg .benin, svg .uganda, svg .malawi, svg .nigeria, svg .south-africa, svg .togo, svg .cameroon, svg .mozambique',
+            'svg path.kenya, svg path.tanzania, svg path.zambia, svg path.benin, svg path.uganda, svg path.malawi, svg path.nigeria, svg path.south-africa, svg path.togo, svg path.cameroon, svg path.mozambique',
             // Title-based selectors
-            'svg [title*="Kenya" i], svg [title*="Tanzania" i], svg [title*="Zambia" i], svg [title*="Benin" i]'
+            'svg [title*="Kenya" i], svg [title*="Tanzania" i], svg [title*="Zambia" i], svg [title*="Benin" i], svg [title*="Uganda" i], svg [title*="Malawi" i], svg [title*="Nigeria" i], svg [title*="South Africa" i], svg [title*="Togo" i], svg [title*="Cameroon" i], svg [title*="Mozambique" i]'
         ];
 
         let foundCountries = new Set();
-        
+
         selectors.forEach(selector => {
             try {
                 const elements = document.querySelectorAll(selector);
                 console.log(`Selector "${selector}" found ${elements.length} elements`);
-                
+
                 elements.forEach(element => {
                     const country = this.extractCountryName(element);
                     if (country && this.careerData[country]) {
@@ -157,6 +229,14 @@ class CareerMap {
         if (id.toLowerCase().includes('tanzania')) return 'Tanzania';
         if (id.toLowerCase().includes('zambia')) return 'Zambia';
         if (id.toLowerCase().includes('benin')) return 'Benin';
+        if (id.toLowerCase().includes('uganda')) return 'Uganda';
+        if (id.toLowerCase().includes('malawi')) return 'Malawi';
+        if (id.toLowerCase().includes('nigeria')) return 'Nigeria';
+        if (id.toLowerCase().includes('south africa')) return 'South Africa';
+        if (id.toLowerCase().includes('togo')) return 'Togo';
+        if (id.toLowerCase().includes('cameroon')) return 'Cameroon';
+        if (id.toLowerCase().includes('mozambique')) return 'Mozambique';
+        if (id.toLowerCase().includes('myanmar')) return 'Myanmar';
 
         // Try class attribute
         const className = element.getAttribute('class') || '';
@@ -164,6 +244,14 @@ class CareerMap {
         if (className.toLowerCase().includes('tanzania')) return 'Tanzania';
         if (className.toLowerCase().includes('zambia')) return 'Zambia';
         if (className.toLowerCase().includes('benin')) return 'Benin';
+        if (className.toLowerCase().includes('uganda')) return 'Uganda';
+        if (className.toLowerCase().includes('malawi')) return 'Malawi';
+        if (className.toLowerCase().includes('nigeria')) return 'Nigeria';
+        if (className.toLowerCase().includes('south-africa')) return 'South Africa';
+        if (className.toLowerCase().includes('togo')) return 'Togo';
+        if (className.toLowerCase().includes('cameroon')) return 'Cameroon';
+        if (className.toLowerCase().includes('mozambique')) return 'Mozambique';
+        if (className.toLowerCase().includes('myanmar')) return 'Myanmar';
 
         // Try title attribute
         const title = element.getAttribute('title') || '';
@@ -171,6 +259,14 @@ class CareerMap {
         if (title.toLowerCase().includes('tanzania')) return 'Tanzania';
         if (title.toLowerCase().includes('zambia')) return 'Zambia';
         if (title.toLowerCase().includes('benin')) return 'Benin';
+        if (title.toLowerCase().includes('uganda')) return 'Uganda';
+        if (title.toLowerCase().includes('malawi')) return 'Malawi';
+        if (title.toLowerCase().includes('nigeria')) return 'Nigeria';
+        if (title.toLowerCase().includes('south africa')) return 'South Africa';
+        if (title.toLowerCase().includes('togo')) return 'Togo';
+        if (title.toLowerCase().includes('cameroon')) return 'Cameroon';
+        if (title.toLowerCase().includes('mozambique')) return 'Mozambique';
+        if (title.toLowerCase().includes('myanmar')) return 'Myanmar';
 
         return null;
     }
@@ -178,8 +274,12 @@ class CareerMap {
     // Normalize country name
     normalizeCountryName(name) {
         const normalized = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-        const validCountries = ['Kenya', 'Tanzania', 'Zambia', 'Benin'];
-        return validCountries.find(country => 
+        const validCountries = [
+            'Kenya', 'Uganda', 'Tanzania', 'Malawi', 'Nigeria',
+            'South Africa', 'Togo', 'Cameroon', 'Benin',
+            'Myanmar', 'Zambia', 'Mozambique'
+        ];
+        return validCountries.find(country =>
             country.toLowerCase() === normalized.toLowerCase()
         ) || null;
     }
@@ -187,28 +287,28 @@ class CareerMap {
     // Setup click handler for individual country element
     setupCountryClickHandler(element, country, updateCallback) {
         console.log(`Setting up click handler for ${country}`);
-        
+
         // Make element interactive
         element.style.cursor = 'pointer';
         element.style.transition = 'all 0.3s ease';
-        
+
         // Store original styles
         const originalFill = element.getAttribute('fill') || element.style.fill;
         const originalStroke = element.getAttribute('stroke') || element.style.stroke;
-        
+
         // Add click event
         element.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            
+
             console.log(`🖱️ SVG Country clicked: ${country}`);
-            
+
             // Update career card
             updateCallback(country);
-            
+
             // Update visual state
             this.updateSVGCountryStates(country);
-            
+
             // Add click animation
             element.style.transform = 'scale(1.05)';
             setTimeout(() => {
@@ -238,7 +338,7 @@ class CareerMap {
     // Setup generic SVG handler as fallback
     setupGenericSVGHandler(updateCallback) {
         console.log('Setting up generic SVG click handler...');
-        
+
         const svg = document.querySelector('svg');
         if (!svg) {
             console.warn('No SVG found on page');
@@ -247,15 +347,15 @@ class CareerMap {
 
         let clickCount = 0;
         const countries = Object.keys(this.careerData);
-        
+
         svg.addEventListener('click', (e) => {
             console.log('Generic SVG clicked, cycling through countries...');
-            
+
             const country = countries[clickCount % countries.length];
             updateCallback(country);
-            
+
             clickCount++;
-            
+
             // Visual feedback
             svg.style.transform = 'scale(0.98)';
             setTimeout(() => {
@@ -268,19 +368,40 @@ class CareerMap {
 
     // Update SVG country visual states
     updateSVGCountryStates(activeCountry) {
-        // Remove active state from all countries
-        document.querySelectorAll('[data-country-handler]').forEach(element => {
+        // Reset all countries to default grey
+        document.querySelectorAll('svg path[id]').forEach(element => {
             element.classList.remove('active-country');
+            element.style.fill = '#D3D3D3';
             element.style.filter = 'none';
-            element.style.opacity = '0.7';
-        });
-
-        // Add active state to selected country
-        document.querySelectorAll(`[data-country-handler="${activeCountry}"]`).forEach(element => {
-            element.classList.add('active-country');
-            element.style.filter = 'brightness(1.2) saturate(1.3)';
             element.style.opacity = '1';
         });
+
+        // Reset all markers
+        document.querySelectorAll('.marker').forEach(marker => {
+            marker.classList.remove('active-marker');
+            marker.style.background = ''; // Logic handled by CSS class or default gradient
+            marker.style.transform = '';
+        });
+
+        // Add active state and specific color to the selected country
+        const data = this.careerData[activeCountry];
+        if (data) {
+            // Highlight SVG path
+            document.querySelectorAll(`[data-country-handler="${activeCountry}"]`).forEach(element => {
+                element.classList.add('active-country');
+                element.style.fill = data.color;
+                element.style.filter = `drop-shadow(0 0 15px ${data.color}80)`;
+                element.style.opacity = '1';
+            });
+
+            // Highlight corresponding marker
+            const marker = document.querySelector(`.marker[data-country="${activeCountry}"]`);
+            if (marker) {
+                marker.classList.add('active-marker');
+                marker.style.background = data.color;
+                marker.style.transform = 'scale(1.2) translateY(-5px)';
+            }
+        }
     }
 
     // Highlight specific SVG country
@@ -291,7 +412,7 @@ class CareerMap {
     // Get or create career card elements
     getOrCreateCardElements() {
         let careerCard = document.getElementById('career-card');
-        
+
         // If card doesn't exist, create it
         if (!careerCard) {
             console.log('Creating career card...');
@@ -331,7 +452,7 @@ class CareerMap {
         // Find best location to insert the card
         const targetContainers = [
             '.career-section',
-            '.map-section', 
+            '.map-section',
             '.content-wrapper',
             'main',
             'body'
@@ -383,7 +504,7 @@ class CareerMap {
         // Update flag
         if (elements.countryFlag) {
             elements.countryFlag.innerHTML = '';
-            
+
             const flagImg = document.createElement('img');
             flagImg.src = data.flagImage;
             flagImg.alt = `${country} flag`;
@@ -394,7 +515,7 @@ class CareerMap {
                 border: 1px solid rgba(255,255,255,0.3);
                 object-fit: cover;
             `;
-            
+
             flagImg.onerror = () => {
                 elements.countryFlag.innerHTML = `
                     <div style="
@@ -411,7 +532,7 @@ class CareerMap {
                     ">${country.substring(0, 2).toUpperCase()}</div>
                 `;
             };
-            
+
             elements.countryFlag.appendChild(flagImg);
         }
     }
@@ -419,7 +540,7 @@ class CareerMap {
     // Enhanced styles for SVG map integration
     addSVGCareerMapStyles() {
         if (document.getElementById('svg-career-map-styles')) return;
-        
+
         const style = document.createElement('style');
         style.id = 'svg-career-map-styles';
         style.textContent = `
@@ -574,8 +695,40 @@ class CareerMap {
                 display: none;
             }
         `;
-        
+
         document.head.appendChild(style);
+    }
+
+    // Setup click handlers for markers in the journey-path
+    setupMarkerHandlers(updateCallback) {
+        const markers = document.querySelectorAll('.marker[data-country]');
+        console.log(`Setting up ${markers.length} marker handlers...`);
+
+        markers.forEach(marker => {
+            const countryAttribute = marker.getAttribute('data-country');
+            const country = this.normalizeCountryName(countryAttribute);
+
+            if (!country || !this.careerData[country]) {
+                console.warn(`Marker country "${countryAttribute}" (normalized: "${country}") not found in careerData`);
+                return;
+            }
+
+            marker.style.cursor = 'pointer';
+            marker.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log(`📍 Marker clicked: ${country}`);
+                updateCallback(country);
+                this.updateSVGCountryStates(country);
+
+                // Also scroll to top of section if on mobile for better visibility
+                if (window.innerWidth < 768) {
+                    const section = document.getElementById('impact-journey');
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
     }
 
     // Debug helper function
