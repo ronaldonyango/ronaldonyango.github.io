@@ -65,7 +65,7 @@ class CareerMap {
                 flagImage: "https://flagsapi.com/CM/flat/64.png",
                 color: "#007A5E"
             },
-            "Benin": {
+            "Benin Republic": {
                 capital: "Porto-Novo",
                 duration: "2024-Present",
                 role: "Senior Product Operations",
@@ -179,13 +179,13 @@ class CareerMap {
             'svg [data-country]',
             'svg path[data-country]',
             'svg g[data-country]',
-            'svg [id*="kenya" i], svg [id*="tanzania" i], svg [id*="zambia" i], svg [id*="benin" i]',
-            'svg path[id*="kenya" i], svg path[id*="tanzania" i], svg path[id*="zambia" i], svg path[id*="benin" i], svg path[id*="uganda" i], svg path[id*="malawi" i], svg path[id*="nigeria" i], svg path[id*="south africa" i], svg path[id*="togo" i], svg path[id*="cameroon" i], svg path[id*="mozambique" i]',
+            'svg [id*="kenya" i], svg [id*="tanzania" i], svg [id*="zambia" i], svg [id*="benin republic" i]',
+            'svg path[id*="kenya" i], svg path[id*="tanzania" i], svg path[id*="zambia" i], svg path[id*="benin republic" i], svg path[id*="uganda" i], svg path[id*="malawi" i], svg path[id*="nigeria" i], svg path[id*="south africa" i], svg path[id*="togo" i], svg path[id*="cameroon" i], svg path[id*="mozambique" i]',
             // Class-based selectors
-            'svg .kenya, svg .tanzania, svg .zambia, svg .benin, svg .uganda, svg .malawi, svg .nigeria, svg .south-africa, svg .togo, svg .cameroon, svg .mozambique',
-            'svg path.kenya, svg path.tanzania, svg path.zambia, svg path.benin, svg path.uganda, svg path.malawi, svg path.nigeria, svg path.south-africa, svg path.togo, svg path.cameroon, svg path.mozambique',
+            'svg .kenya, svg .tanzania, svg .zambia, svg .benin republic, svg .uganda, svg .malawi, svg .nigeria, svg .south-africa, svg .togo, svg .cameroon, svg .mozambique',
+            'svg path.kenya, svg path.tanzania, svg path.zambia, svg path.benin republic, svg path.uganda, svg path.malawi, svg path.nigeria, svg path.south-africa, svg path.togo, svg path.cameroon, svg path.mozambique',
             // Title-based selectors
-            'svg [title*="Kenya" i], svg [title*="Tanzania" i], svg [title*="Zambia" i], svg [title*="Benin" i], svg [title*="Uganda" i], svg [title*="Malawi" i], svg [title*="Nigeria" i], svg [title*="South Africa" i], svg [title*="Togo" i], svg [title*="Cameroon" i], svg [title*="Mozambique" i]'
+            'svg [title*="Kenya" i], svg [title*="Tanzania" i], svg [title*="Zambia" i], svg [title*="Benin Republic" i], svg [title*="Uganda" i], svg [title*="Malawi" i], svg [title*="Nigeria" i], svg [title*="South Africa" i], svg [title*="Togo" i], svg [title*="Cameroon" i], svg [title*="Mozambique" i]'
         ];
 
         let foundCountries = new Set();
@@ -228,7 +228,7 @@ class CareerMap {
         if (id.toLowerCase().includes('kenya')) return 'Kenya';
         if (id.toLowerCase().includes('tanzania')) return 'Tanzania';
         if (id.toLowerCase().includes('zambia')) return 'Zambia';
-        if (id.toLowerCase().includes('benin')) return 'Benin';
+        if (id.toLowerCase().includes('benin republic')) return 'Benin Republic';
         if (id.toLowerCase().includes('uganda')) return 'Uganda';
         if (id.toLowerCase().includes('malawi')) return 'Malawi';
         if (id.toLowerCase().includes('nigeria')) return 'Nigeria';
@@ -243,7 +243,7 @@ class CareerMap {
         if (className.toLowerCase().includes('kenya')) return 'Kenya';
         if (className.toLowerCase().includes('tanzania')) return 'Tanzania';
         if (className.toLowerCase().includes('zambia')) return 'Zambia';
-        if (className.toLowerCase().includes('benin')) return 'Benin';
+        if (className.toLowerCase().includes('benin republic')) return 'Benin Republic';
         if (className.toLowerCase().includes('uganda')) return 'Uganda';
         if (className.toLowerCase().includes('malawi')) return 'Malawi';
         if (className.toLowerCase().includes('nigeria')) return 'Nigeria';
@@ -258,7 +258,7 @@ class CareerMap {
         if (title.toLowerCase().includes('kenya')) return 'Kenya';
         if (title.toLowerCase().includes('tanzania')) return 'Tanzania';
         if (title.toLowerCase().includes('zambia')) return 'Zambia';
-        if (title.toLowerCase().includes('benin')) return 'Benin';
+        if (title.toLowerCase().includes('benin republic')) return 'Benin Republic';
         if (title.toLowerCase().includes('uganda')) return 'Uganda';
         if (title.toLowerCase().includes('malawi')) return 'Malawi';
         if (title.toLowerCase().includes('nigeria')) return 'Nigeria';
@@ -276,7 +276,7 @@ class CareerMap {
         const normalized = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
         const validCountries = [
             'Kenya', 'Uganda', 'Tanzania', 'Malawi', 'Nigeria',
-            'South Africa', 'Togo', 'Cameroon', 'Benin',
+            'South Africa', 'Togo', 'Cameroon', 'Benin Republic',
             'Myanmar', 'Zambia', 'Mozambique'
         ];
         return validCountries.find(country =>
