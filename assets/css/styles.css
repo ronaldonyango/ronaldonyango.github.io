@@ -185,10 +185,11 @@ body {
 
 /* Section Styles */
 .section {
-    padding: 100px 0;
+    padding: var(--section-spacing) 0;
     background: var(--bg-color);
     transition: background-color 0.3s ease;
     scroll-margin-top: var(--header-height);
+    position: relative;
 }
 
 .section:nth-child(even) {
@@ -197,20 +198,39 @@ body {
 
 .section-title {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
 }
 
 .section-title h2 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 800;
     color: var(--text-main);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     letter-spacing: -0.03em;
 }
 
 .section-title p {
     color: var(--text-muted);
-    font-size: 1.1rem;
+    font-size: 1rem;
     max-width: 600px;
     margin: 0 auto;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-spacing: 80px;
+    }
+
+    .section-title {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-title p {
+        font-size: 0.95rem;
+    }
 }

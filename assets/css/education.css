@@ -1,18 +1,6 @@
 /* Education Section Styles */
 
-.section {
-    padding: calc(var(--spacing-unit) * 4) 0;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: calc(var(--spacing-unit) * 3);
-}
-
 .section-title h2 {
-    font-size: 2.5rem;
-    color: var(--text-color-dark);
-    margin-bottom: 0.5rem;
     position: relative;
     display: inline-block;
 }
@@ -25,11 +13,6 @@
     background: var(--primary-color);
     margin: 10px auto 0;
     border-radius: 2px;
-}
-
-.section-title p {
-    font-size: 1.1rem;
-    color: var(--text-color-subtle);
 }
 
 .education-grid {
@@ -232,9 +215,6 @@
 }
 
 @media (max-width: 768px) {
-    .section-title h2 {
-        font-size: 2rem;
-    }
 
     .education-grid {
         grid-template-columns: 1fr;
