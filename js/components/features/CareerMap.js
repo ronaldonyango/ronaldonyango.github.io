@@ -99,6 +99,8 @@ class CareerMap {
             }
         };
 
+        this.activeCountry = null;
+        this.previousCountry = null;
         this.init();
     }
 
@@ -113,48 +115,156 @@ class CareerMap {
             console.log(`Updating career card for: ${country}`);
 
             const data = this.careerData[country];
-            if (!data) {
-                console.warn(`No data found for country: ${country}`);
-                return;
-            }
+            if (!data) return;
 
             const elements = this.getOrCreateCardElements();
+            if (!elements.careerCard) return;
 
-            if (!elements.careerCard) {
-                console.error('Could not create or find career card');
-                return;
-            }
-
-            elements.careerCard.classList.add('updating');
-
-            elements.careerCard.style.opacity = '0.5';
-            elements.careerCard.style.transform = 'translateY(-10px)';
+            // Transition out
+            elements.careerCard.classList.remove('active');
 
             setTimeout(() => {
                 this.updateCardContent(elements, data, country);
 
-                elements.careerCard.style.borderTop = `6px solid ${data.color}`;
-                elements.careerCard.style.background = `linear-gradient(135deg, rgba(25, 25, 50, 0.98) 0%, ${data.color}10 100%)`;
-                elements.careerCard.style.boxShadow = `0 15px 45px rgba(0, 0, 0, 0.5), 0 0 20px ${data.color}20`;
+                // Set accent color for the card's decorative top border
+                elements.careerCard.style.setProperty('--card-accent', data.color);
 
-                elements.careerCard.style.opacity = '1';
-                elements.careerCard.style.transform = 'translateY(0)';
-                elements.careerCard.style.display = 'block';
-                elements.careerCard.classList.remove('updating');
-
-                console.log(`✅ Career card updated successfully for ${country}`);
-            }, 200);
+                // Transition in
+                elements.careerCard.classList.add('active');
+                console.log(`✅ Career card updated for ${country}`);
+            }, 300);
         };
 
         this.setupSVGCountryHandlers(updateCareerCard);
         this.setupMarkerHandlers(updateCareerCard);
 
+        // Highlight all countries that have data
+        this.highlightAllImpactedCountries();
+
+        // Initialize with Kenya and trigger sequential animation
         setTimeout(() => {
-            updateCareerCard('Kenya');
-            this.highlightSVGCountry('Kenya');
-        }, 500);
+            this.animateJourneySequence(updateCareerCard);
+        }, 1000);
 
         this.addSVGCareerMapStyles();
+    }
+
+    highlightAllImpactedCountries() {
+        Object.keys(this.careerData).forEach(country => {
+            const el = this.getCountryElement(country);
+            if (el) {
+                el.style.fill = '#cbd5e1'; // Subtle grey-blue for impacted countries
+                el.style.stroke = 'rgba(255,255,255,0.5)';
+                el.style.strokeWidth = '1';
+                el.classList.add('impacted-country');
+            }
+        });
+    }
+
+    animateJourneySequence(updateCallback) {
+        const countries = [
+            "Kenya", "Uganda", "Tanzania", "Zambia", "Malawi",
+            "Mozambique", "South Africa", "Nigeria", "Benin Republic",
+            "Togo", "Cameroon"
+        ];
+
+        // Optionally auto-play sequence or just start with Kenya
+        this.updateToCountry('Kenya', updateCallback);
+    }
+
+    updateToCountry(countryName, updateCallback) {
+        if (this.activeCountry === countryName) return;
+
+        this.previousCountry = this.activeCountry;
+        this.activeCountry = countryName;
+
+        updateCallback(countryName);
+        this.updateSVGCountryStates(countryName);
+
+        if (this.previousCountry) {
+            this.drawImpactPath(this.previousCountry, this.activeCountry);
+        }
+    }
+
+    drawImpactPath(fromCountry, toCountry) {
+        const svg = document.getElementById('africa-map');
+        if (!svg) return;
+
+        const fromEl = this.getCountryElement(fromCountry);
+        const toEl = this.getCountryElement(toCountry);
+
+        if (!fromEl || !toEl) return;
+
+        const fromPoint = this.getElementCenter(fromEl, svg);
+        const toPoint = this.getElementCenter(toEl, svg);
+
+        // Remove old links and markers
+        svg.querySelectorAll('.impact-link, .impact-traveler').forEach(el => el.remove());
+
+        // Create new path - using elliptical arc with fixed sweep
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        const dx = toPoint.x - fromPoint.x;
+        const dy = toPoint.y - fromPoint.y;
+        const dr = Math.sqrt(dx * dx + dy * dy) * 1.2;
+
+        const pathData = `M${fromPoint.x},${fromPoint.y}A${dr},${dr} 0 0,1 ${toPoint.x},${toPoint.y}`;
+        path.setAttribute('d', pathData);
+        path.setAttribute('class', 'impact-link');
+        path.setAttribute('stroke', this.careerData[toCountry].color);
+        path.id = 'impactPath';
+
+        svg.appendChild(path);
+
+        // Add traveling marker (Airplane-like icon)
+        const traveler = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        traveler.setAttribute('class', 'impact-traveler');
+
+        // Use createElementNS for traveler parts to ensure visibility
+        const airplaneIcon = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        airplaneIcon.setAttribute('d', 'M-10,-6 L12,0 L-10,6 L-5,0 Z');
+        airplaneIcon.setAttribute('fill', this.careerData[toCountry].color);
+        airplaneIcon.setAttribute('stroke', 'white');
+        airplaneIcon.setAttribute('stroke-width', '1.5');
+        traveler.appendChild(airplaneIcon);
+
+        const animateMotion = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
+        animateMotion.setAttribute('dur', '2s');
+        animateMotion.setAttribute('repeatCount', 'infinite');
+        animateMotion.setAttribute('path', pathData);
+        animateMotion.setAttribute('rotate', 'auto');
+
+        traveler.appendChild(animateMotion);
+        svg.appendChild(traveler);
+
+        // Add impact pulse at the destination
+        setTimeout(() => {
+            this.createImpactPulse(toPoint.x, toPoint.y, this.careerData[toCountry].color, svg);
+        }, 1500);
+    }
+
+    getElementCenter(el, svg) {
+        const bbox = el.getBBox();
+        return {
+            x: bbox.x + bbox.width / 2,
+            y: bbox.y + bbox.height / 2
+        };
+    }
+
+    getCountryElement(countryName) {
+        return document.querySelector(`svg path[id*="${countryName}" i]`) ||
+            document.querySelector(`svg [data-country*="${countryName}" i]`);
+    }
+
+    createImpactPulse(x, y, color, svg) {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', x);
+        circle.setAttribute('cy', y);
+        circle.setAttribute('r', '10');
+        circle.setAttribute('class', 'impact-pulse');
+        circle.setAttribute('fill', color);
+
+        svg.appendChild(circle);
+        setTimeout(() => circle.remove(), 2000);
     }
 
     setupSVGCountryHandlers(updateCallback) {
@@ -273,9 +383,7 @@ class CareerMap {
 
             console.log(`🖱️ SVG Country clicked: ${country}`);
 
-            updateCallback(country);
-
-            this.updateSVGCountryStates(country);
+            this.updateToCountry(country, updateCallback);
 
             element.style.transform = 'scale(1.05)';
             setTimeout(() => {
@@ -332,7 +440,12 @@ class CareerMap {
     updateSVGCountryStates(activeCountry) {
         document.querySelectorAll('svg path[id]').forEach(element => {
             element.classList.remove('active-country');
-            element.style.fill = '#D3D3D3';
+            const country = this.extractCountryName(element);
+            if (country && this.careerData[country]) {
+                element.style.fill = '#cbd5e1'; // Impacted base color
+            } else {
+                element.style.fill = '#D3D3D3'; // Default grey
+            }
             element.style.filter = 'none';
             element.style.opacity = '1';
         });
@@ -485,155 +598,20 @@ class CareerMap {
         const style = document.createElement('style');
         style.id = 'svg-career-map-styles';
         style.textContent = `
-            /* Career card styles */
-            #career-card {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                border-radius: 16px;
-                box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25);
-                padding: 32px;
-                margin: 24px auto;
-                max-width: 600px;
-                opacity: 0;
-                transform: translateY(20px);
-                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            #career-card[style*="block"], #career-card[style*="opacity: 1"] {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-            }
-
-            #career-card.updating {
-                pointer-events: none;
-            }
-
-            .card-header {
-                display: flex;
-                align-items: center;
-                gap: 24px;
-                margin-bottom: 28px;
-                padding-bottom: 20px;
-                border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-            }
-
-            .card-title-section h2 {
-                margin: 0 0 8px 0;
-                font-size: 2rem;
-                font-weight: 700;
-                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-
-            .card-title-section p {
-                margin: 0;
-                opacity: 0.9;
-                font-size: 1.1rem;
-            }
-
-            .duration {
-                background: rgba(255, 255, 255, 0.2);
-                padding: 10px 18px;
-                border-radius: 25px;
-                font-weight: 600;
-                font-size: 0.95rem;
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                white-space: nowrap;
-            }
-
-            .card-content h3 {
-                font-size: 1.4rem;
-                margin-bottom: 16px;
-                color: rgba(255, 255, 255, 0.95);
-                font-weight: 600;
-            }
-
-            .card-content p {
-                font-size: 1.05rem;
-                line-height: 1.7;
-                color: rgba(255, 255, 255, 0.9);
-                margin: 0;
-            }
-
-            .country-flag {
-                flex-shrink: 0;
-            }
-
-            /* SVG Country Styles */
+            /* SVG Interactive Styles */
             svg [data-country-handler] {
                 cursor: pointer !important;
                 transition: all 0.3s ease !important;
             }
 
             svg [data-country-handler]:hover {
-                opacity: 0.8 !important;
-                filter: brightness(1.1) !important;
-                transform: scale(1.02) !important;
+                filter: brightness(1.1) saturate(1.2) !important;
             }
 
             svg [data-country-handler].active-country {
-                filter: brightness(1.2) saturate(1.3) !important;
-                opacity: 1 !important;
+                filter: brightness(1.2) saturate(1.4) !important;
                 stroke: #fff !important;
-                stroke-width: 2 !important;
-            }
-
-            /* Responsive Design */
-            @media (max-width: 768px) {
-                #career-card {
-                    margin: 16px;
-                    padding: 24px;
-                }
-                
-                .card-header {
-                    flex-direction: column;
-                    text-align: center;
-                    gap: 16px;
-                }
-                
-                .card-title-section h2 {
-                    font-size: 1.6rem;
-                }
-                
-                .duration {
-                    padding: 8px 16px;
-                    font-size: 0.9rem;
-                }
-            }
-
-            /* Loading Animation */
-            #career-card.updating::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-                animation: shimmer 1.5s infinite;
-                border-radius: 16px;
-                pointer-events: none;
-            }
-
-            @keyframes shimmer {
-                0% { transform: translateX(-100%); }
-                100% { transform: translateX(100%); }
-            }
-
-            /* Debug Helper */
-            .debug-info {
-                position: fixed;
-                bottom: 10px;
-                right: 10px;
-                background: rgba(0, 0, 0, 0.8);
-                color: white;
-                padding: 8px 12px;
-                border-radius: 4px;
-                font-size: 0.8rem;
-                z-index: 10000;
-                display: none;
+                stroke-width: 3 !important;
             }
         `;
 
@@ -657,8 +635,7 @@ class CareerMap {
             marker.addEventListener('click', (e) => {
                 e.preventDefault();
                 console.log(`📍 Marker clicked: ${country}`);
-                updateCallback(country);
-                this.updateSVGCountryStates(country);
+                this.updateToCountry(country, updateCallback);
 
                 if (window.innerWidth < 768) {
                     const section = document.getElementById('impact-journey');
