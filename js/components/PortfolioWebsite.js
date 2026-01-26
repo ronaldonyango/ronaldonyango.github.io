@@ -4,39 +4,38 @@ import NavigationHighlight from './features/NavigationHighlight.js';
 import HeroEffects from './features/HeroEffects.js';
 import ProjectCards from './features/ProjectCards.js';
 import SkillConstellations from './features/SkillConstellations.js';
+import ProjectCaseStudies from './features/ProjectCaseStudies.js';
 import CareerMap from './features/CareerMap.js';
 import MobileMenu from './features/MobileMenu.js';
 import Analytics from './features/Analytics.js';
-import LoadingAnimation from './features/LoadingAnimation.js';
+import ThemeSwitcher from './features/ThemeSwitcher.js';
 import { throttle, debounce } from './utilities/ThrottleDebounce.js';
 
 class PortfolioWebsite {
     constructor() {
         this.observers = new Map();
-        this.init();
-    }
-
-    init() {
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.initializeFeatures());
-        } else {
-            this.initializeFeatures();
-        }
+        this.initializeFeatures();
     }
 
     initializeFeatures() {
         const utils = { throttle, debounce };
 
+        // 1. Foundation & Layout
         new SmoothScrolling();
         new ScrollAnimations(this.observers);
         new NavigationHighlight(utils);
+        new MobileMenu(utils);
+        new ThemeSwitcher();
+
+        // 2. Interactive Components
         new HeroEffects(utils);
         new ProjectCards();
+        new ProjectCaseStudies();
         new SkillConstellations();
         new CareerMap();
-        new MobileMenu(utils);
+
+        // 3. Analytics
         new Analytics();
-        new LoadingAnimation();
     }
 
     destroy() {

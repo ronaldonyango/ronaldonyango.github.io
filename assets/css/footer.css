@@ -1,32 +1,22 @@
 /* Optimized Footer Section - Minimal */
-:root {
-    /* Re-using variables from the hero section for consistency */
-    --primary-color: #3b82f6;
-    --footer-background: #11111d; /* Slightly darker than hero for contrast */
-    --text-light: #e0e0e0;
-    --text-lighter: #f0f0f0;
 
-    /* Social Brand Colors */
-    --linkedin-color: #0A66C2;
-    --github-color: #181717;
-    --kaggle-color: #20BEFF;
-    --medium-color: #000000;
-    --email-color: #D44638;
-}
 
 .footer {
     background: var(--footer-background);
     color: var(--text-light);
     text-align: center;
-    padding: 2.5rem 0 1.5rem; /* Reduced padding for a more compact look */
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle top border */
+    padding: 2.5rem 0 1.5rem;
+    /* Reduced padding for a more compact look */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle top border */
 }
 
 .footer .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
-    display: flex; /* Flexbox for centering */
+    display: flex;
+    /* Flexbox for centering */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -35,9 +25,12 @@
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1.25rem; /* Spacing between icons */
-    margin-bottom: 1rem; /* Space between social links and copyright */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 1.25rem;
+    /* Spacing between icons */
+    margin-bottom: 1rem;
+    /* Space between social links and copyright */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
 }
 
 .social-links a {
@@ -86,27 +79,38 @@
 }
 
 .footer p.copyright-text {
-    font-size: 0.9rem; /* Slightly smaller for minimalism */
-    opacity: 0.6; /* More subdued */
+    font-size: 0.9rem;
+    /* Slightly smaller for minimalism */
+    opacity: 0.6;
+    /* More subdued */
     line-height: 1.5;
-    margin-top: 0; /* No extra margin, directly follows social links */
-    animation: fadeIn 1.5s ease-out forwards; /* Keep fade-in animation */
+    margin-top: 0;
+    /* No extra margin, directly follows social links */
+    animation: fadeIn 1.5s ease-out forwards;
+    /* Keep fade-in animation */
 }
 
 /* Define fadeIn if not already globally available */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .footer {
-        padding: 2rem 0 1rem; /* Even more compact on mobile */
+        padding: 2rem 0 1rem;
+        /* Even more compact on mobile */
     }
 
     .social-links {
-        gap: 0.8rem; /* Tighter gap on mobile */
+        gap: 0.8rem;
+        /* Tighter gap on mobile */
         margin-bottom: 0.75rem;
     }
 

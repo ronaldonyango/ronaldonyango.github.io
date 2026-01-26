@@ -1,99 +1,121 @@
 <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Projects</h2>
-                <p>Strategic initiatives and personal projects driving meaningful impact</p>
+<section id="projects" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Featured Projects</h2>
+            <p>Strategic initiatives and personal projects driving meaningful impact</p>
+        </div>
+
+        <div class="content-grid">
+            <!-- Project 1 -->
+            <div class="project-card animate-on-scroll"
+                data-star-s="Mental health awareness is a critical global issue, but raw data is often overwhelming and underutilized."
+                data-star-t="Conduct a comprehensive EDA on global suicide rates (1985-2016) to identify vulnerable demographics and socio-economic correlations."
+                data-star-a="Wrangled 27k+ rows of data using Python/Pandas. Engineered features for GDP per capita and age groups. Built interactive visualizations with Seaborn and Matplotlib."
+                data-star-r="Identified a strong correlation between economic stability and suicide rates. Findings used to advocate for targeted mental health resources.">
+                <div class="project-image">
+                    <img src="assets/images/Map_of_countries_by_suicide_rate,_WHO_(2019).svg" alt="Suicide Rates EDA">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Suicide Rates EDA and Visualization</h3>
+                    <p class="project-description">
+                        Comprehensive exploratory data analysis of global mental health trends spanning three decades,
+                        uncovering critical socio-economic correlations.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Pandas</span>
+                        <span class="project-tag">EDA</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="project-btn open-case-study">Deep Dive (STAR)</button>
+                        <a href="https://github.com/ronaldonyango/suicide-rates-eda/blob/main/suicide-rates-eda.ipynb"
+                            class="project-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            
-            <div class="content-grid">
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                       <img src="assets/images/Map_of_countries_by_suicide_rate,_WHO_(2019).svg" alt="Suicide Rates EDA">
+
+            <!-- Project 2 -->
+            <div class="project-card animate-on-scroll"
+                data-star-s="The Unilever-MESH partnership lacked real-time visibility into last-mile delivery performance across diverse geographic regions."
+                data-star-t="Design and implement a centralized dashboard to track project performance and delivery efficiency."
+                data-star-a="Analyzed sales and operational data. Identified key bottlenecks. Built a real-time dashboard that segmented performance by region and agent."
+                data-star-r="Identified strategies that led to a 35% boost in sales growth and improved delivery SLA adherence by 20%.">
+                <div class="project-image">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Product Analytics Dashboard</h3>
+                    <p class="project-description">
+                        Custom BI solution for Unilever/MESH partnership, providing real-time operational visibility and
+                        driving significant sales growth.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Power BI</span>
+                        <span class="project-tag">Analytics</span>
+                        <span class="project-tag">GTM</span>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Suicide Rates EDA and Visualization</h3>
-                        <p class="project-description">
-                            Conducted an in-depth exploratory analysis of global suicide rates from 1985 to 2016. Highlighted trends across age, gender, country, and economic indicators to provide insights into mental health patterns. Utilized Python, Pandas, and Seaborn for data wrangling and storytelling.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Data Analysis</span>
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Mental Health</span>
-                            <span class="project-tag">Visualization</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/ronaldonyango/suicide-rates-eda/blob/main/suicide-rates-eda.ipynb" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                View Project
-                            </a>
-                            <a href="https://github.com/ronaldonyango/suicide-rates-eda/blob/main/suicide-rates-eda.ipynb" class="project-link">
-                                <i class="fab fa-github"></i>
-                                Code
-                            </a>
-                        </div>
-                    </div>
+                    <div class="project-links">
+                        <button class="project-btn open-case-study">Deep Dive (STAR)</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                        <i class="fas fa-chart-line"></i>
-                        <!--
-                        <img src="project2-image.jpg" alt="Analytics Dashboard">
-                        -->
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Product Analytics Dashboard</h3>
-                        <p class="project-description">
-                            Built comprehensive analytics dashboard for Unilever and MESH project, providing real-time insights into the project performance and last mile delivery.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Data Visualization</span>
-                            <span class="project-tag">Product Analytics</span>
-                            <span class="project-tag">Business Intelligence</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                View Dashboard
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-chart-bar"></i>
-                                Analytics
-                            </a>
-                        </div>
-                    </div>
+            <!-- Project 3 -->
+            <div class="project-card animate-on-scroll"
+                data-star-s="Sun King needed to scale operations quickly into three new African markets but faced regional logistical and adoption challenges."
+                data-star-t="Lead the GTM strategy to ensure smooth launches and high user adoption."
+                data-star-a="Coordinated cross-functional teams. Developed structured issue resolution frameworks. Standardized product onboarding documentation."
+                data-star-r="Successfully launched in all 3 markets with 95% test success rate and high user satisfaction scores (NPS).">
+                <div class="project-image">
+                    <i class="fas fa-rocket"></i>
                 </div>
-
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                        <i class="fas fa-rocket"></i>
-                        <!-- 
-                        <img src="project3-image.jpg" alt="Go-to-Market Strategy">
-                        -->
+                <div class="project-content">
+                    <h3 class="project-title">Multi-Market GTM Strategy</h3>
+                    <p class="project-description">
+                        Strategic expansion lead for 3 new African markets, focusing on operational standardization and
+                        rapid adoption scaling.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">GTM</span>
+                        <span class="project-tag">Strategy</span>
+                        <span class="project-tag">Launch</span>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Multi-Market GTM Strategy</h3>
-                        <p class="project-description">
-                            Designed and executed go-to-market strategies for product expansion into 3 new African markets, resulting in accelerated user adoption and satisfaction.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Market Expansion</span>
-                            <span class="project-tag">Strategic Planning</span>
-                            <span class="project-tag">Cross-functional Leadership</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                Case Study
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-presentation"></i>
-                                Presentation
-                            </a>
-                        </div>
+                    <div class="project-links">
+                        <button class="project-btn open-case-study">Deep Dive (STAR)</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h2 id="modal-title">Project Title</h2>
+                <div class="star-container">
+                    <div class="star-item">
+                        <div class="star-letter">S</div>
+                        <div class="star-text"><strong>Situation:</strong> <span id="star-s"></span></div>
+                    </div>
+                    <div class="star-item">
+                        <div class="star-letter">T</div>
+                        <div class="star-text"><strong>Task:</strong> <span id="star-t"></span></div>
+                    </div>
+                    <div class="star-item">
+                        <div class="star-letter">A</div>
+                        <div class="star-text"><strong>Action:</strong> <span id="star-a"></span></div>
+                    </div>
+                    <div class="star-item">
+                        <div class="star-letter">R</div>
+                        <div class="star-text"><strong>Result:</strong> <span id="star-r"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -26,45 +26,95 @@
     gap: 1rem;
 }
 
+.experience-company-logo-placeholder {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e2e8f0;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    color: #64748b;
+}
+
+/* Experience Institution Themes */
+.experience-card-sunking {
+    border-left-color: #f59e0b;
+}
+
+.experience-card-sunking .card-subtitle {
+    color: #f59e0b;
+}
+
+.experience-card-sunking:hover {
+    box-shadow: 0 12px 35px rgba(245, 158, 11, 0.15);
+}
+
+.experience-card-ama {
+    border-left-color: #0ea5e9;
+}
+
+.experience-card-ama .card-subtitle {
+    color: #0ea5e9;
+}
+
+.experience-card-ama:hover {
+    box-shadow: 0 12px 35px rgba(14, 165, 233, 0.15);
+}
+
+.experience-card-mesh {
+    border-left-color: #3b82f6;
+}
+
+.experience-card-mesh .card-subtitle {
+    color: #3b82f6;
+}
+
+.experience-card-mesh:hover {
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.15);
+}
+
 .card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 0.3rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 0.2rem;
 }
 
 .card-subtitle {
     font-size: 1rem;
-    color: #3b82f6;
     font-weight: 600;
 }
 
 .career-duration {
-    background: linear-gradient(45deg, #1e3a8a, #3b82f6);
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    white-space: nowrap;
+    background: #f1f5f9;
+    color: #64748b;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .card-description {
-    color: #666;
+    color: #475569;
     line-height: 1.7;
     font-size: 0.95rem;
 }
 
 .card-description ul {
-    margin-left: 1rem;
-    margin-top: 0.8rem;
+    margin-left: 1.2rem;
+    margin-top: 1rem;
 }
 
 .card-description li {
-    margin-bottom: 0.4rem;
-    position: relative;
+    margin-bottom: 0.6rem;
 }
 
-.card-description li::marker {
-    color: #3b82f6;
+@media (max-width: 600px) {
+    .header-logo-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
 }

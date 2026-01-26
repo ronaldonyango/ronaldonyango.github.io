@@ -1,24 +1,4 @@
-:root {
-    --primary-color: #3b82f6;
-    --accent-color: #f6ad55;
-    --text-color-dark: #333;
-    --text-color-light: #666;
-    --text-color-subtle: #999;
-    --background-light: #f9fafb;
-    --card-background: white;
-    --shadow-light: rgba(0, 0, 0, 0.05);
-    --shadow-medium: rgba(0, 0, 0, 0.1);
-    --shadow-hover: rgba(59, 130, 246, 0.15);
-    --border-radius-base: 12px;
-    --spacing-unit: 1rem;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color-light);
-    background-color: var(--background-light);
-}
+/* Education Section Styles */
 
 .section {
     padding: calc(var(--spacing-unit) * 4) 0;
@@ -54,24 +34,25 @@ body {
 
 .education-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: calc(var(--spacing-unit) * 2);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .education-card {
-    background: var(--card-background);
-    padding: calc(var(--spacing-unit) * 1.8);
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 6px 18px var(--shadow-light);
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
     border-left: 5px solid var(--primary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .education-card::before {
@@ -134,11 +115,12 @@ body {
 }
 
 @keyframes sparkle {
-    0% { 
+    0% {
         opacity: 0.7;
         transform: scale(1);
     }
-    100% { 
+
+    100% {
         opacity: 1;
         transform: scale(1.1);
     }
@@ -154,25 +136,76 @@ body {
 }
 
 .education-icon {
-    font-size: 3rem;
-    color: var(--primary-color);
+    width: 60px;
+    height: 60px;
     margin-bottom: var(--spacing-unit);
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 2;
+    background: transparent;
+    /* Ensure transparent background */
 }
 
-.education-card:hover .education-icon {
-    animation: bounceIcon 0.6s ease-in-out;
+.institution-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* Removed padding and background to ensure transparency */
 }
 
-@keyframes bounceIcon {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
+/* Institution Specific Themes */
+.education-card-ku {
+    border-left-color: #800000;
+}
+
+.education-card-ku .education-subtitle {
+    color: #800000;
+}
+
+.education-card-ku:hover {
+    border-color: #FFD700;
+    box-shadow: 0 15px 40px rgba(128, 0, 0, 0.15);
+}
+
+.education-card-fcc {
+    border-left-color: #0a0a23;
+}
+
+.education-card-fcc .education-subtitle {
+    color: #0a0a23;
+}
+
+.education-card-fcc:hover {
+    border-color: #006400;
+    box-shadow: 0 15px 40px rgba(10, 10, 35, 0.15);
+}
+
+.education-card-google {
+    border-left-color: #4285F4;
+}
+
+.education-card-google .education-subtitle {
+    color: #4285F4;
+}
+
+.education-card-google:hover {
+    border-color: #EA4335;
+    box-shadow: 0 15px 40px rgba(66, 133, 244, 0.15);
+}
+
+.education-card-ps {
+    border-left-color: #ff3f5f;
+}
+
+.education-card-ps .education-subtitle {
+    color: #ff3f5f;
+}
+
+.education-card-ps:hover {
+    border-color: #333;
+    box-shadow: 0 15px 40px rgba(255, 63, 95, 0.15);
 }
 
 .education-title {
