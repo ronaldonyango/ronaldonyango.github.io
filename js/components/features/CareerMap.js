@@ -5,7 +5,7 @@ class CareerMap {
                 capital: "Nairobi",
                 duration: "2018-Present",
                 role: "Senior Product Operations | Co-Founder & Board Chair",
-                achievements: "Co-founded Amazing Minds Africa mental health initiative impacting 200,000+ youths with 17% reduction in campus suicide rates. Led successful launch of MESH networking platform growing user base to 150K+ microentrepreneurs.",
+                achievements: "In Kenya, I played a key role in strengthening operational efficiency and customer experience by supporting core product rollouts, resolving high-impact support issues, and collaborating closely with cross-functional teams. I contributed to improved adoption of internal tools and processes, helped stabilize escalations, and ensured consistent service delivery across regions, supporting Kenya’s position as a benchmark market within Sun King.",
                 flagImage: "https://flagsapi.com/KE/flat/64.png",
                 color: "#FF6B6B"
             },
