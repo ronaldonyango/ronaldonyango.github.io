@@ -1,22 +1,39 @@
-/* assets/css/dashboard.css */
+
 .dashboard-section {
     background: var(--bg-secondary);
-    padding: var(--section-spacing) 0;
+    padding: 2.5rem 0; 
     position: relative;
     z-index: 1;
+    min-height: calc(100vh - var(--header-height)); 
+    display: flex;
+    align-items: center;
+}
+
+.compact-title {
+    margin-bottom: 2rem !important; 
+}
+
+.compact-title h2 {
+    font-size: 1.8rem !important; 
+    margin-bottom: 0.5rem !important;
+}
+
+.compact-title p {
+    font-size: 0.9rem !important;
+    max-width: 500px;
 }
 
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr) 1fr;
-    gap: 1.5rem;
-    margin-top: 3rem;
+    gap: 1rem; 
+    margin-top: 0;
 }
 
 .dashboard-card {
     background: #ffffff;
-    border-radius: 24px;
-    padding: 2rem;
+    border-radius: 20px;
+    padding: 1.5rem;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -32,7 +49,7 @@
 }
 
 .main-impact {
-    min-height: 320px;
+    min-height: 260px;
     background: linear-gradient(145deg, #ffffff 0%, #f1f5f9 100%);
 }
 
@@ -48,47 +65,47 @@
 }
 
 .impact-header {
-    margin-bottom: 1.5rem;
-    position: relative;
-    z-index: 1;
-}
-
-.impact-icon {
-    font-size: 2rem;
-    color: #3b82f6;
-    background: rgba(59, 130, 246, 0.1);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 16px;
-}
-
-.impact-value {
-    font-size: 4rem;
-    font-weight: 800;
-    line-height: 1;
-    color: #1e293b;
-    margin-bottom: 0.5rem;
-    position: relative;
-    z-index: 1;
-}
-
-.impact-label {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #334155;
     margin-bottom: 1rem;
     position: relative;
     z-index: 1;
 }
 
+.impact-icon {
+    font-size: 1.5rem;
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.impact-value {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #1e293b;
+    margin-bottom: 0.3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.impact-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 1;
+}
+
 .impact-context {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #64748b;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
     position: relative;
     z-index: 1;
 }
@@ -114,11 +131,11 @@
 .dashboard-stats-grid {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .secondary-impact {
-    padding: 1.5rem;
+    padding: 1.25rem;
 }
 
 .impact-item {
@@ -127,14 +144,14 @@
 }
 
 .impact-number {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: #1e293b;
     margin-bottom: 0.2rem;
 }
 
 .impact-desc {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #64748b;
     font-weight: 600;
     margin-bottom: 0.8rem;
@@ -155,29 +172,76 @@
     transition: width 1.5s ease-out;
 }
 
+/* Viewport-specific optimizations */
+@media (max-height: 800px) {
+    .dashboard-section {
+        padding: 1.5rem 0;
+    }
+    
+    .main-impact.compact-card {
+        min-height: 220px;
+    }
+    
+    .impact-value {
+        font-size: 2.5rem;
+    }
+    
+    .impact-label {
+        font-size: 1rem;
+    }
+}
+
+/* Keep existing responsive styles but adjust for compact version */
 @media (max-width: 1024px) {
     .dashboard-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 0.875rem;
     }
-
+    
     .dashboard-stats-grid {
         grid-column: span 2;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
+        gap: 0.875rem;
     }
 }
 
 @media (max-width: 768px) {
     .dashboard-grid {
         grid-template-columns: 1fr;
+        gap: 0.75rem;
     }
-
+    
     .dashboard-stats-grid {
         grid-column: span 1;
         grid-template-columns: 1fr;
     }
-
+    
     .impact-value {
-        font-size: 3rem;
+        font-size: 2.5rem; /* Slightly larger for mobile */
+    }
+    
+    .dashboard-section {
+        padding: 1.5rem 0;
+        min-height: auto; /* Remove min-height on mobile */
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .compact-title h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .compact-title p {
+        font-size: 0.8rem !important;
+    }
+    
+    .dashboard-card {
+        padding: 1.25rem;
+    }
+    
+    .main-impact.compact-card {
+        min-height: 200px;
     }
 }
