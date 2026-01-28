@@ -10,6 +10,7 @@ import MobileMenu from './features/MobileMenu.js';
 import Analytics from './features/Analytics.js';
 import ThemeSwitcher from './features/ThemeSwitcher.js';
 import { throttle, debounce } from './utilities/ThrottleDebounce.js';
+import ExperienceTabs from './ComponentsTabs.js';
 
 class PortfolioWebsite {
     constructor() {
@@ -36,6 +37,8 @@ class PortfolioWebsite {
 
         // 3. Analytics
         new Analytics();
+        // 4. Experience Tabs
+        new ExperienceTabs();
     }
 
     destroy() {

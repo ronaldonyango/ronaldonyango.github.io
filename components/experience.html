@@ -1,94 +1,254 @@
-<!-- Experience Section -->
-<section id="experience" class="section">
+<!-- Experience Section - Optimized -->
+<section id="experience" class="section experience-section">
     <div class="container">
-        <div class="section-title">
-            <h2>Professional Experience</h2>
-            <p>Driving growth and innovation across multiple markets</p>
+        <!-- Background Effects -->
+        <div class="background" aria-hidden="true">
+            <div class="cursor"></div>
+            <div class="shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
         </div>
 
-        <div class="content-grid">
-            <div class="card experience-card-sunking animate-on-scroll">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Senior Product Operations Associate</div>
-                        <div class="card-subtitle">Sun King</div>
-                    </div>
-                    <div class="career-duration">April 2025 - Present</div>
+        <div class="journey-section">
+            <!-- Section Header -->
+            <header class="section-title creative-title">
+                <h2>Professional Journey</h2>
+                <p>Experience & Impact Timeline</p>
+                <div class="title-decoration" aria-hidden="true">
+                    <div class="decoration-line"></div>
+                    <div class="decoration-dot"></div>
+                    <div class="decoration-line"></div>
                 </div>
-                <div class="card-description">
-                    <ul>
-                        <li>Lead go-to-market (GTM) strategy and execution across new and existing markets to drive high
-                            adoption rates</li>
-                        <li>Coordinate across sales, operations, product and engineering teams to maintain alignment and
-                            execute strategic initiatives</li>
-                        <li>Develop and maintain structured issue resolution frameworks ensuring timely handling of
-                            critical product concerns</li>
-                        <li>Ensure product quality through comprehensive testing while gathering actionable field
-                            insights</li>
-                    </ul>
-                </div>
+            </header>
+
+            <!-- Filters -->
+            <div class="year-filters" role="tablist" aria-label="Filter experience by category">
+                <button class="filter active" data-year="all" role="tab" aria-selected="true" aria-controls="all-experience">
+                    <span class="filter-dot" aria-hidden="true"></span>
+                    All Experience
+                </button>
+                <button class="filter" data-year="leadership" role="tab" aria-selected="false" aria-controls="leadership-experience">
+                    <span class="filter-dot" aria-hidden="true"></span>
+                    Leadership
+                </button>
+                <button class="filter" data-year="product" role="tab" aria-selected="false" aria-controls="product-experience">
+                    <span class="filter-dot" aria-hidden="true"></span>
+                    Product Ops
+                </button>
             </div>
 
-            <div class="card experience-card-sunking animate-on-scroll">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Product Operations Associate</div>
-                        <div class="card-subtitle">Sun King</div>
-                    </div>
-                    <div class="career-duration">June 2024 - March 2025</div>
+            <!-- Journey Timeline -->
+            <div class="journey-container" role="list" aria-label="Professional experience timeline">
+                <!-- Timeline Line -->
+                <div class="timeline-line" aria-hidden="true">
+                    <div class="line-progress"></div>
                 </div>
-                <div class="card-description">
-                    <ul>
-                        <li>Streamlined product development process creating comprehensive documentation, boosting team
-                            efficiency by 25%</li>
-                        <li>Successfully led launch of new products, features, and automations in multiple countries
-                        </li>
-                        <li>Conducted end-to-end testing (app, database, API) achieving 95% success rate</li>
-                        <li>Achieved 90% adherence rate to SLA timelines while resolving technical issues</li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="card experience-card-ama animate-on-scroll">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Board Chairperson | Co-Founder</div>
-                        <div class="card-subtitle">Amazing Minds Africa</div>
+                <!-- Sun King (Current) -->
+                <article class="journey-item current sunking" data-year="2024" data-category="product" role="listitem">
+                    <div class="item-marker" aria-hidden="true">
+                        <div class="marker-pulse"></div>
+                        <div class="marker-core"></div>
+                        <div class="current-badge">
+                            <span class="pulse-dot" aria-hidden="true"></span>
+                            Current
+                        </div>
                     </div>
-                    <div class="career-duration">April 2021 - Present</div>
-                </div>
-                <div class="card-description">
-                    <ul>
-                        <li>Conceptualized and implemented mental health therapy program contributing to 17% reduction
-                            in campus suicide rate</li>
-                        <li>Developed comprehensive mental health toolkit equipping over 1,000 students with resources
-                        </li>
-                        <li>Partnered with organizations impacting 200,000+ youths through targeted outreach initiatives
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                    <div class="item-card">
+                        <header class="card-header">
+                            <div class="company-icon sunking-icon" aria-hidden="true">
+                                <span>SK</span>
+                            </div>
+                            <div class="company-info">
+                                <h3>Sun King</h3>
+                                <div class="company-year">
+                                    <time datetime="2024-06">Jun 2024</time> - Present
+                                </div>
+                            </div>
+                            <span class="category-tag current-tag">Current Role</span>
+                        </header>
+                        
+                        <!-- Role Tabs -->
+                        <div class="role-tabs" role="tablist" aria-label="Select role to view details">
+                            <button class="role-tab" data-role="associate" role="tab" aria-selected="false" aria-controls="associate-content">
+                                <span class="tab-indicator" aria-hidden="true"></span>
+                                Associate Role
+                            </button>
+                            <button class="role-tab active" data-role="senior" role="tab" aria-selected="true" aria-controls="senior-content">
+                                <span class="tab-indicator" aria-hidden="true"></span>
+                                Senior Role
+                            </button>
+                        </div>
 
-            <div class="card experience-card-mesh animate-on-scroll">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Product Operations Specialist</div>
-                        <div class="card-subtitle">MESH</div>
+                        <div class="card-content">
+                            <!-- Associate Role -->
+                            <div id="associate-content" class="role-content" data-role="associate" role="tabpanel" aria-labelledby="associate-tab" hidden>
+                                <h4>Product Operations Associate</h4>
+                                <div class="role-period">
+                                    <time datetime="2024-06">June 2024</time> - <time datetime="2025-03">March 2025</time>
+                                </div>
+                                <div class="experience-impact">
+                                    <div class="experience-details">
+                                        <p>Streamlined product operations and drove process improvements across teams.</p>
+                                        <ul>
+                                            <li>Streamlined product development processes</li>
+                                            <li>Led product launches in multiple countries</li>
+                                            <li>Conducted comprehensive end-to-end testing</li>
+                                            <li>Managed technical issue resolution frameworks</li>
+                                        </ul>
+                                    </div>
+                                    <div class="impact-highlights" aria-label="Key achievements">
+                                        <div class="impact-stat">
+                                            <div class="stat-value" aria-label="25 percent">25%</div>
+                                            <div class="stat-label">Team Efficiency</div>
+                                        </div>
+                                        <div class="impact-stat">
+                                            <div class="stat-value" aria-label="95 percent">95%</div>
+                                            <div class="stat-label">Test Success Rate</div>
+                                        </div>
+                                        <div class="impact-stat">
+                                            <div class="stat-value" aria-label="90 percent">90%</div>
+                                            <div class="stat-label">SLA Adherence</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Senior Associate -->
+                            <div id="senior-content" class="role-content active" data-role="senior" role="tabpanel" aria-labelledby="senior-tab">
+                                <h4>Senior Product Operations Associate</h4>
+                                <div class="role-period">
+                                    <time datetime="2025-04">April 2025</time> - Present
+                                </div>
+                                <div class="experience-impact">
+                                    <div class="experience-details">
+                                        <p>Leading strategic initiatives and market expansion through operational excellence.</p>
+                                        <ul>
+                                            <li>Lead go-to-market strategy across markets</li>
+                                            <li>Coordinate cross-functional team alignment</li>
+                                            <li>Develop issue resolution frameworks</li>
+                                            <li>Ensure product quality and gather insights</li>
+                                        </ul>
+                                    </div>
+                                    <div class="impact-highlights" aria-label="Key achievements">
+                                        <div class="impact-stat">
+                                            <div class="stat-value" aria-label="Go to market strategy">GTM</div>
+                                            <div class="stat-label">Strategy lead</div>
+                                        </div>
+                                        <div class="impact-stat">
+                                            <div class="stat-value" aria-label="Multiple markets">Multi</div>
+                                            <div class="stat-label">Market focus</div>
+                                        </div>
+                                        <div class="impact-stat">
+                                            <div class="stat-value" aria-label="Team coordination">Team</div>
+                                            <div class="stat-label">Coordination</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="career-duration">November 2021 - May 2024</div>
-                </div>
-                <div class="card-description">
-                    <ul>
-                        <li>Contributed to successful launch of MESH networking platform growing user base to over 150K
-                        </li>
-                        <li>Conducted sales analysis for Unilever partnership identifying strategies to boost sales by
-                            35%</li>
-                        <li>Analyzed data to derive insights leading to 40% increase in reach through targeted
-                            optimizations</li>
-                        <li>Led usability tests and user research gathering key customer insights for product refinement
-                        </li>
-                    </ul>
-                </div>
+                </article>
+
+                <!-- MESH -->
+                <article class="journey-item mesh" data-year="2021" data-category="product" role="listitem">
+                    <div class="item-marker" aria-hidden="true">
+                        <div class="marker-pulse"></div>
+                        <div class="marker-core"></div>
+                    </div>
+                    <div class="item-card">
+                        <header class="card-header">
+                            <div class="company-icon mesh-icon" aria-hidden="true">
+                                <span>ME</span>
+                            </div>
+                            <div class="company-info">
+                                <h3>MESH</h3>
+                                <div class="company-year">
+                                    <time datetime="2021">2021</time> - <time datetime="2024">2024</time>
+                                </div>
+                            </div>
+                            <span class="category-tag">Product Ops</span>
+                        </header>
+                        <div class="card-content">
+                            <h4>Product Operations Specialist</h4>
+                            <div class="experience-impact">
+                                <div class="experience-details">
+                                    <p>Scaled networking platform operations and drove data-driven optimizations.</p>
+                                    <ul>
+                                        <li>Contributed to platform launch and user growth strategy</li>
+                                        <li>Conducted partnership sales analysis and optimizations</li>
+                                        <li>Led user research and usability testing initiatives</li>
+                                    </ul>
+                                </div>
+                                <div class="impact-highlights" aria-label="Key achievements">
+                                    <div class="impact-stat">
+                                        <div class="stat-value" aria-label="Over 150,000">150K+</div>
+                                        <div class="stat-label">Platform users</div>
+                                    </div>
+                                    <div class="impact-stat">
+                                        <div class="stat-value" aria-label="35 percent">35%</div>
+                                        <div class="stat-label">Sales growth</div>
+                                    </div>
+                                    <div class="impact-stat">
+                                        <div class="stat-value" aria-label="40 percent">40%</div>
+                                        <div class="stat-label">Reach increase</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Amazing Minds Africa -->
+                <article class="journey-item ama" data-year="2021" data-category="leadership" role="listitem">
+                    <div class="item-marker" aria-hidden="true">
+                        <div class="marker-pulse"></div>
+                        <div class="marker-core"></div>
+                    </div>
+                    <div class="item-card">
+                        <header class="card-header">
+                            <div class="company-icon ama-icon" aria-hidden="true">
+                                <span>AM</span>
+                            </div>
+                            <div class="company-info">
+                                <h3>Amazing Minds Africa</h3>
+                                <div class="company-year">
+                                    <time datetime="2021">2021</time> - Present
+                                </div>
+                            </div>
+                            <span class="category-tag">Leadership</span>
+                        </header>
+                        <div class="card-content">
+                            <h4>Board Chairperson & Co-Founder</h4>
+                            <div class="experience-impact">
+                                <div class="experience-details">
+                                    <p>Driving mental health initiatives and social impact programs across educational institutions.</p>
+                                    <ul>
+                                        <li>Conceptualized mental health therapy program implementation</li>
+                                        <li>Developed comprehensive mental health toolkit</li>
+                                        <li>Established strategic partnerships for youth outreach</li>
+                                    </ul>
+                                </div>
+                                <div class="impact-highlights" aria-label="Key achievements">
+                                    <div class="impact-stat">
+                                        <div class="stat-value" aria-label="17 percent">17%</div>
+                                        <div class="stat-label">Suicide rate reduction</div>
+                                    </div>
+                                    <div class="impact-stat">
+                                        <div class="stat-value" aria-label="Over 1000">1K+</div>
+                                        <div class="stat-label">Students equipped</div>
+                                    </div>
+                                    <div class="impact-stat">
+                                        <div class="stat-value" aria-label="Over 200,000">200K+</div>
+                                        <div class="stat-label">Youths impacted</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </div>

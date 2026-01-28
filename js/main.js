@@ -1,10 +1,6 @@
 import ComponentLoader from './components/ComponentLoader.js';
 import PortfolioWebsite from './components/PortfolioWebsite.js';
 
-/**
- * Main Application Controller
- * Orchestrates the sequence from DOM ready to component load to feature initialization.
- */
 class AppController {
     constructor() {
         this.loader = new ComponentLoader();

@@ -1,118 +1,177 @@
 <!-- Projects Section -->
-<section id="projects" class="section">
+<section id="projects" class="section projects-section">
     <div class="container">
-        <div class="section-title">
+        <!-- Section Header -->
+        <header class="section-title">
             <h2>Featured Projects</h2>
             <p>Strategic initiatives and personal projects driving meaningful impact</p>
-        </div>
+        </header>
 
-        <div class="content-grid">
-            <!-- Project 1 -->
-            <div class="project-card animate-on-scroll"
+        <!-- Projects Grid -->
+        <div class="content-grid projects-grid" role="list" aria-label="Featured projects">
+            
+            <!-- Project 1: Suicide Rates EDA -->
+            <article class="project-card animate-on-scroll" 
+                role="listitem"
                 data-star-s="Mental health awareness is a critical global issue, but raw data is often overwhelming and underutilized."
                 data-star-t="Conduct a comprehensive EDA on global suicide rates (1985-2016) to identify vulnerable demographics and socio-economic correlations."
                 data-star-a="Wrangled 27k+ rows of data using Python/Pandas. Engineered features for GDP per capita and age groups. Built interactive visualizations with Seaborn and Matplotlib."
                 data-star-r="Identified a strong correlation between economic stability and suicide rates. Findings used to advocate for targeted mental health resources.">
+                
                 <div class="project-image">
-                    <img src="assets/images/Map_of_countries_by_suicide_rate,_WHO_(2019).svg" alt="Suicide Rates EDA">
+                    <img src="assets/images/Map_of_countries_by_suicide_rate,_WHO_(2019).svg" 
+                         alt="World map showing global suicide rates by country" 
+                         loading="lazy">
                 </div>
+                
                 <div class="project-content">
                     <h3 class="project-title">Suicide Rates EDA and Visualization</h3>
                     <p class="project-description">
                         Comprehensive exploratory data analysis of global mental health trends spanning three decades,
                         uncovering critical socio-economic correlations.
                     </p>
-                    <div class="project-tags">
+                    
+                    <div class="project-tags" aria-label="Technologies used">
                         <span class="project-tag">Python</span>
                         <span class="project-tag">Pandas</span>
                         <span class="project-tag">EDA</span>
+                        <span class="project-tag">Seaborn</span>
+                        <span class="project-tag">Matplotlib</span>
                     </div>
+                    
                     <div class="project-links">
-                        <button class="project-btn open-case-study">Deep Dive (STAR)</button>
+                        <button class="project-btn open-case-study" 
+                                aria-label="View case study for Suicide Rates EDA project">
+                            <span>Deep Dive</span>
+                        </button>
                         <a href="https://github.com/ronaldonyango/suicide-rates-eda/blob/main/suicide-rates-eda.ipynb"
-                            class="project-link" target="_blank">
-                            <i class="fab fa-github"></i>
+                           class="project-link" 
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="View source code on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span class="sr-only">GitHub</span>
                         </a>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Project 2 -->
-            <div class="project-card animate-on-scroll"
+            <!-- Project 2: Product Analytics Dashboard -->
+            <article class="project-card animate-on-scroll" 
+                role="listitem"
                 data-star-s="The Unilever-MESH partnership lacked real-time visibility into last-mile delivery performance across diverse geographic regions."
                 data-star-t="Design and implement a centralized dashboard to track project performance and delivery efficiency."
                 data-star-a="Analyzed sales and operational data. Identified key bottlenecks. Built a real-time dashboard that segmented performance by region and agent."
                 data-star-r="Identified strategies that led to a 35% boost in sales growth and improved delivery SLA adherence by 20%.">
-                <div class="project-image">
-                    <i class="fas fa-chart-line"></i>
+                
+                <div class="project-image project-image-icon">
+                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    <span class="sr-only">Analytics Dashboard Icon</span>
                 </div>
+                
                 <div class="project-content">
                     <h3 class="project-title">Product Analytics Dashboard</h3>
                     <p class="project-description">
                         Custom BI solution for Unilever/MESH partnership, providing real-time operational visibility and
                         driving significant sales growth.
                     </p>
-                    <div class="project-tags">
+                    
+                    <div class="project-tags" aria-label="Technologies used">
                         <span class="project-tag">Power BI</span>
                         <span class="project-tag">Analytics</span>
                         <span class="project-tag">GTM</span>
+                        <span class="project-tag">BI</span>
                     </div>
+                    
                     <div class="project-links">
-                        <button class="project-btn open-case-study">Deep Dive (STAR)</button>
+                        <button class="project-btn open-case-study" 
+                                aria-label="View case study for Product Analytics Dashboard project">
+                            <span>Deep Dive</span>
+                        </button>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Project 3 -->
-            <div class="project-card animate-on-scroll"
-                data-star-s="Sun King needed to scale operations quickly into three new African markets but faced regional logistical and adoption challenges."
+            <!-- Project 3: Multi-Market GTM Strategy -->
+            <article class="project-card animate-on-scroll" 
+                role="listitem"
+                data-star-s="Sun King needed to scale a software product quickly into 2 new and 10 existing markets but faced regional adoption challenges."
                 data-star-t="Lead the GTM strategy to ensure smooth launches and high user adoption."
                 data-star-a="Coordinated cross-functional teams. Developed structured issue resolution frameworks. Standardized product onboarding documentation."
-                data-star-r="Successfully launched in all 3 markets with 95% test success rate and high user satisfaction scores (NPS).">
-                <div class="project-image">
-                    <i class="fas fa-rocket"></i>
+                data-star-r="Successfully launched in all 12 markets with 95% test success rate and high user satisfaction.">
+                
+                <div class="project-image project-image-icon">
+                    <i class="fas fa-rocket" aria-hidden="true"></i>
+                    <span class="sr-only">Rocket Launch Icon</span>
                 </div>
+                
                 <div class="project-content">
                     <h3 class="project-title">Multi-Market GTM Strategy</h3>
                     <p class="project-description">
-                        Strategic expansion lead for 3 new African markets, focusing on operational standardization and
+                        Strategic expansion lead for 12 markets, focusing on operational standardization and
                         rapid adoption scaling.
                     </p>
-                    <div class="project-tags">
+                    
+                    <div class="project-tags" aria-label="Technologies used">
                         <span class="project-tag">GTM</span>
                         <span class="project-tag">Strategy</span>
                         <span class="project-tag">Launch</span>
+                        <span class="project-tag">Operations</span>
                     </div>
+                    
                     <div class="project-links">
-                        <button class="project-btn open-case-study">Deep Dive (STAR)</button>
+                        <button class="project-btn open-case-study" 
+                                aria-label="View case study for Multi-Market GTM Strategy project">
+                            <span>Deep Dive</span>
+                        </button>
                     </div>
                 </div>
-            </div>
+            </article>
         </div>
     </div>
 
     <!-- Project Modal -->
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
+    <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-overlay" aria-hidden="true"></div>
+        <div class="modal-content" role="document">
+            <button class="close-modal" aria-label="Close modal">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            
             <div class="modal-body">
                 <h2 id="modal-title">Project Title</h2>
+                
                 <div class="star-container">
                     <div class="star-item">
-                        <div class="star-letter">S</div>
-                        <div class="star-text"><strong>Situation:</strong> <span id="star-s"></span></div>
+                        <div class="star-letter" aria-hidden="true">S</div>
+                        <div class="star-text">
+                            <strong>Situation</strong> 
+                            <span id="star-s"></span>
+                        </div>
                     </div>
+                    
                     <div class="star-item">
-                        <div class="star-letter">T</div>
-                        <div class="star-text"><strong>Task:</strong> <span id="star-t"></span></div>
+                        <div class="star-letter" aria-hidden="true">T</div>
+                        <div class="star-text">
+                            <strong>Task</strong> 
+                            <span id="star-t"></span>
+                        </div>
                     </div>
+                    
                     <div class="star-item">
-                        <div class="star-letter">A</div>
-                        <div class="star-text"><strong>Action:</strong> <span id="star-a"></span></div>
+                        <div class="star-letter" aria-hidden="true">A</div>
+                        <div class="star-text">
+                            <strong>Action</strong> 
+                            <span id="star-a"></span>
+                        </div>
                     </div>
+                    
                     <div class="star-item">
-                        <div class="star-letter">R</div>
-                        <div class="star-text"><strong>Result:</strong> <span id="star-r"></span></div>
+                        <div class="star-letter" aria-hidden="true">R</div>
+                        <div class="star-text">
+                            <strong>Result</strong> 
+                            <span id="star-r"></span>
+                        </div>
                     </div>
                 </div>
             </div>
