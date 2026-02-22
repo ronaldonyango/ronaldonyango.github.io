@@ -37,10 +37,27 @@ class ProjectCaseStudies {
         const r = card.getAttribute('data-star-r');
 
         document.getElementById('modal-title').textContent = title;
-        document.getElementById('star-s').textContent = s;
-        document.getElementById('star-t').textContent = t;
-        document.getElementById('star-a').textContent = a;
-        document.getElementById('star-r').textContent = r;
+        const modalBody = document.querySelector('.modal-body');
+
+        // Remove existing content if any (except title)
+        const existingContent = modalBody.querySelector('.project-narrative');
+        if (existingContent) existingContent.remove();
+
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'project-narrative';
+
+        contentDiv.innerHTML = `
+            <p class="narrative-lead">${s}</p>
+            <p class="narrative-block"><strong>The Objective:</strong> ${t}</p>
+            <p class="narrative-block"><strong>Strategic Approach:</strong> ${a}</p>
+            <div class="narrative-result">
+                <span>Outcome</span>
+                <p>${r}</p>
+            </div>
+        `;
+
+        document.getElementById('modal-title').textContent = title;
+        modalBody.appendChild(contentDiv);
 
         this.modal.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Prevent scroll

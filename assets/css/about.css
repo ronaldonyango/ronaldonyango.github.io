@@ -218,3 +218,96 @@
         font-size: 1rem;
     }
 }
+
+/* ===================================
+   INTERACTIVE ELEMENTS
+   =================================== */
+
+/* Interactive Text with Tooltips */
+.interactive-text {
+    position: relative;
+    cursor: help;
+    color: var(--text-main);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.interactive-text:hover {
+    color: var(--accent);
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 4px;
+    padding: 0 2px;
+    margin: 0 -2px;
+}
+
+/* Tooltip Styling */
+.interactive-text::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px) scale(0.9);
+    background: var(--text-main);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+    z-index: 100;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+}
+
+/* Tooltip Arrow */
+.interactive-text::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    border: 6px solid transparent;
+    border-top-color: var(--text-main);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+    z-index: 100;
+    margin-bottom: -12px;
+}
+
+.interactive-text:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-12px) scale(1);
+}
+
+.interactive-text:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-12px);
+}
+
+/* Improved Highlight Animation */
+.highlight {
+    background: linear-gradient(120deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 30%;
+    background-position: 0 90%;
+    transition: background-size 0.3s ease;
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+.highlight:hover {
+    background-size: 100% 100%;
+    color: var(--accent);
+}
