@@ -9,14 +9,17 @@
 .map-container {
     flex: 1.4;
     min-width: 350px;
-    background: rgba(15, 23, 42, 0.05);
-    border-radius: 32px;
-    padding: 30px;
+    background: rgba(15, 23, 42, 0.04);
+    border-radius: 28px;
+    padding: 24px;
     box-shadow: var(--shadow);
     backdrop-filter: blur(12px);
     border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
+    background-image:
+        radial-gradient(circle at 15% 85%, rgba(59, 130, 246, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(96, 165, 250, 0.04) 0%, transparent 40%);
 }
 
 .card-container {
@@ -28,9 +31,9 @@
 
 #career-card {
     background: var(--card-bg);
-    border-radius: 32px;
-    padding: 45px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-radius: 24px;
+    padding: 28px 32px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-color);
     width: 100%;
@@ -38,13 +41,12 @@
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     opacity: 0;
     transform: translateX(30px);
     position: relative;
     z-index: 10;
     overflow: hidden;
-    /* Ensure accent bar respects border radius */
 }
 
 #career-card.active {
@@ -67,8 +69,8 @@
 .card-header {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -81,30 +83,31 @@
 }
 
 .card-title {
-    font-size: 2.2rem;
+    font-size: 1.7rem;
     font-weight: 800;
     color: var(--text-main);
     letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 .card-body {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 .card-section {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 .card-section h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
+    font-size: 0.72rem;
+    margin-bottom: 5px;
     color: var(--text-main);
     display: flex;
     align-items: center;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    opacity: 0.8;
+    letter-spacing: 0.06em;
+    opacity: 0.6;
 }
 
 .card-section h3 i {
@@ -114,10 +117,22 @@
 }
 
 .card-section p {
-    line-height: 1.6;
+    line-height: 1.5;
     color: var(--text-muted);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 500;
+}
+
+#duration {
+    display: inline-block;
+    color: #ffffff !important;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .journey-path-container {

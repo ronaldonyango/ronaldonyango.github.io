@@ -3,101 +3,102 @@ class CareerMap {
         this.careerData = {
             "Kenya": {
                 capital: "Nairobi",
-                duration: "2018-Present",
+                duration: "2018–Present",
                 role: "Senior Product Operations | Co-Founder & Board Chair",
-                achievements: "In Kenya, I played a key role in strengthening operational efficiency and customer experience by supporting core product rollouts, resolving high-impact support issues, and collaborating closely with cross-functional teams. I contributed to improved adoption of internal tools and processes, helped stabilize escalations, and ensured consistent service delivery across regions, supporting Kenya’s position as a benchmark market within Sun King.",
+                achievements: "Strengthened operational efficiency across Sun King's benchmark market — driving core product rollouts, resolving high-impact escalations, and improving cross-functional adoption.",
                 flagImage: "https://flagsapi.com/KE/flat/64.png",
                 color: "#FF6B6B"
             },
             "Uganda": {
                 capital: "Kampala",
-                duration: "2023-Present",
+                duration: "2023–Present",
                 role: "Senior Product Operations",
-                achievements: "Expanding MESH community and optimizing product-market fit. Streamlining operations for local market nuances and merchant engagement while driving cross-border integration.",
+                achievements: "Expanded MESH community reach and optimised product-market fit by streamlining operations for local market nuances and driving merchant engagement.",
                 flagImage: "https://flagsapi.com/UG/flat/64.png",
                 color: "#F9D423"
             },
             "Tanzania": {
                 capital: "Dodoma",
-                duration: "2024-Present",
+                duration: "2024–Present",
                 role: "Senior Product Operations",
-                achievements: "Led smooth product launch and market entry strategy for expansion. Implemented structured issue resolution frameworks ensuring 90% SLA adherence. Conducted comprehensive market analysis.",
+                achievements: "Led smooth market entry — implemented structured issue resolution frameworks achieving 90% SLA adherence and conducted comprehensive market analysis.",
                 flagImage: "https://flagsapi.com/TZ/flat/64.png",
                 color: "#4ECDC4"
             },
             "Malawi": {
                 capital: "Lilongwe",
-                duration: "2024-Present",
+                duration: "2024–Present",
                 role: "Strategic Advisor",
-                achievements: "Strategic advisory on product expansion and community impact initiatives. Leveraging data to drive user engagement in emerging tech corridors and supporting local entrepreneurship ecosystems.",
+                achievements: "Provided strategic advisory on product expansion, leveraging data to drive user engagement in emerging tech corridors.",
                 flagImage: "https://flagsapi.com/MW/flat/64.png",
                 color: "#E1306C"
             },
             "Nigeria": {
                 capital: "Abuja",
-                duration: "2023-Present",
+                duration: "2023–Present",
                 role: "Senior Product Operations",
-                achievements: "Spearheading product operations for high-growth markets. Implemented robust analytics framework to monitor real-time growth and merchant success in the West African hub.",
+                achievements: "Spearheaded product operations for high-growth West African markets, implementing a real-time analytics framework to monitor merchant success.",
                 flagImage: "https://flagsapi.com/NG/flat/64.png",
                 color: "#008751"
             },
             "South Africa": {
                 capital: "Cape Town",
-                duration: "2023-Present",
+                duration: "2023–Present",
                 role: "Senior Product Operations",
-                achievements: "Driving operational excellence and scalability for product ecosystems. Focused on cross-border logistics and merchant payment solutions to enhance regional trade efficiency.",
+                achievements: "Drove operational excellence across product ecosystems with a focus on cross-border logistics and merchant payment solutions.",
                 flagImage: "https://flagsapi.com/ZA/flat/64.png",
                 color: "#007A33"
             },
             "Togo": {
                 capital: "Lomé",
-                duration: "2024-Present",
+                duration: "2024–Present",
                 role: "Senior Product Operations",
-                achievements: "Market entry strategy and regulatory compliance. Building foundational networks for product adoption in the Francophone West African region with focus on sustainable growth.",
+                achievements: "Executed market entry strategy and regulatory compliance — building foundational networks for product adoption in Francophone West Africa.",
                 flagImage: "https://flagsapi.com/TG/flat/64.png",
                 color: "#FFCE00"
             },
             "Cameroon": {
                 capital: "Yaoundé",
-                duration: "2024-Present",
+                duration: "2024–Present",
                 role: "Product Operations Lead",
-                achievements: "Executing product roadmaps and localizing user experiences. Bridging the gap between technology and traditional trade systems to foster digital transformation.",
+                achievements: "Executed product roadmaps and localised user experiences, bridging technology and traditional trade systems to foster digital transformation.",
                 flagImage: "https://flagsapi.com/CM/flat/64.png",
                 color: "#007A5E"
             },
             "Benin Republic": {
                 capital: "Porto-Novo",
-                duration: "2024-Present",
+                duration: "2024–Present",
                 role: "Senior Product Operations",
-                achievements: "Leading go-to-market strategy and execution in Benin Republic. Driving high adoption rates through data-driven decision making and strategic market analysis.",
+                achievements: "Led go-to-market strategy and execution — driving high adoption rates through data-driven decisions and strategic market analysis.",
                 flagImage: "https://flagsapi.com/BJ/flat/64.png",
                 color: "#FCD116"
             },
             "Myanmar": {
                 capital: "Naypyidaw",
-                duration: "2023-Present",
+                duration: "2023–Present",
                 role: "Global Product Initiatives",
-                achievements: "Leading global product initiatives and remote operations. Driving social impact through technology in complex, high-stakes environments and facilitating cross-cultural collaboration.",
+                achievements: "Led global product initiatives and remote operations, driving social impact through technology in complex, high-stakes environments.",
                 flagImage: "https://flagsapi.com/MM/flat/64.png",
                 color: "#FECB00"
             },
             "Zambia": {
                 capital: "Lusaka",
-                duration: "2024-Present",
+                duration: "2024–Present",
                 role: "Senior Product Operations",
-                achievements: "Successfully launched and expanded our product within 7 months. Coordinated cross-functional teams to execute strategic initiatives and reduced support queries.",
+                achievements: "Launched and expanded operations within 7 months — coordinating cross-functional teams and significantly reducing support query volumes.",
                 flagImage: "https://flagsapi.com/ZM/flat/64.png",
                 color: "#198A00"
             },
             "Mozambique": {
                 capital: "Maputo",
-                duration: "2024-Present",
+                duration: "2024–Present",
                 role: "Strategic Planning",
-                achievements: "Strategic planning for market penetration and community development. Enhancing product accessibility for diverse linguistic and demographic groups in the SADC region.",
+                achievements: "Planned market penetration strategy, enhancing product accessibility across diverse linguistic and demographic groups in the SADC region.",
                 flagImage: "https://flagsapi.com/MZ/flat/64.png",
                 color: "#D21034"
             }
         };
+
 
         this.activeCountry = null;
         this.previousCountry = null;
@@ -548,6 +549,13 @@ class CareerMap {
         if (elements.duration) {
             elements.duration.textContent = data.duration;
             elements.duration.style.background = data.color;
+            elements.duration.style.color = '#ffffff';
+            elements.duration.style.padding = '4px 12px';
+            elements.duration.style.borderRadius = '20px';
+            elements.duration.style.fontSize = '0.85rem';
+            elements.duration.style.fontWeight = '700';
+            elements.duration.style.display = 'inline-block';
+            elements.duration.style.letterSpacing = '0.03em';
         }
 
         if (elements.role) {

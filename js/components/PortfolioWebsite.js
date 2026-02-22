@@ -9,6 +9,7 @@ import CareerMap from './features/CareerMap.js';
 import MobileMenu from './features/MobileMenu.js';
 import Analytics from './features/Analytics.js';
 import ThemeSwitcher from './features/ThemeSwitcher.js';
+import AboutSection from './features/AboutSection.js';
 import { throttle, debounce } from './utilities/ThrottleDebounce.js';
 import ExperienceTabs from './ComponentsTabs.js';
 
@@ -34,6 +35,7 @@ class PortfolioWebsite {
         new ProjectCaseStudies();
         new SkillConstellations();
         new CareerMap();
+        new AboutSection();
 
         // 3. Analytics
         new Analytics();
