@@ -34,16 +34,19 @@
 }
 
 .social-links a {
-    color: var(--text-lighter);
-    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.4rem;
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-    padding: 0.8rem;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.08);
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.1);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Specific Social Link Hover Colors */

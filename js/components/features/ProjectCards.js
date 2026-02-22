@@ -215,33 +215,17 @@ export default class ProjectCards {
                         <h2 id="modal-title">${projectTitle}</h2>
                         ${tags ? `<div class="modal-tag-row">${tags.split(', ').map(t => `<span class="modal-tag">${t}</span>`).join('')}</div>` : ''}
                     </div>
-                    <div class="star-steps">
-                        <div class="star-step star-step-s">
-                            <div class="step-badge"><span>S</span></div>
-                            <div class="step-body">
-                                <div class="step-label">Situation</div>
-                                <p>${starData.s}</p>
+                    <div class="project-summary-content">
+                        <div class="summary-block">
+                            <i class="fas fa-bullseye summary-icon"></i>
+                            <div class="summary-text">
+                                <strong>Challenge:</strong> ${starData.s} ${starData.t}
                             </div>
                         </div>
-                        <div class="star-step star-step-t">
-                            <div class="step-badge"><span>T</span></div>
-                            <div class="step-body">
-                                <div class="step-label">Task</div>
-                                <p>${starData.t}</p>
-                            </div>
-                        </div>
-                        <div class="star-step star-step-a">
-                            <div class="step-badge"><span>A</span></div>
-                            <div class="step-body">
-                                <div class="step-label">Action</div>
-                                <p>${starData.a}</p>
-                            </div>
-                        </div>
-                        <div class="star-step star-step-r highlight-result">
-                            <div class="step-badge"><span>R</span></div>
-                            <div class="step-body">
-                                <div class="step-label">Result</div>
-                                <p>${starData.r}</p>
+                        <div class="summary-block highlight-result">
+                            <i class="fas fa-trophy summary-icon"></i>
+                            <div class="summary-text">
+                                <strong>Impact:</strong> ${starData.a} ${starData.r}
                             </div>
                         </div>
                     </div>
