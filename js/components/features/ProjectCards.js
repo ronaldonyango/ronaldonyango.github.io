@@ -10,7 +10,7 @@ export default class ProjectCards {
             activeProject: null,
             observer: null
         };
-        
+
         this.init();
     }
 
@@ -19,14 +19,14 @@ export default class ProjectCards {
      */
     init() {
         if (this.state.isInitialized) return;
-        
+
         try {
             this.cacheElements();
             this.setupScrollAnimations();
             this.setupHoverEffects();
             this.setupModal();
             this.setupAccessibility();
-            
+
             this.state.isInitialized = true;
         } catch (error) {
             console.error('Failed to initialize ProjectCards:', error);
@@ -42,23 +42,23 @@ export default class ProjectCards {
         if (!this.section) {
             throw new Error('Projects section not found');
         }
-        
+
         // Project cards
         this.projectCards = this.section.querySelectorAll('.project-card');
-        
+
         // Modal elements
         this.modal = document.getElementById('project-modal');
         this.modalContent = this.modal?.querySelector('.modal-content');
         this.modalOverlay = this.modal?.querySelector('.modal-overlay');
         this.closeModalBtn = this.modal?.querySelector('.close-modal');
-        
+
         // Modal content elements
         this.modalTitle = document.getElementById('modal-title');
         this.starS = document.getElementById('star-s');
         this.starT = document.getElementById('star-t');
         this.starA = document.getElementById('star-a');
         this.starR = document.getElementById('star-r');
-        
+
         // Buttons
         this.caseStudyButtons = this.section.querySelectorAll('.open-case-study');
     }
@@ -76,13 +76,13 @@ export default class ProjectCards {
             });
             return;
         }
-        
+
         // Intersection Observer for scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
         };
-        
+
         this.state.observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
@@ -90,13 +90,13 @@ export default class ProjectCards {
                     setTimeout(() => {
                         entry.target.classList.add('is-visible');
                     }, index * 150);
-                    
+
                     // Unobserve after animation
                     this.state.observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
-        
+
         // Observe all project cards
         this.projectCards.forEach(card => {
             this.state.observer.observe(card);
@@ -110,13 +110,13 @@ export default class ProjectCards {
         // Check for reduced motion preference
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (prefersReducedMotion) return;
-        
+
         this.projectCards.forEach(card => {
             // Mouse enter - enhance existing CSS hover
             card.addEventListener('mouseenter', () => {
                 this.handleCardHover(card, true);
             }, { passive: true });
-            
+
             // Mouse leave
             card.addEventListener('mouseleave', () => {
                 this.handleCardHover(card, false);
@@ -130,7 +130,7 @@ export default class ProjectCards {
     handleCardHover(card, isHovering) {
         const image = card.querySelector('.project-image img, .project-image i');
         if (!image) return;
-        
+
         if (isHovering) {
             // Slight rotation for icon-based images
             if (image.tagName === 'I') {
@@ -151,7 +151,7 @@ export default class ProjectCards {
             console.warn('Modal element not found');
             return;
         }
-        
+
         // Open modal buttons
         this.caseStudyButtons.forEach(button => {
             button.addEventListener('click', (e) => {
@@ -160,7 +160,7 @@ export default class ProjectCards {
                 this.openModal(card);
             });
         });
-        
+
         // Close modal button
         if (this.closeModalBtn) {
             this.closeModalBtn.addEventListener('click', (e) => {
@@ -168,21 +168,21 @@ export default class ProjectCards {
                 this.closeModal();
             });
         }
-        
+
         // Close on overlay click
         if (this.modalOverlay) {
             this.modalOverlay.addEventListener('click', () => {
                 this.closeModal();
             });
         }
-        
+
         // Close on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && this.modal && !this.modal.hasAttribute('hidden')) {
                 this.closeModal();
             }
         });
-        
+
         // Prevent modal content clicks from closing modal
         if (this.modalContent) {
             this.modalContent.addEventListener('click', (e) => {
@@ -196,80 +196,103 @@ export default class ProjectCards {
      */
     openModal(card) {
         if (!card || !this.modal) return;
-        
+
         try {
-            // Get STAR data from card attributes
             const projectTitle = card.querySelector('.project-title')?.textContent || 'Project';
+            const tags = [...card.querySelectorAll('.project-tag')].map(t => t.textContent).join(', ');
             const starData = {
                 s: card.dataset.starS || '',
                 t: card.dataset.starT || '',
                 a: card.dataset.starA || '',
                 r: card.dataset.starR || ''
             };
-            
-            // Populate modal
-            if (this.modalTitle) this.modalTitle.textContent = projectTitle;
-            if (this.starS) this.starS.textContent = starData.s;
-            if (this.starT) this.starT.textContent = starData.t;
-            if (this.starA) this.starA.textContent = starData.a;
-            if (this.starR) this.starR.textContent = starData.r;
-            
+
+            // Build rich modal HTML
+            const modalBody = this.modal.querySelector('.modal-body');
+            if (modalBody) {
+                modalBody.innerHTML = `
+                    <div class="modal-project-header">
+                        <h2 id="modal-title">${projectTitle}</h2>
+                        ${tags ? `<div class="modal-tag-row">${tags.split(', ').map(t => `<span class="modal-tag">${t}</span>`).join('')}</div>` : ''}
+                    </div>
+                    <div class="star-steps">
+                        <div class="star-step star-step-s">
+                            <div class="step-badge"><span>S</span></div>
+                            <div class="step-body">
+                                <div class="step-label">Situation</div>
+                                <p>${starData.s}</p>
+                            </div>
+                        </div>
+                        <div class="star-step star-step-t">
+                            <div class="step-badge"><span>T</span></div>
+                            <div class="step-body">
+                                <div class="step-label">Task</div>
+                                <p>${starData.t}</p>
+                            </div>
+                        </div>
+                        <div class="star-step star-step-a">
+                            <div class="step-badge"><span>A</span></div>
+                            <div class="step-body">
+                                <div class="step-label">Action</div>
+                                <p>${starData.a}</p>
+                            </div>
+                        </div>
+                        <div class="star-step star-step-r highlight-result">
+                            <div class="step-badge"><span>R</span></div>
+                            <div class="step-body">
+                                <div class="step-label">Result</div>
+                                <p>${starData.r}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
             // Show modal
             this.modal.removeAttribute('hidden');
             this.modal.classList.add('active');
-            
-            // Trap focus in modal
             this.trapFocus(this.modal);
-            
-            // Prevent body scroll
             document.body.style.overflow = 'hidden';
-            
-            // Store active project
             this.state.activeProject = card;
-            
-            // Announce to screen readers
             this.announce(`Opened case study for ${projectTitle}`);
-            
-            // Focus on close button
-            setTimeout(() => {
-                this.closeModalBtn?.focus();
-            }, 100);
-            
+            setTimeout(() => { this.closeModalBtn?.focus(); }, 100);
+
         } catch (error) {
             console.error('Error opening modal:', error);
         }
     }
+
 
     /**
      * Close modal
      */
     closeModal() {
         if (!this.modal) return;
-        
+
         try {
             // Hide modal
             this.modal.classList.remove('active');
-            
+
             // Wait for animation to complete
             setTimeout(() => {
                 this.modal.setAttribute('hidden', '');
             }, 300);
-            
+
             // Restore body scroll
             document.body.style.overflow = '';
-            
+
             // Return focus to triggering element
             if (this.state.activeProject) {
                 const button = this.state.activeProject.querySelector('.open-case-study');
                 button?.focus();
             }
-            
+
             // Clear active project
             this.state.activeProject = null;
-            
+
             // Announce to screen readers
             this.announce('Closed case study modal');
-            
+
         } catch (error) {
             console.error('Error closing modal:', error);
         }
@@ -282,13 +305,13 @@ export default class ProjectCards {
         const focusableElements = element.querySelectorAll(
             'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
         );
-        
+
         const firstFocusable = focusableElements[0];
         const lastFocusable = focusableElements[focusableElements.length - 1];
-        
+
         const handleTabKey = (e) => {
             if (e.key !== 'Tab') return;
-            
+
             if (e.shiftKey) {
                 // Shift + Tab
                 if (document.activeElement === firstFocusable) {
@@ -303,7 +326,7 @@ export default class ProjectCards {
                 }
             }
         };
-        
+
         element.addEventListener('keydown', handleTabKey);
     }
 
@@ -313,10 +336,10 @@ export default class ProjectCards {
     setupAccessibility() {
         // Add skip link if needed
         this.addSkipLink();
-        
+
         // Setup live region for announcements
         this.setupLiveRegion();
-        
+
         // Ensure keyboard navigation
         this.ensureKeyboardAccessibility();
     }
@@ -327,7 +350,7 @@ export default class ProjectCards {
      */
     setupLiveRegion() {
         let liveRegion = this.section.querySelector('[aria-live]');
-        
+
         if (!liveRegion) {
             liveRegion = document.createElement('div');
             liveRegion.setAttribute('aria-live', 'polite');
@@ -335,7 +358,7 @@ export default class ProjectCards {
             liveRegion.className = 'sr-only';
             this.section.appendChild(liveRegion);
         }
-        
+
         this.liveRegion = liveRegion;
     }
 
@@ -344,9 +367,9 @@ export default class ProjectCards {
      */
     announce(message) {
         if (!this.liveRegion) return;
-        
+
         this.liveRegion.textContent = message;
-        
+
         // Clear after announcement
         setTimeout(() => {
             this.liveRegion.textContent = '';
@@ -359,7 +382,7 @@ export default class ProjectCards {
     ensureKeyboardAccessibility() {
         // Make sure all interactive elements are keyboard accessible
         const interactiveElements = this.section.querySelectorAll('.open-case-study');
-        
+
         interactiveElements.forEach(element => {
             if (element.tagName !== 'BUTTON' && element.tagName !== 'A') {
                 if (!element.hasAttribute('tabindex')) {
@@ -380,15 +403,15 @@ export default class ProjectCards {
         if (this.state.observer) {
             this.state.observer.disconnect();
         }
-        
+
         // Remove event listeners
         // (In production, you'd store references to bound functions and remove them)
-        
+
         // Close modal if open
         if (this.modal && !this.modal.hasAttribute('hidden')) {
             this.closeModal();
         }
-        
+
         this.state.isInitialized = false;
     }
 }

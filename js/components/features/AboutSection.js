@@ -1,7 +1,9 @@
 /**
  * AboutSection.js
- * Handles tab navigation, animated stat counters, and fun-fact flip cards
- * for the interactive About Me section.
+ * Handles:
+ *  - "Read more" expand/collapse toggle
+ *  - Quick-facts accordion (click to reveal detail)
+ *  - Animated stat counters (IntersectionObserver)
  */
 class AboutSection {
     constructor() {
@@ -9,89 +11,102 @@ class AboutSection {
     }
 
     init() {
-        this.setupTabs();
-        this.setupFlipCards();
+        this.setupExpandToggle();
+        this.setupFactAccordion();
         this.setupStatCounters();
     }
 
-    /* ---- Tab Switching ---- */
-    setupTabs() {
-        const tabs = document.querySelectorAll('.about-tab');
-        if (!tabs.length) return;
+    /* ---- Read More / Collapse ---- */
+    setupExpandToggle() {
+        const toggle = document.querySelector('.expand-toggle');
+        if (!toggle) return;
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const target = tab.dataset.tab;
+        const contentId = toggle.getAttribute('aria-controls');
+        const content = document.getElementById(contentId);
+        if (!content) return;
 
-                // Update tab buttons
-                tabs.forEach(t => {
-                    t.classList.remove('active');
-                    t.setAttribute('aria-selected', 'false');
-                });
-                tab.classList.add('active');
-                tab.setAttribute('aria-selected', 'true');
+        toggle.addEventListener('click', () => {
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', String(!expanded));
+            const label = toggle.querySelector('.expand-label');
 
-                // Update panels
-                document.querySelectorAll('.about-tab-content').forEach(panel => {
-                    panel.classList.remove('active');
-                });
-                const panel = document.querySelector(`.about-tab-content[data-content="${target}"]`);
-                if (panel) panel.classList.add('active');
-            });
+            if (expanded) {
+                // Collapse
+                content.setAttribute('hidden', '');
+                if (label) label.textContent = 'Read more about me';
+            } else {
+                // Expand
+                content.removeAttribute('hidden');
+                if (label) label.textContent = 'Show less';
+            }
         });
     }
 
-    /* ---- 3D Flip Cards (click toggle for touch devices) ---- */
-    setupFlipCards() {
-        const cards = document.querySelectorAll('.fact-card');
-        if (!cards.length) return;
+    /* ---- Quick Facts Accordion ---- */
+    setupFactAccordion() {
+        const factButtons = document.querySelectorAll('.fact-item');
+        if (!factButtons.length) return;
 
-        cards.forEach(card => {
-            card.addEventListener('click', () => {
-                card.classList.toggle('flipped');
+        factButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const factKey = btn.dataset.fact;
+                const detail = document.getElementById(`fact-${factKey}`);
+                if (!detail) return;
+
+                const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+                // Close all others
+                factButtons.forEach(b => {
+                    b.setAttribute('aria-expanded', 'false');
+                    const key = b.dataset.fact;
+                    const d = document.getElementById(`fact-${key}`);
+                    if (d) d.setAttribute('hidden', '');
+                });
+
+                if (!isExpanded) {
+                    btn.setAttribute('aria-expanded', 'true');
+                    detail.removeAttribute('hidden');
+                }
             });
         });
     }
 
     /* ---- Animated Stat Counters ---- */
     setupStatCounters() {
-        const statNumbers = document.querySelectorAll('.stat-number[data-target]');
-        if (!statNumbers.length) return;
+        const statsSection = document.querySelector('#about .stats');
+        if (!statsSection) return;
 
-        // Fire counters when the stats section enters the viewport
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.querySelectorAll('.stat-number[data-target]').forEach(el => {
-                        this.animateCounter(el);
+                    // Animate pure-number stats only (skip those like "500K+")
+                    entry.target.querySelectorAll('.stat-number').forEach(el => {
+                        const text = el.textContent.trim();
+                        const match = text.match(/^(\d+)/);
+                        if (match) {
+                            const target = parseInt(match[1], 10);
+                            const suffix = text.replace(match[1], '');
+                            this.animateCounter(el, target, suffix);
+                        }
                     });
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.4 });
 
-        const statsSection = document.querySelector('.about-section .stats, #about .stats');
-        if (statsSection) {
-            observer.observe(statsSection);
-        } else {
-            // Fallback: animate immediately
-            statNumbers.forEach(el => this.animateCounter(el));
-        }
+        observer.observe(statsSection);
     }
 
-    animateCounter(el) {
-        const target = parseInt(el.dataset.target, 10);
-        const duration = 1800;
+    animateCounter(el, target, suffix) {
+        const duration = 1600;
         const start = performance.now();
 
         const step = (now) => {
-            const elapsed = now - start;
-            const progress = Math.min(elapsed / duration, 1);
-            // Ease out cubic
+            const progress = Math.min((now - start) / duration, 1);
             const eased = 1 - Math.pow(1 - progress, 3);
-            el.textContent = Math.floor(eased * target);
+            el.textContent = Math.floor(eased * target) + suffix;
             if (progress < 1) requestAnimationFrame(step);
-            else el.textContent = target;
+            else el.textContent = target + suffix;
         };
 
         requestAnimationFrame(step);

@@ -4,96 +4,115 @@ class CareerMap {
             "Kenya": {
                 capital: "Nairobi",
                 duration: "2018–Present",
-                role: "Senior Product Operations | Co-Founder & Board Chair",
-                achievements: "Strengthened operational efficiency across Sun King's benchmark market — driving core product rollouts, resolving high-impact escalations, and improving cross-functional adoption.",
+                role: "Product Operations Lead | Co-Founder & Board Chair",
+                achievements: "Served as a central escalation and execution leader across Sun King’s most complex \
+                market - stabilising operations, unblocking critical product rollouts, and strengthening adoption \
+                across field, product, and support teams. Co-founded and helped govern Amazing Minds, shaping \
+                strategy, building operational foundations, and driving mental health initiatives across schools \
+                and youth communities. Provided leadership oversight to ensure programs scaled sustainably and \
+                delivered meaningful impact. Played a core role in strengthening the MESH ecosystem by supporting \
+                program execution, coordinating partners, and translating operator feedback into actionable \
+                insights. Helped improve engagement workflows and ensured initiatives delivered practical value \
+                to founders and field operators across markets.",
                 flagImage: "https://flagsapi.com/KE/flat/64.png",
                 color: "#FF6B6B"
             },
-            "Uganda": {
-                capital: "Kampala",
-                duration: "2023–Present",
-                role: "Senior Product Operations",
-                achievements: "Expanded MESH community reach and optimised product-market fit by streamlining operations for local market nuances and driving merchant engagement.",
-                flagImage: "https://flagsapi.com/UG/flat/64.png",
-                color: "#F9D423"
-            },
+
             "Tanzania": {
                 capital: "Dodoma",
                 duration: "2024–Present",
-                role: "Senior Product Operations",
-                achievements: "Led smooth market entry — implemented structured issue resolution frameworks achieving 90% SLA adherence and conducted comprehensive market analysis.",
+                role: "Product Operations Lead",
+                achievements: "Drove market scale by implementing structured support processes, introducing automated issue tracking, and improving SLA discipline to ensure reliable customer experience during growth.",
                 flagImage: "https://flagsapi.com/TZ/flat/64.png",
                 color: "#4ECDC4"
             },
+
+            "Uganda": {
+                capital: "Kampala",
+                duration: "2023–Present",
+                role: "Product Operations Lead",
+                achievements: "Led operational scale-up by strengthening customer support structures, driving adoption improvements, and establishing automated workflows to improve response times and operational consistency.",
+                flagImage: "https://flagsapi.com/UG/flat/64.png",
+                color: "#F9D423"
+            },
+
             "Malawi": {
                 capital: "Lilongwe",
                 duration: "2024–Present",
-                role: "Strategic Advisor",
-                achievements: "Provided strategic advisory on product expansion, leveraging data to drive user engagement in emerging tech corridors.",
+                role: "Product Operations Lead",
+                achievements: "Led early operational maturity efforts by defining support frameworks, guiding scale-up priorities, and introducing structured workflows to stabilise customer experience.",
                 flagImage: "https://flagsapi.com/MW/flat/64.png",
                 color: "#E1306C"
             },
+
             "Nigeria": {
                 capital: "Abuja",
                 duration: "2023–Present",
-                role: "Senior Product Operations",
-                achievements: "Spearheaded product operations for high-growth West African markets, implementing a real-time analytics framework to monitor merchant success.",
+                role: "Product Operations Lead",
+                achievements: "Led support and operational scale in a high-complexity market by improving escalation visibility, driving workflow automation, and strengthening customer experience mechanisms.",
                 flagImage: "https://flagsapi.com/NG/flat/64.png",
                 color: "#008751"
             },
+
             "South Africa": {
                 capital: "Cape Town",
                 duration: "2023–Present",
-                role: "Senior Product Operations",
-                achievements: "Drove operational excellence across product ecosystems with a focus on cross-border logistics and merchant payment solutions.",
+                role: "Product Operations Lead",
+                achievements: "Drove operational excellence by refining support processes, improving cross-team coordination, and establishing scalable workflows to maintain product reliability.",
                 flagImage: "https://flagsapi.com/ZA/flat/64.png",
                 color: "#007A33"
             },
+
             "Togo": {
                 capital: "Lomé",
                 duration: "2024–Present",
-                role: "Senior Product Operations",
-                achievements: "Executed market entry strategy and regulatory compliance — building foundational networks for product adoption in Francophone West Africa.",
+                role: "Product Operations Lead",
+                achievements: "Led foundational scale-up by establishing support operations, defining escalation paths, and introducing structured workflows to support product launches and customer support.",
                 flagImage: "https://flagsapi.com/TG/flat/64.png",
                 color: "#FFCE00"
             },
+
             "Cameroon": {
                 capital: "Yaoundé",
                 duration: "2024–Present",
                 role: "Product Operations Lead",
-                achievements: "Executed product roadmaps and localised user experiences, bridging technology and traditional trade systems to foster digital transformation.",
+                achievements: "Drove operational readiness by leading support setup, improving issue resolution workflows, and aligning product behaviour with local operational realities.",
                 flagImage: "https://flagsapi.com/CM/flat/64.png",
                 color: "#007A5E"
             },
+
             "Benin Republic": {
                 capital: "Porto-Novo",
                 duration: "2024–Present",
-                role: "Senior Product Operations",
-                achievements: "Led go-to-market strategy and execution — driving high adoption rates through data-driven decisions and strategic market analysis.",
+                role: "Product Operations Lead",
+                achievements: "Led go-to-market operational scale by leading product launch and building customer support mechanisms, improving visibility into operational risks, and introducing repeatable workflows.",
                 flagImage: "https://flagsapi.com/BJ/flat/64.png",
                 color: "#FCD116"
             },
+
             "Myanmar": {
                 capital: "Naypyidaw",
                 duration: "2023–Present",
-                role: "Global Product Initiatives",
-                achievements: "Led global product initiatives and remote operations, driving social impact through technology in complex, high-stakes environments.",
+                role: "Product Operations Lead",
+                achievements: "Led operational continuity in a complex environment by driving coordination across teams, strengthening support processes, and maintaining reliable product delivery.",
                 flagImage: "https://flagsapi.com/MM/flat/64.png",
                 color: "#FECB00"
             },
+
             "Zambia": {
                 capital: "Lusaka",
                 duration: "2024–Present",
-                role: "Senior Product Operations",
-                achievements: "Launched and expanded operations within 7 months — coordinating cross-functional teams and significantly reducing support query volumes.",
+                role: "Product Operations Lead",
+                achievements: "Drove rapid scale-up by leading support operations, improving triage processes, and introducing automation to reduce operational load and improve response speed.",
                 flagImage: "https://flagsapi.com/ZM/flat/64.png",
                 color: "#198A00"
             },
+
             "Mozambique": {
                 capital: "Maputo",
                 duration: "2024–Present",
-                role: "Strategic Planning",
-                achievements: "Planned market penetration strategy, enhancing product accessibility across diverse linguistic and demographic groups in the SADC region.",
+                role: "Product Operations Lead",
+                achievements: "Led market readiness by defining support structures, identifying scale risks, and establishing workflows to enable stable growth.",
                 flagImage: "https://flagsapi.com/MZ/flat/64.png",
                 color: "#D21034"
             }

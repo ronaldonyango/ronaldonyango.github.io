@@ -2,6 +2,16 @@
    ABOUT SECTION - SLEEK & MODERN
    =================================== */
 
+/* Two-column layout */
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+
+/* Legacy .about-content still supported */
 .about-content {
     max-width: 800px;
     margin: 0 auto;
@@ -9,6 +19,177 @@
     position: relative;
     z-index: 1;
 }
+
+/* Story column */
+.about-story {
+    position: relative;
+}
+
+/* ---- Expand / Collapse block ---- */
+.expand-block {
+    margin-top: 1.5rem;
+}
+
+.expand-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0;
+    transition: opacity 0.2s ease;
+}
+
+.expand-toggle:hover {
+    opacity: 0.8;
+}
+
+.expand-icon {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.expand-toggle[aria-expanded="true"] .expand-icon {
+    transform: rotate(180deg);
+}
+
+.expand-content {
+    overflow: hidden;
+    padding-top: 1rem;
+}
+
+/* ---- Sidebar ---- */
+.about-sidebar {
+    position: sticky;
+    top: 90px;
+}
+
+.sidebar-heading {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+/* ---- Quick Facts ---- */
+.quick-facts {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 1.5rem;
+}
+
+.fact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.fact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.75rem;
+    border-radius: 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background 0.2s ease;
+    color: var(--text-main);
+}
+
+.fact-item:hover {
+    background: var(--bg-secondary);
+}
+
+.fact-item[aria-expanded="true"] {
+    background: rgba(59, 130, 246, 0.06);
+}
+
+.fact-item[aria-expanded="true"] .fact-arrow {
+    transform: rotate(90deg);
+}
+
+.fact-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(96, 165, 250, 0.08));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.fact-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex: 1;
+}
+
+.fact-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.fact-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.fact-arrow {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    transition: transform 0.25s ease;
+}
+
+.fact-detail {
+    padding: 0.6rem 0.75rem 0.75rem 3.4rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    background: rgba(59, 130, 246, 0.04);
+    border-radius: 12px;
+    margin-bottom: 2px;
+    animation: fadeTabIn 0.25s ease;
+}
+
+@keyframes fadeTabIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .about-sidebar {
+        position: static;
+    }
+}
+
+
 
 .about-paragraph {
     font-size: 1.15rem;

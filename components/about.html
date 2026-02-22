@@ -3,7 +3,6 @@
     <div class="container">
         <header class="section-title creative-title">
             <h2>About Me</h2>
-            <p>Philosophy & Background</p>
             <div class="title-decoration" aria-hidden="true">
                 <div class="decoration-line"></div>
                 <div class="decoration-dot"></div>
@@ -11,89 +10,145 @@
             </div>
         </header>
 
-        <div class="about-content">
-            <p class="about-paragraph">
-                Hey! I'm Ronald, and honestly, I'm just a guy who gets way too excited about solving problems that
-                actually matter. You know that feeling when you're talking to someone and they mention this tiny
-                frustration in their day, and suddenly your brain goes <span class="highlight">"wait, what if we could
-                    fix that?"</span> Yeah, that's me. I've spent the last few years turning those conversations into
-                products that somehow reached over <span class="interactive-text"
-                    data-tooltip="Across 5+ African markets">300,000 people</span> across Africa.
-            </p>
+        <div class="about-layout">
+            <!-- Left: Story -->
+            <div class="about-story">
+                <p class="about-paragraph">
+                    Hey! I'm Ronald — I get way too excited about solving problems that actually matter.
+                    I've spent the last few years turning conversations into products that reached over
+                    <span class="interactive-text" data-tooltip="Across 5+ African markets">300,000 people</span>
+                    across Africa.
+                </p>
 
-            <p class="about-paragraph">
-                The thing is, I never set out to build something massive. It started with me just being curious about
-                one person's problem, then another, and before I knew it, I had this philosophy: <span
-                    class="highlight">listen first, build second, and never stop asking "but why?"</span> Sounds simple,
-                right? But you'd be surprised how many brilliant people skip that first part and wonder why their genius
-                idea flopped.
-            </p>
-            <p class="about-paragraph">
-                I mean, sure, I can talk about my years in <span class="interactive-text"
-                    data-tooltip="Focus on SaaS & EdTech">product management</span>, my obsession with data-driven
-                decisions,
-                or how I can turn a vague idea into a fully-fledged product roadmap. But honestly? What gets me out of
-                bed every morning is the chance to make a real difference. Whether it's through launching products that
-                actually solve problems or mentoring young entrepreneurs who remind me why I fell in love with this work
-                - it's all about creating solutions that matter.
-                I'm especially passionate about <span class="interactive-text"
-                    data-tooltip="Co-founder of Amazing Minds Africa">mental health advocacy</span>. Co-founding an
-                initiative that reached 200,000+
-                young people taught me that sometimes the most important metrics aren't the ones on your dashboard.
-            </p>
+                <p class="about-paragraph">
+                    My philosophy is simple: <span class="highlight">listen first, build second, and never stop asking
+                        "but why?"</span>
+                    I can talk about my years in
+                    <span class="interactive-text" data-tooltip="Focus on SaaS & EdTech">product management</span>,
+                    but what gets me out of bed is the chance to make a real difference.
+                </p>
 
-            <p class="about-paragraph">
-                When I'm not diving deep into <span class="interactive-text"
-                    data-tooltip="Automation & Data Analysis">Python scripts</span> (yes, I'm one of those weird people
-                who finds debugging
-                oddly therapeutic) or getting lost in user analytics at 2 AM, you'll find me exploring how emerging tech
-                can drive real social change. I live for those <span class="highlight">late-night conversations about
-                    what's possible</span> when technology meets genuine human need.
-            </p>
+                <p class="about-paragraph">
+                    I'm especially passionate about
+                    <span class="interactive-text" data-tooltip="Co-founder of Amazing Minds Africa">mental health
+                        advocacy</span>.
+                    Co-founding an initiative that reached <strong>200,000+ young people</strong> taught me that
+                    sometimes the most important metrics aren't the ones on your dashboard.
+                </p>
 
-            <div class="quote-block">
-                Here's my favorite story: I once had what everyone called a <span class="interactive-text"
-                    data-tooltip="My biggest learning curve">"failed" product launch</span>. Instead of
-                immediately pivoting like everyone expected, I spent weeks just talking to users about what went wrong.
-                Turns out, they didn't want what we built - they needed something completely different. That "failure"
-                became our most successful feature and taught me that sometimes the best strategy is simply shutting up
-                and listening.
+                <div class="quote-block">
+                    A <span class="interactive-text" data-tooltip="My biggest learning curve">"failed" product
+                        launch</span>
+                    once became our most successful feature — after I shut up and actually listened to users.
+                </div>
+
+                <!-- Expandable: More about me -->
+                <div class="expand-block" id="more-story">
+                    <button class="expand-toggle" aria-expanded="false" aria-controls="more-story-content">
+                        <span class="expand-label">Read more about me</span>
+                        <i class="fas fa-chevron-down expand-icon"></i>
+                    </button>
+                    <div class="expand-content" id="more-story-content" hidden>
+                        <p class="about-paragraph">
+                            When I'm not diving deep into
+                            <span class="interactive-text" data-tooltip="Automation & Data Analysis">Python
+                                scripts</span>
+                            or getting lost in user analytics at 2 AM, you'll find me exploring how emerging tech
+                            can drive real social change. I live for those
+                            <span class="highlight">late-night conversations about what's possible</span>
+                            when technology meets genuine human need.
+                        </p>
+                        <p class="about-paragraph">
+                            <span class="highlight">The best products aren't born from boardrooms or eureka
+                                moments</span>
+                            — they come from real conversations with real people about real problems.
+                            And honestly? That's way more fun than any algorithm I've ever written.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <p class="about-paragraph">
-                These days, I build that listening philosophy into everything I do. Because here's what I've learned:
-                <span class="highlight">the best products aren't born from boardrooms or brilliant eureka moments</span>
-                - they come from real conversations with real people about real problems. And honestly? That's way more
-                fun than any algorithm I've ever written.
-            </p>
+            <!-- Right: Interactive highlights -->
+            <div class="about-sidebar">
+                <!-- Quick facts — clickable to learn more -->
+                <div class="quick-facts">
+                    <h3 class="sidebar-heading">Quick Facts</h3>
+                    <div class="fact-list">
+                        <button class="fact-item" aria-expanded="false" data-fact="markets">
+                            <div class="fact-icon"><i class="fas fa-globe-africa"></i></div>
+                            <div class="fact-text">
+                                <span class="fact-title">12+ Markets</span>
+                                <span class="fact-sub">Pan-African + Asia</span>
+                            </div>
+                            <i class="fas fa-chevron-right fact-arrow"></i>
+                        </button>
+                        <div class="fact-detail" id="fact-markets" hidden>
+                            Operated products across Kenya, Uganda, Tanzania, Nigeria, South Africa, Malawi, Togo,
+                            Cameroon, Benin Republic, Zambia, Mozambique, Myanmar, and more.
+                        </div>
+
+                        <button class="fact-item" aria-expanded="false" data-fact="impact">
+                            <div class="fact-icon"><i class="fas fa-heart"></i></div>
+                            <div class="fact-text">
+                                <span class="fact-title">500K+ Lives</span>
+                                <span class="fact-sub">Direct product impact</span>
+                            </div>
+                            <i class="fas fa-chevron-right fact-arrow"></i>
+                        </button>
+                        <div class="fact-detail" id="fact-impact" hidden>
+                            Through Sun King's energy products, MESH's networking platform, and Amazing Minds Africa's
+                            mental health programs — real impact at scale.
+                        </div>
+
+                        <button class="fact-item" aria-expanded="false" data-fact="python">
+                            <div class="fact-icon"><i class="fab fa-python"></i></div>
+                            <div class="fact-text">
+                                <span class="fact-title">Python Tinkerer</span>
+                                <span class="fact-sub">Debugging oddly therapeutic</span>
+                            </div>
+                            <i class="fas fa-chevron-right fact-arrow"></i>
+                        </button>
+                        <div class="fact-detail" id="fact-python" hidden>
+                            I automate everything I can. If I do something more than twice, I write a script for it.
+                            Pandas and Seaborn are basically family at this point.
+                        </div>
+
+                        <button class="fact-item" aria-expanded="false" data-fact="founder">
+                            <div class="fact-icon"><i class="fas fa-seedling"></i></div>
+                            <div class="fact-text">
+                                <span class="fact-title">Co-Founder</span>
+                                <span class="fact-sub">Amazing Minds Africa</span>
+                            </div>
+                            <i class="fas fa-chevron-right fact-arrow"></i>
+                        </button>
+                        <div class="fact-detail" id="fact-founder" hidden>
+                            Co-founded Amazing Minds Africa to bring mental health resources to schools across East
+                            Africa. 200K+ young people reached, 17% measured reduction in crisis rates.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
+        <!-- Stats -->
         <div class="stats">
             <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
+                <div class="stat-icon"><i class="fas fa-rocket"></i></div>
                 <span class="stat-number">7+</span>
                 <div class="stat-label">Product Launches</div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
+                <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
                 <span class="stat-number">90%</span>
                 <div class="stat-label">Testing Success</div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
+                <div class="stat-icon"><i class="fas fa-heart"></i></div>
                 <span class="stat-number">500K+</span>
                 <div class="stat-label">Lives Impacted</div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
+                <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
                 <span class="stat-number">65%</span>
                 <div class="stat-label">Efficiency Gains</div>
             </div>

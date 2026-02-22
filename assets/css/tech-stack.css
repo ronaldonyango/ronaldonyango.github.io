@@ -125,6 +125,15 @@
     color: #607D8B;
 }
 
+.zendesk {
+    color: #03363D;
+}
+
+.looker {
+    color: #4285F4;
+}
+
+
 @media (max-width: 1024px) {
     .tech-grid {
         grid-template-columns: repeat(2, 1fr);
